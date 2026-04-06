@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAFT Reading List | Unified Axioconscious Field Theory</title>
+    <meta name="description" content="Essential reading for understanding the Unified Axioconscious Field Theory (UAFT) — key papers, books, and research across disciplines.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --serif: 'Source Serif 4', Georgia, serif;
+            --sans: 'Source Sans 3', 'Segoe UI', sans-serif;
+            --bg: #FAFAF8;
+            --surface: #FFFFFF;
+            --text: #1A1A1A;
+            --text-secondary: #555555;
+            --text-tertiary: #888888;
+            --accent: #2C5F7C;
+            --accent-light: #E8F0F5;
+            --border: #E0E0DC;
+            --max-width: 760px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--sans);
+            background: var(--bg);
+            color: var(--text);
+            font-size: 16px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border);
+            background: var(--surface);
+        }
+
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 2rem 1.5rem 1.8rem;
+        }
+
+        .site-title {
+            font-family: var(--serif);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text);
+            letter-spacing: -0.02em;
+            margin-bottom: 0.2rem;
+        }
+
+        .site-title span { color: var(--accent); }
+
+        .site-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        nav {
+            border-bottom: 1px solid var(--border);
+            background: var(--surface);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            gap: 0;
+        }
+
+        nav a {
+            display: block;
+            padding: 0.8rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+            white-space: nowrap;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        main {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        section:last-child { border-bottom: none; }
+
+        h2 {
+            font-family: var(--serif);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.8rem;
+        }
+
+        .lead {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        /* VOLUME GROUPS */
+        .volume-group {
+            margin-bottom: 2.5rem;
+        }
+
+        .volume-header {
+            margin-bottom: 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .volume-header summary {
+            font-family: var(--serif);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            cursor: pointer;
+            padding: 1rem 0;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--accent-light);
+        }
+
+        .volume-header summary::-webkit-details-marker { display: none; }
+
+        .volume-header summary::after {
+            content: '+';
+            font-family: var(--sans);
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: var(--accent);
+        }
+
+        .volume-header[open] summary::after {
+            content: '\2212';
+        }
+
+        .volume-header summary:hover {
+            color: var(--text);
+        }
+
+        /* READING ITEMS */
+        .reading-list {
+            padding: 0.5rem 0 1.5rem;
+        }
+
+        .reading-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .reading-item:last-child {
+            border-bottom: none;
+        }
+
+        .reading-item .citation {
+            font-size: 0.9rem;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .reading-item .citation em {
+            font-style: italic;
+        }
+
+        .reading-item .relevance {
+            font-size: 0.82rem;
+            color: var(--text-tertiary);
+            margin-top: 0.3rem;
+            line-height: 1.5;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.12rem 0.45rem;
+            border-radius: 2px;
+            margin-right: 0.4rem;
+            vertical-align: middle;
+        }
+
+        .tag-core {
+            background: #E8F5E9;
+            color: #2E7D32;
+        }
+
+        .tag-engages {
+            background: #E3F2FD;
+            color: #1565C0;
+        }
+
+        .tag-background {
+            background: #F3E5F5;
+            color: #7B1FA2;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .back-link:hover { text-decoration: underline; }
+
+        footer {
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .nav-inner { flex-wrap: wrap; }
+            nav a { padding: 0.6rem 0.7rem; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <div class="site-title"><span>UAFT</span> | Reading List</div>
+        <div class="site-subtitle">Essential Reading Across Disciplines</div>
+    </div>
+</header>
+
+<nav>
+    <div class="nav-inner">
+        <a href="https://axioconsciousness.com/index.html">Home</a>
+        <a href="https://axioconsciousness.com/research.html">Research</a>
+        <a href="#foundations">Foundations</a>
+        <a href="#life">Life</a>
+        <a href="#mind">Mind</a>
+        <a href="#culture">Culture</a>
+        <a href="#technology">Technology</a>
+    </div>
+</nav>
+
+<main>
+
+    <section>
+        <h2>Reading List</h2>
+        <p class="lead">The works below represent the academic landscape UAFT engages with, organised by the same five-volume structure as the research programme. Items marked <span class="tag tag-core">Core</span> are directly cited in UAFT papers. Items marked <span class="tag tag-engages">Engages</span> are frameworks UAFT responds to. Items marked <span class="tag tag-background">Background</span> provide context.</p>
+    </section>
+
+    <!-- VOLUME 1 -->
+    <section id="foundations">
+        <details class="volume-header" open>
+            <summary>Volume 1 — Foundations: Ontology, Physics, and Cosmology</summary>
+            <div class="reading-list">
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-core">Core</span> Chalmers, D. J. (1995). Facing Up to the Problem of Consciousness. <em>Journal of Consciousness Studies</em>, 2(3), 200-219.</div>
+                    <div class="relevance">Defines the hard problem. UAFT reframes it: the question is not how matter produces experience but how axiomatic consciousness generates phenomenal awareness.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-core">Core</span> Chalmers, D. J. (1996). <em>The Conscious Mind: In Search of a Fundamental Theory</em>. Oxford University Press.</div>
+                    <div class="relevance">Full treatment of the hard problem and property dualism. UAFT dissolves the explanatory gap by starting from consciousness rather than matter.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-engages">Engages</span> Kastrup, B. (2019). <em>The Idea of the World: A Multi-Disciplinary Argument for the Mental Nature of Reality</em>. Iff Books.</div>
+                    <div class="relevance">Analytic idealism. Shares commitment to consciousness as ontologically primary. UAFT diverges: Kastrup describes universal consciousness as having experiences and dissociative processes, which UAFT identifies as conscious bias.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-engages">Engages</span> Hoffman, D. D., &amp; Prakash, C. (2014). Objects of Consciousness. <em>Frontiers in Psychology</em>, 5, 577.</div>
+                    <div class="relevance">Interface theory of perception. Shares recognition that perceived reality may not reflect fundamental reality. UAFT grounds its argument in differentiation and constraint rather than fitness-driven interfaces.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-engages">Engages</span> Whitehead, A. N. (1929). <em>Process and Reality</em>. Free Press.</div>
+                    <div class="relevance">Process philosophy. UAFT shares the commitment to reality as fundamentally processual rather than substantial.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-core">Core</span> Penrose, R. (1994). <em>Shadows of the Mind</em>. Oxford University Press.</div>
+                    <div class="relevance">Argues consciousness involves non-computable processes and quantum gravity. UAFT corrects: consciousness is in the superposition, not the collapse; gravity's role is coherence, not triggering reduction.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-core">Core</span> Hameroff, S., &amp; Penrose, R. (2014). Consciousness in the Universe: A Review of the 'Orch OR' Theory. <em>Physics of Life Reviews</em>, 11(1), 39-78.</div>
+                    <div class="relevance">Orch-OR theory. Correctly identifies microtubules as the locus of quantum-scale consciousness-relevant processes. UAFT translates and corrects the framework.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-engages">Engages</span> Rovelli, C. (2021). <em>Helgoland: Making Sense of the Quantum Revolution</em>. Riverhead Books.</div>
+                    <div class="relevance">Relational quantum mechanics. Resonates with UAFT's treatment of observation as relational constraint. UAFT makes a stronger claim about what relations are.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-engages">Engages</span> Barbour, J. (1999). <em>The End of Time: The Next Revolution in Physics</em>. Oxford University Press.</div>
+                    <div class="relevance">Treats time as emergent from relations between configurations. UAFT makes a stronger claim: time is identical with differentiation itself, not merely relational but constitutive.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-background">Background</span> Spencer-Brown, G. (1969). <em>Laws of Form</em>. Allen &amp; Unwin.</div>
+                    <div class="relevance">Distinction as the primary act. Resonates with UAFT's treatment of differentiation as the first structural feature of expression.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-core">Core</span> Wheeler, J. A. (1990). Information, Physics, Quantum: The Search for Links. <em>Proceedings of the 3rd International Symposium on Foundations of Quantum Mechanics</em>.</div>
+                    <div class="relevance">Participatory universe. UAFT provides the structural account of why the observer and the observed share a generative source.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-core">Core</span> Arndt, M., et al. (1999). Wave-Particle Duality of C60 Molecules. <em>Nature</em>, 401(6754), 680-682.</div>
+                    <div class="relevance">Demonstrates interference with large molecules. Supports UAFT's claim that there is no quantum/classical divide, only resolved and unresolved differentiation.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-engages">Engages</span> Nagel, T. (2012). <em>Mind and Cosmos</em>. Oxford University Press.</div>
+                    <div class="relevance">Argues materialist neo-Darwinism is insufficient to account for consciousness. UAFT provides the alternative framework Nagel calls for.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-background">Background</span> Goff, P. (2019). <em>Galileo's Error: Foundations for a New Science of Consciousness</em>. Pantheon.</div>
+                    <div class="relevance">Argues for panpsychism as a response to the hard problem. UAFT avoids the combination problem by starting from unity rather than multiplicity.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-engages">Engages</span> Friston, K. (2010). The Free-Energy Principle: A Unified Brain Theory? <em>Nature Reviews Neuroscience</em>, 11(2), 127-138.</div>
+                    <div class="relevance">Free energy principle parallels UAFT's treatment of balance as dynamic consistency maintained through corrective response.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-engages">Engages</span> Tononi, G. (2008). Consciousness as Integrated Information: A Provisional Manifesto. <em>Biological Bulletin</em>, 215(3), 216-242.</div>
+                    <div class="relevance">Integrated Information Theory. UAFT challenges substrate-independence assumption: consciousness requires non-dual differentiation, not just information integration.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-background">Background</span> Deacon, T. W. (2012). <em>Incomplete Nature: How Mind Emerged from Matter</em>. W. W. Norton.</div>
+                    <div class="relevance">Explores how absence and constraint shape emergent phenomena. Resonates with UAFT's treatment of constraint as constitutive.</div>
+                </div>
+
+            </div>
+        </details>
+    </section>
+
+    <!-- VOLUME 2 -->
+    <section id="life">
+        <details class="volume-header">
+            <summary>Volume 2 — Life: Biology, Evolution, and Neuroscience</summary>
+            <div class="reading-list">
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-core">Core</span> Hameroff, S. (2006). The Entwined Mysteries of Anesthesia and Consciousness: Is There a Common Underlying Mechanism? <em>Anesthesiology</em>, 105(2), 400-412.</div>
+                    <div class="relevance">Argues anesthetic gases bind to tubulin in microtubules disrupting quantum coherence. UAFT reframes: anesthetics suppress the quantum-scale unconstrained differentiation maintaining atemporal connection. Evidence for the two-threshold model.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-core">Core</span> Diekelmann, S., &amp; Born, J. (2010). The Memory Function of Sleep. <em>Nature Reviews Neuroscience</em>, 11(2), 114-126.</div>
+                    <div class="relevance">Definitive review of hippocampal replay, synaptic homeostasis, and memory consolidation during sleep. Supports UAFT's treatment of sleep as the field's integration phase.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-engages">Engages</span> Damasio, A. (1999). <em>The Feeling of What Happens: Body and Emotion in the Making of Consciousness</em>. Harcourt.</div>
+                    <div class="relevance">Proto-self, core self, autobiographical self. Closest ally in neuroscience. UAFT diverges on five points: ground (brain vs field), mapping vs differentiation, three selves vs pinch point, homeostasis vs dynamic consistency, emotion as signal vs generative.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-background">Background</span> Damasio, A. (2010). <em>Self Comes to Mind: Constructing the Conscious Brain</em>. Pantheon.</div>
+                    <div class="relevance">Updated model of the three selves. Symphony analogy (conductor emerges from playing) parallels UAFT's three-step pinch point mechanism.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-background">Background</span> Damasio, A. (1994). <em>Descartes' Error: Emotion, Reason, and the Human Brain</em>. Putnam.</div>
+                    <div class="relevance">Somatic marker hypothesis. Establishes emotion as central to rational decision-making. UAFT goes further: emotion is not a guide to decisions but the mechanism that produces the decision-maker.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-background">Background</span> Panksepp, J. (1998). <em>Affective Neuroscience: The Foundations of Human and Animal Emotions</em>. Oxford University Press.</div>
+                    <div class="relevance">Core emotional systems in the brain. Empirical grounding for the claim that emotion is biologically fundamental, not cognitively derived.</div>
+                </div>
+
+            </div>
+        </details>
+    </section>
+
+    <!-- VOLUME 3 -->
+    <section id="mind">
+        <details class="volume-header">
+            <summary>Volume 3 — Mind: Psychology, Pharmacology, and Animal Consciousness</summary>
+            <div class="reading-list">
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-core">Core</span> Rochat, P. (2003). Five Levels of Self-Awareness as They Unfold Early in Life. <em>Consciousness and Cognition</em>, 12(4), 717-731.</div>
+                    <div class="relevance">Primary source for developmental self-awareness stages. Mirror self-recognition at 15-24 months. Independently confirms UAFT's seven-stage pinch point mechanism.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-core">Core</span> Ekman, P. (1992). An Argument for Basic Emotions. <em>Cognition and Emotion</em>, 6(3-4), 169-200.</div>
+                    <div class="relevance">Establishes that primary emotions are biologically innate, universal, and require no cognitive input. Supports UAFT's claim that emotions precede the self and operate from birth without a subject.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-core">Core</span> Nagel, T. (1974). What Is It Like to Be a Bat? <em>Philosophical Review</em>, 83(4), 435-450.</div>
+                    <div class="relevance">Establishes subjective experience as irreducible. UAFT reframes: the question is not what it is like to be something but how the field's differentiation reaches the threshold that produces a "what it is like."</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-core">Core</span> Kiehl, K. A. (2006). A Cognitive Neuroscience Perspective on Psychopathy: Evidence for Paralimbic System Dysfunction. <em>Psychiatry Research</em>, 142(2-3), 107-128.</div>
+                    <div class="relevance">Documents grey matter deficits in paralimbic regions in psychopathy. Supports UAFT's negative proof: reduced emotional differentiation correlates with reduced phenomenal selfhood.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-core">Core</span> Meffert, H., et al. (2013). Reduced Spontaneous but Relatively Normal Deliberate Vicarious Representations in Psychopathy. <em>Brain</em>, 136(8), 2550-2562.</div>
+                    <div class="relevance">Psychopaths can partially activate empathic responses when deliberately instructed. Supports UAFT's claim that the machinery is present but not spontaneously active.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-background">Background</span> Stern, D. N. (1985). <em>The Interpersonal World of the Infant: A View from Psychoanalysis and Developmental Psychology</em>. Basic Books.</div>
+                    <div class="relevance">Foundational work on infant self-development and the emergence of intersubjectivity. Background for the pinch point mechanism.</div>
+                </div>
+
+            </div>
+        </details>
+    </section>
+
+    <!-- VOLUME 4 -->
+    <section id="culture">
+        <details class="volume-header">
+            <summary>Volume 4 — Culture: Language, Ethics, Education, and Religion</summary>
+            <div class="reading-list">
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-background">Background</span> Lao Tzu. <em>Tao Te Ching</em>. (Various translations.)</div>
+                    <div class="relevance">UAFT may be the structural vocabulary for what Taoism points at non-conceptually. "The Tao that can be spoken is not the eternal Tao" as a structural prediction: reporting on the undifferentiated state requires re-engaging the differentiation that was quieted.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-background">Background</span> Varela, F. J., Thompson, E., &amp; Rosch, E. (1991). <em>The Embodied Mind: Cognitive Science and Human Experience</em>. MIT Press.</div>
+                    <div class="relevance">Neurophenomenology. Pioneered integration of first-person and third-person methodologies. UAFT provides the structural account of why both approaches yield valid but incomplete knowledge.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-background">Background</span> Singer, P. (1975). <em>Animal Liberation</em>. Random House.</div>
+                    <div class="relevance">Moral status based on capacity to suffer. UAFT reframes: moral status grounded in threshold crossing within the differentiation spectrum, not species membership.</div>
+                </div>
+
+            </div>
+        </details>
+    </section>
+
+    <!-- VOLUME 5 -->
+    <section id="technology">
+        <details class="volume-header">
+            <summary>Volume 5 — Technology: AI, Computing, and the Future of Consciousness Research</summary>
+            <div class="reading-list">
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-core">Core</span> Barnes, P. W. (2026a). Unified Axioconscious Field Theory: Consciousness, Differentiation, and the Emergence of Physical Reality. <em>Zenodo</em>. DOI: 10.5281/zenodo.19433409.</div>
+                    <div class="relevance">The foundational UAFT paper. Establishes axioconsciousness, non-dual differentiation, the seven-condition constraint taxonomy, the pinch point mechanism, and the smoke-and-lens problem.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-core">Core</span> Barnes, P. W. (2026b). The Binary Severance Threshold: Why Artificial Intelligence Cannot Achieve Consciousness. <em>Zenodo</em>. DOI: 10.5281/zenodo.19432883.</div>
+                    <div class="relevance">Introduces BST and NSB as structural barriers to machine consciousness. Examines classical computing, quantum computing, Orch-OR, and the compatibility problem.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-engages">Engages</span> Tononi, G. (2008). Consciousness as Integrated Information: A Provisional Manifesto. <em>Biological Bulletin</em>, 215(3), 216-242.</div>
+                    <div class="relevance">IIT treats consciousness as substrate-independent. UAFT challenges this directly: substrate matters because consciousness requires non-dual differentiation, not just information integration.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-background">Background</span> Kurzweil, R. (2005). <em>The Singularity Is Near</em>. Viking.</div>
+                    <div class="relevance">Predicts machine consciousness through computational scaling. UAFT argues the barrier is structural, not quantitative. No amount of scaling overcomes the BST.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-background">Background</span> Searle, J. (1980). Minds, Brains, and Programs. <em>Behavioral and Brain Sciences</em>, 3(3), 417-424.</div>
+                    <div class="relevance">The Chinese Room argument. UAFT provides the structural account of why syntax cannot produce semantics: computation operates through severed states that cannot participate in non-dual differentiation.</div>
+                </div>
+
+                <div class="reading-item">
+                    <div class="citation"><span class="tag tag-background">Background</span> Block, N. (1995). On a Confusion about a Function of Consciousness. <em>Behavioral and Brain Sciences</em>, 18(2), 227-247.</div>
+                    <div class="relevance">Distinguishes access consciousness from phenomenal consciousness. UAFT reframes both through the two-threshold model.</div>
+                </div>
+
+            </div>
+        </details>
+    </section>
+
+    <a href="https://axioconsciousness.com/index.html" class="back-link">&larr; Back to main site</a>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Paul W. Barnes. All rights reserved.</p>
+    <p>Unified Axioconscious Field Theory (UAFT) — axioconsciousness.com</p>
+</footer>
+
+<script>
+    // Smooth scroll for hash links only
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (!href.startsWith('#')) return;
+            e.preventDefault();
+            if (href === '#') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

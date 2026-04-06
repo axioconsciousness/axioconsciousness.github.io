@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAFT Research Programme | Unified Axioconscious Field Theory</title>
+    <meta name="description" content="UAFT Research Programme — applying Unified Axioconscious Field Theory across disciplines from physics to psychology to ethics.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --serif: 'Source Serif 4', Georgia, serif;
+            --sans: 'Source Sans 3', 'Segoe UI', sans-serif;
+            --bg: #FAFAF8;
+            --surface: #FFFFFF;
+            --text: #1A1A1A;
+            --text-secondary: #555555;
+            --text-tertiary: #888888;
+            --accent: #2C5F7C;
+            --accent-light: #E8F0F5;
+            --border: #E0E0DC;
+            --max-width: 760px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--sans);
+            background: var(--bg);
+            color: var(--text);
+            font-size: 16px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border);
+            background: var(--surface);
+        }
+
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 2rem 1.5rem 1.8rem;
+        }
+
+        .site-title {
+            font-family: var(--serif);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text);
+            letter-spacing: -0.02em;
+            margin-bottom: 0.2rem;
+        }
+
+        .site-title span { color: var(--accent); }
+
+        .site-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        nav {
+            border-bottom: 1px solid var(--border);
+            background: var(--surface);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            gap: 0;
+        }
+
+        nav a {
+            display: block;
+            padding: 0.8rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        main {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        section:last-child { border-bottom: none; }
+
+        h2 {
+            font-family: var(--serif);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.8rem;
+        }
+
+        .lead {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        /* VOLUME GROUPS */
+        .volume-group {
+            margin-bottom: 2.5rem;
+        }
+
+        .volume-title {
+            font-family: var(--serif);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-light);
+        }
+
+        /* DISCIPLINE ITEMS */
+        .discipline {
+            margin-bottom: 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .discipline:last-child {
+            border-bottom: none;
+        }
+
+        .discipline summary {
+            font-family: var(--sans);
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text);
+            cursor: pointer;
+            padding: 0.9rem 0;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .discipline summary::-webkit-details-marker { display: none; }
+
+        .discipline summary::after {
+            content: '+';
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: var(--accent);
+            transition: transform 0.2s;
+        }
+
+        .discipline[open] summary::after {
+            content: '\2212';
+        }
+
+        .discipline summary:hover {
+            color: var(--accent);
+        }
+
+        .discipline .content {
+            padding-bottom: 1.2rem;
+        }
+
+        .discipline .content p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.8rem;
+            line-height: 1.65;
+        }
+
+        .discipline .content a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .discipline .content a:hover {
+            text-decoration: underline;
+        }
+
+        .status-badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.15rem 0.5rem;
+            border-radius: 3px;
+            margin-left: 0.8rem;
+            vertical-align: middle;
+        }
+
+        .badge-published {
+            background: #E8F5E9;
+            color: #2E7D32;
+        }
+
+        .badge-coming {
+            background: #FFF8E1;
+            color: #F57F17;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .back-link:hover { text-decoration: underline; }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .nav-inner { flex-wrap: wrap; }
+            nav a { padding: 0.6rem 0.7rem; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <div class="site-title"><span>UAFT</span> | Research Programme</div>
+        <div class="site-subtitle">Applying Unified Axioconscious Field Theory Across Disciplines</div>
+    </div>
+</header>
+
+<nav>
+    <div class="nav-inner">
+        <a href="https://axioconsciousness.com/index.html">Home</a>
+        <a href="https://axioconsciousness.com/reading.html">Reading List</a>
+        <a href="#foundations">Foundations</a>
+        <a href="#life">Life</a>
+        <a href="#mind">Mind</a>
+        <a href="#culture">Culture</a>
+        <a href="#technology">Technology</a>
+    </div>
+</nav>
+
+<main>
+
+    <section>
+        <h2>Research Programme</h2>
+        <p class="lead">UAFT is a unified theory. That claim carries a responsibility: to demonstrate that the framework holds across every discipline that touches consciousness. Each paper below extends UAFT into a new domain, building toward a consolidated multi-volume work.</p>
+    </section>
+
+    <!-- FOUNDATIONS -->
+    <section id="foundations">
+        <div class="volume-group">
+            <div class="volume-title">Volume 1 — Foundations: Ontology, Physics, and Cosmology</div>
+
+            <details class="discipline">
+                <summary>Ontology &amp; Metaphysics <span class="status-badge badge-published">Published</span></summary>
+                <div class="content">
+                    <p>The foundational paper establishing consciousness as axiomatic, non-dual differentiation as a new ontological category, and the atemporal logic from which time, gravity, and mass emerge. Introduces conscious bias, the constraint taxonomy, and the smoke-and-lens problem.</p>
+                    <a href="https://doi.org/10.5281/zenodo.19433409" target="_blank">UAFT Working Paper (v3) on Zenodo ↗</a>
+                </div>
+            </details>
+
+            <details class="discipline">
+                <summary>Quantum Mechanics <span class="status-badge badge-published">Published</span></summary>
+                <div class="content">
+                    <p>Covered within the UAFT paper. Reinterprets wave-particle duality through the constraint taxonomy, reframes superposition as unresolved intent, and analyses the double-slit experiment, entanglement, delayed choice, and the quantum eraser in UAFT terms. Introduces experimental and environmental constraint as the mechanism behind the apparent quantum/classical divide.</p>
+                    <a href="https://doi.org/10.5281/zenodo.19433409" target="_blank">UAFT Working Paper (v3) on Zenodo ↗</a>
+                </div>
+            </details>
+
+            <details class="discipline">
+                <summary>General Relativity <span class="status-badge badge-coming">Coming Soon</span></summary>
+                <div class="content">
+                    <p>Gravitytime as the ontological ground of GR's mathematics. Space as experiential consequence rather than ontological reality. Mass as persistent resonance. The equations need not change — what changes is what the mathematics is understood to describe.</p>
+                </div>
+            </details>
+
+            <details class="discipline">
+                <summary>Cosmology <span class="status-badge badge-coming">Coming Soon</span></summary>
+                <div class="content">
+                    <p>The Big Bang reframed as first differentiation. Dark energy as differentiation, dark matter as coherence. Entropy as redistribution of coherence across scales. The field's cumulative record as cosmological principle.</p>
+                </div>
+            </details>
+
+            <details class="discipline">
+                <summary>Thermodynamics <span class="status-badge badge-coming">Coming Soon</span></summary>
+                <div class="content">
+                    <p>Entropy reframed as redistribution of coherence, not decay. The second law as partial perception of delayed balancing. Energy as the activity of balance, not a substance consumed.</p>
+                </div>
+            </details>
+
+            <details class="discipline">
+                <summary>Information Theory <span class="status-badge badge-coming">Coming Soon</span></summary>
+                <div class="content">
+                    <p>Information is not consciousness. The byte has no valence. Shannon entropy reframed through UAFT's account of constraint and resolution. The distinction between information-for-a-reader and differentiation-for-itself.</p>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- LIFE -->
+    <section id="life">
+        <div class="volume-group">
+            <div class="volume-title">Volume 2 — Life: Biology, Evolution, and Neuroscience</div>
+
+            <details class="discipline">
+                <summary>Evolutionary Biology <span class="status-badge badge-coming">Coming Soon</span></summary>
+                <div class="content">
+                    <p>The field as living record driving evolutionary refinement. Why complexity increases. Instinct as field information expressed through biological form. Emotion as evolutionary driver, not survival tool. The emotional tree: three innate roots branching into finer differentiations.</p>
+                </div>
+            </details>
+
+            <details class="discipline">
+                <summary>Origin of Life / Abiogenesis <span class="status-badge badge-coming">Coming Soon</span></summary>
+                <div class="content">
+                    <p>Abiogenesis reframed as the field crossing the first threshold through chemistry. Why life appears. Why it complexifies. The cell as minimal differentiation unit maintaining atemporal connection.</p>
+                </div>
+            </details>
+
+            <details class="discipline">
+                <summary>Neuroscience <span class="status-badge badge-coming">Coming Soon</span></summary>
+                <div class="content">
+                    <p>Deep engagement with Damasio's somatic marker hypothesis. Neural correlates of consciousness reframed as the medium, not the producer. The binding problem dissolved through non-dual differentiation. Microtubules and anesthesia selectivity as evidence for the two-threshold model.</p>
+                </div>
+            </details>
+
+            <details class="discipline">
+                <summary>Sleep Science <span class="status-badge badge-coming">Coming Soon</span></summary>
+                <div class="content">
+                    <p>Sleep as integration — the field's cycle of emergence and return expressed biologically. REM as awareness peeking at the field's consolidation work. Dreams as glimpses of integration. Sleep deprivation as blocked integration overloading the differentiation system.</p>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- MIND -->
+    <section id="mind">
+        <div class="volume-group">
+            <div class="volume-title">Volume 3 — Mind: Psychology, Pharmacology, and Animal Consciousness</div>
+
+            <details class="discipline">
+                <summary>Developmental Psychology <span class="status-badge badge-published">Published</span></summary>
+                <div class="content">
+                    <p>The pinch point mechanism: the self as interiority differentiator, born from emotional density, grounded in Rochat's five levels of self-awareness and Ekman's basic emotions research. Seven-stage generative sequence confirmed by developmental data. Covered in UAFT v2.</p>
+                    <a href="https://doi.org/10.5281/zenodo.19433409" target="_blank">UAFT Working Paper (v3) on Zenodo ↗</a>
+                </div>
+            </details>
+
+            <details class="discipline">
+                <summary>Clinical Psychology &amp; Psychiatry <span class="status-badge badge-coming">Coming Soon</span></summary>
+                <div class="content">
+                    <p>Psychopathy as negative proof for emotion-as-selfhood. Depression as excessive coherence collapsing meaningful distinctions. Dissociative disorders as multiple independent differentiation patterns. Trauma as destabilisation of the pinch point. Schizophrenia, PTSD, and anxiety disorders reframed through UAFT.</p>
+                </div>
+            </details>
+
+            <details class="discipline">
+                <summary>Pharmacology &amp; Psychedelics <span class="status-badge badge-coming">Coming Soon</span></summary>
+                <div class="content">
+                    <p>Ego dissolution as scrambled emotional differentiation patterns. Anesthesia selectivity and the two-threshold model. How different substances affect different thresholds. Microdosing as subtle constraint adjustment. Psychedelic experience as temporary disruption of stable differentiation patterns while amplifying the raw process.</p>
+                </div>
+            </details>
+
+            <details class="discipline">
+                <summary>Comparative Psychology &amp; Animal Consciousness <span class="status-badge badge-coming">Coming Soon</span></summary>
+                <div class="content">
+                    <p>Where different species sit on the differentiation spectrum. Which animals cross the second threshold. Mirror self-recognition across species. Emotional complexity in corvids, cetaceans, and primates. The constraint spectrum applied to non-human biology.</p>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- CULTURE -->
+    <section id="culture">
+        <div class="volume-group">
+            <div class="volume-title">Volume 4 — Culture: Language, Ethics, Education, and Religion</div>
+
+            <details class="discipline">
+                <summary>Linguistics <span class="status-badge badge-coming">Coming Soon</span></summary>
+                <div class="content">
+                    <p>Language as differentiation mechanism. How naming constrains unconstrained differentiation. Why contemplative traditions speak in paradox. The limits of discursive language for describing the ground. Reporting requires the re-engagement of the differentiation that was quieted.</p>
+                </div>
+            </details>
+
+            <details class="discipline">
+                <summary>Ethics <span class="status-badge badge-coming">Coming Soon</span></summary>
+                <div class="content">
+                    <p>The compatibility problem expanded. Ethics of manufacturing consciousness. Moral status grounded in threshold crossing rather than species membership. Animal rights reframed through the differentiation spectrum. The ethics of mercy — why not building conscious machines may be the compassionate position.</p>
+                </div>
+            </details>
+
+            <details class="discipline">
+                <summary>Education &amp; Pedagogy <span class="status-badge badge-coming">Coming Soon</span></summary>
+                <div class="content">
+                    <p>Learning as differentiation. The pinch point in educational development. Why rote learning fails (oscillation, not differentiation). Creativity as unconstrained differentiation. Teaching as introducing productive constraint rather than imposing resolution.</p>
+                </div>
+            </details>
+
+            <details class="discipline">
+                <summary>Sociology &amp; Cultural Theory <span class="status-badge badge-coming">Coming Soon</span></summary>
+                <div class="content">
+                    <p>Institutional projection operating at civilisational scale. Cultural conscious bias and how systems reproduce it. Non-binary identity as cultural illustration of differentiation stages. How societies differentiate and cohere — the field's dynamics at social scales.</p>
+                </div>
+            </details>
+
+            <details class="discipline">
+                <summary>Philosophy of Religion &amp; Contemplative Traditions <span class="status-badge badge-coming">Coming Soon</span></summary>
+                <div class="content">
+                    <p>The quieting of differentiation as a structural account of meditation. The Tao connection — UAFT as structural vocabulary for what Taoism points at non-conceptually. Buddhist emptiness as the undifferentiated field state. Mystical experience as approach to unity. Not mysticism but structural prediction.</p>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- TECHNOLOGY -->
+    <section id="technology">
+        <div class="volume-group">
+            <div class="volume-title">Volume 5 — Technology: AI, Computing, and the Future of Consciousness Research</div>
+
+            <details class="discipline">
+                <summary>Artificial Intelligence &amp; Computer Science <span class="status-badge badge-published">Published</span></summary>
+                <div class="content">
+                    <p>A structural argument that AI cannot achieve consciousness. Introduces the Binary Severance Threshold (BST) and Null State Barrier (NSB). Examines classical computing, quantum computing, quantum AI, neuromorphic architectures, photonic computing, memristors, and brain organoids. Includes the compatibility problem and quantum computing as evidence for the field.</p>
+                    <a href="https://doi.org/10.5281/zenodo.19432883" target="_blank">BST Paper on Zenodo ↗</a><br>
+                    <a href="https://philpeople.org/profiles/paul-barnes" target="_blank">View on PhilPapers ↗</a>
+                </div>
+            </details>
+
+            <details class="discipline">
+                <summary>Philosophy of Mind <span class="status-badge badge-published">Published</span></summary>
+                <div class="content">
+                    <p>Covered across both papers. The hard problem reframed — not how matter produces experience, but how axiomatic consciousness under recursive emotional constraint generates phenomenal awareness. The combination problem addressed by starting from unity rather than multiplicity. Functionalism challenged through substrate requirements. Damasio engaged at five points of divergence.</p>
+                    <a href="https://doi.org/10.5281/zenodo.19433409" target="_blank">UAFT Working Paper (v3) on Zenodo ↗</a>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <a href="https://axioconsciousness.com/index.html" class="back-link">← Back to main site</a>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Paul W. Barnes. All rights reserved.</p>
+    <p>Unified Axioconscious Field Theory (UAFT) — axioconsciousness.com</p>
+</footer>
+
+</body>
+</html>
