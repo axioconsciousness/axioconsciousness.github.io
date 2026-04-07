@@ -451,9 +451,13 @@
       var href = link.getAttribute('href');
       if (href && href.startsWith('#')) {
         e.preventDefault();
-        var target = document.querySelector(href);
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (href === '#top') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          var target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
         }
       }
     });
