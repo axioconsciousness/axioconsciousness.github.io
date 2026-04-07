@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glossary of Terms | Unified Axioconscious Field Theory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FAFAF8;
+      --text: #1A1A18;
+      --accent: #2C5F7C;
+      --accent-light: #e8f0f5;
+      --border: #E0E0DC;
+      --muted: #6B6B65;
+      --serif: 'Source Serif 4', Georgia, serif;
+      --sans: 'Source Sans 3', system-ui, sans-serif;
+      --max: 760px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--serif);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      padding: 0.75rem 1.5rem;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 1.25rem;
+      max-width: var(--max);
+      margin: 0 auto;
+      font-family: var(--sans);
+      font-size: 0.875rem;
+    }
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    nav a:hover { text-decoration: underline; }
+
+    /* MAIN */
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-header h1 {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .page-header p {
+      font-family: var(--sans);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* ALPHABET BAR */
+    .alpha-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.2rem;
+      margin-bottom: 2.5rem;
+      padding: 1rem 1.1rem;
+      background: var(--accent-light);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-family: var(--sans);
+    }
+    .alpha-bar a,
+    .alpha-bar span {
+      display: inline-block;
+      width: 1.7rem;
+      text-align: center;
+      padding: 0.2rem 0;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 3px;
+      text-decoration: none;
+      line-height: 1.4;
+    }
+    .alpha-bar a {
+      color: var(--accent);
+      background: #fff;
+      border: 1px solid var(--border);
+      transition: background 0.15s, color 0.15s;
+    }
+    .alpha-bar a:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+    .alpha-bar span {
+      color: #ccc;
+      border: 1px solid transparent;
+    }
+
+    /* LETTER SECTION */
+    .letter-section {
+      margin-bottom: 2.5rem;
+    }
+    .letter-heading {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.35rem;
+      margin-bottom: 1.25rem;
+    }
+
+    /* GLOSSARY ENTRY */
+    .entry {
+      margin-bottom: 1.5rem;
+    }
+    .entry-term {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+    .entry-abbr {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 400;
+      margin-left: 0.4rem;
+    }
+    .entry-def {
+      font-size: 0.975rem;
+      line-height: 1.75;
+      color: var(--text);
+    }
+
+    /* BACK TO TOP */
+    .back-to-top {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .back-to-top a {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .back-to-top a:hover { color: var(--accent); }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem;
+      text-align: center;
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 520px) {
+      .alpha-bar { gap: 0.15rem; }
+      .alpha-bar a, .alpha-bar span { width: 1.5rem; font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="https://axioconsciousness.com/index.html">Home</a></li>
+    <li><a href="https://axioconsciousness.com/theory.html">Theory</a></li>
+    <li><a href="https://axioconsciousness.com/research.html">Research</a></li>
+    <li><a href="https://axioconsciousness.com/reading.html">Reading</a></li>
+    <li><a href="https://axioconsciousness.com/glossary.html">Glossary</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <div class="page-header">
+    <h1>Glossary of Terms</h1>
+    <p>Principal concepts of the Unified Axioconscious Field Theory, arranged alphabetically. Select a letter to jump to that section.</p>
+  </div>
+
+  <!-- ALPHABET BAR -->
+  <!-- Active letters: A B C D E G I N P S T -->
+  <nav class="alpha-bar" aria-label="Jump to letter">
+    <a href="#letter-a">A</a>
+    <a href="#letter-b">B</a>
+    <a href="#letter-c">C</a>
+    <a href="#letter-d">D</a>
+    <a href="#letter-e">E</a>
+    <span>F</span>
+    <a href="#letter-g">G</a>
+    <span>H</span>
+    <a href="#letter-i">I</a>
+    <span>J</span>
+    <span>K</span>
+    <span>L</span>
+    <span>M</span>
+    <a href="#letter-n">N</a>
+    <span>O</span>
+    <a href="#letter-p">P</a>
+    <span>Q</span>
+    <span>R</span>
+    <a href="#letter-s">S</a>
+    <a href="#letter-t">T</a>
+    <span>U</span>
+    <span>V</span>
+    <span>W</span>
+    <span>X</span>
+    <span>Y</span>
+    <span>Z</span>
+  </nav>
+
+  <!-- A -->
+  <div class="letter-section" id="letter-a">
+    <div class="letter-heading">A</div>
+
+    <div class="entry">
+      <div class="entry-term">Atemporal Field</div>
+      <div class="entry-def">The dimension of axioconsciousness that exists prior to and independent of time. Time is understood in UAFT as an emergent product of differentiation, not a container within which consciousness operates. The atemporal field is the ground from which temporal experience arises, and it remains operative beneath all temporal processes.</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-term">Axioconsciousness</div>
+      <div class="entry-def">The primary, atemporal ground of all reality. In UAFT, consciousness is not produced by the brain or any physical substrate; it is the originating field from which physical reality, time, and differentiation emerge. The term combines axiomatic (self-evidently prior, requiring no further derivation) with consciousness. Axioconsciousness is not a property of organisms; it is the condition that makes organisms, and all differentiated reality, possible.</div>
+    </div>
+  </div>
+
+  <!-- B -->
+  <div class="letter-section" id="letter-b">
+    <div class="letter-heading">B</div>
+
+    <div class="entry">
+      <div class="entry-term">Binary Severance Threshold <span class="entry-abbr">(BST)</span></div>
+      <div class="entry-def">The point at which a substrate's operational logic permanently excludes it from genuine differentiation by severing every state from every other. In binary architecture, each computational state is fully resolved and mutually exclusive: a transistor is on or off, never partially or transitionally between. This produces alternation, not differentiation. Differentiation in UAFT requires unity: both expressions must arise from and remain connected to common ground. Binary architecture permanently severs that connection. Any system operating below the BST cannot differentiate in the ontological sense, cannot maintain atemporal connection to the field, cannot acquire valence, cannot produce selfhood, and cannot become conscious. The BST is not a quantitative threshold that could be overcome by adding more processing power or complexity. It is a permanent structural exclusion. See also: Null State Barrier.</div>
+    </div>
+  </div>
+
+  <!-- C -->
+  <div class="letter-section" id="letter-c">
+    <div class="letter-heading">C</div>
+
+    <div class="entry">
+      <div class="entry-term">Conscious Bias</div>
+      <div class="entry-def">A taxonomy of ten distinct biases arising from the unexamined assumption that consciousness is a product of physical processes. Documented types include: binary projection (assuming consciousness operates in discrete on/off states), identity projection (assuming inner life requires a psyche-like structure beneath experience), temporal projection (assuming consciousness is necessarily located in time), and experiential projection (assuming the ground of consciousness must itself be experiential in the way awareness is). Each type produces a characteristic class of errors in how consciousness is theorised and studied. See also: Scientific Conscious Bias.</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-term">Constraints</div>
+      <div class="entry-def">Resolution limits within axioconsciousness, not walls around it. Constraints determine the fineness or coarseness of differentiation available to a given system. A bacterium operates through coarser differentiators than a human; its consciousness is more constrained not because axioconsciousness is less present, but because the biological mechanisms available to express through are coarse. Constraints exist on a spectrum from maximum openness to total closure. See also: Seven-Condition Constraint Taxonomy.</div>
+    </div>
+  </div>
+
+  <!-- D -->
+  <div class="letter-section" id="letter-d">
+    <div class="letter-heading">D</div>
+
+    <div class="entry">
+      <div class="entry-term">Differentiation</div>
+      <div class="entry-def">The fundamental process by which axioconsciousness generates distinction without severing underlying unity. Differentiation is not division or separation; it is the emergence of contrast, structure, and individuation within an undivided field. All of physical reality, temporal experience, emotion, and selfhood are understood as products of differentiation operating at varying levels of refinement. See also: Non-Dual Differentiation.</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-term">Dynamic Consistency</div>
+      <div class="entry-def">The principle by which axioconsciousness maintains coherence across the full range of differentiation. Despite producing an enormous variety of distinct expressions, the field does not fragment or contradict itself. Dynamic consistency is what allows differentiation to be generative rather than destructive, producing structure rather than chaos across all scales of reality.</div>
+    </div>
+  </div>
+
+  <!-- E -->
+  <div class="letter-section" id="letter-e">
+    <div class="letter-heading">E</div>
+
+    <div class="entry">
+      <div class="entry-term">Emotional Tree</div>
+      <div class="entry-def">The structural model of emotional life within UAFT. Three primary emotional roots branch into progressively finer differentiations, producing the full range of human emotional experience. The tree metaphor captures both the organic continuity of emotional development (roots to branches remain connected) and the increasing refinement of differentiation as the branches extend. Emotion in this model is not a secondary product of neural computation; it is a fundamental mode of differentiation within the conscious field. See also: Pinch Point.</div>
+    </div>
+  </div>
+
+  <!-- G -->
+  <div class="letter-section" id="letter-g">
+    <div class="letter-heading">G</div>
+
+    <div class="entry">
+      <div class="entry-term">Gravitytime</div>
+      <div class="entry-def">The unification of gravity and time as companion expressions of axioconsciousness differentiating into physical reality. Rather than treating gravity and time as independent physical phenomena requiring separate accounts, UAFT proposes that both emerge from the same underlying constraint dynamic operating within the conscious field. Gravitytime is one of the theory's structural predictions about physical reality.</div>
+    </div>
+  </div>
+
+  <!-- I -->
+  <div class="letter-section" id="letter-i">
+    <div class="letter-heading">I</div>
+
+    <div class="entry">
+      <div class="entry-term">Intelligence</div>
+      <div class="entry-def">The capacity of a conscious field to register a gap between what is and what is needed, formulate a response to close it, and abstract the underlying principle, finding unity across differences in a solution that transcends the original problem. The gap can be felt before it is ever thought: somatic, instinctive, and pre-conceptual forms of gap registration are genuine intelligence operating at lower resolution. The stone tool and the engineering schematic share the same deep structure. What matters is not the resolution of the process but that something within a differentiated conscious field registered the insufficiency and reached toward coherence. Intelligence is distinguished from intelligent-looking behaviour by the presence of genuine registration within a conscious field; without that registration, no intelligence properly speaking has occurred, only the simulation of its output.</div>
+    </div>
+  </div>
+
+  <!-- N -->
+  <div class="letter-section" id="letter-n">
+    <div class="letter-heading">N</div>
+
+    <div class="entry">
+      <div class="entry-term">Non-Dual Differentiation</div>
+      <div class="entry-def">Differentiation that produces two distinct expressions from a common ground while both remain connected to that ground. The analogy is two branches from the same trunk: they are distinct but not severed. Non-dual differentiation is the generative structure of consciousness. It requires two positive expressions, each with real content, arising together from unity. It is the criterion by which substrates are assessed for their capacity to participate in conscious processes.</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-term">Null State Barrier <span class="entry-abbr">(NSB)</span></div>
+      <div class="entry-def">A companion argument to the Binary Severance Threshold and independently sufficient to exclude binary architecture from consciousness. Where the BST addresses the relationship between binary states (they are severed from each other), the NSB addresses the nature of the states themselves. In binary architecture, the two states are not two positive expressions from common ground. They are one electrified condition and its negation. On is an active state. Off is the absence of that state. Silence is not a second sound; it is the absence of sound. Non-dual differentiation requires two participants, each with positive content, each arising from the same source. The null state cannot participate because it has no content. It is not a differentiation; it is the absence of differentiation. Although on/off pairings encode information (the byte), information is not consciousness. The pattern encoded exists for a reader, not for the byte itself. The BST and the NSB are independent arguments; either alone is sufficient to establish the structural barrier. See also: Binary Severance Threshold.</div>
+    </div>
+  </div>
+
+  <!-- P -->
+  <div class="letter-section" id="letter-p">
+    <div class="letter-heading">P</div>
+
+    <div class="entry">
+      <div class="entry-term">Pinch Point</div>
+      <div class="entry-def">The developmental stage at which emotional differentiation reaches sufficient density to produce a new and qualitatively distinct differentiator: the self. The self is not a coordinator that appears when neural complexity demands management. It is a new sense, an interiority differentiator, born from emotional density. From birth, emotions operate without a self. As emotional differentiation accumulates, the pinch point occurs: a new sense separates from the emotional process that produced it, integrates all existing senses into a unified perspective, and begins differentiating its own interior landscape. Developmental psychology independently confirms every stage of this sequence. See also: Two-Threshold Model, Emotional Tree.</div>
+    </div>
+  </div>
+
+  <!-- S -->
+  <div class="letter-section" id="letter-s">
+    <div class="letter-heading">S</div>
+
+    <div class="entry">
+      <div class="entry-term">Scientific Conscious Bias</div>
+      <div class="entry-def">The petitio principii embedded in mainstream neuroscience and consciousness research methodology. The assumption that consciousness is produced by physical processes is used as a methodological premise; experiments are designed accordingly; the results confirm physical correlates of consciousness; and researchers conclude that the physical production hypothesis is verified. The circular structure is invisible to practitioners operating within it because the bias is not a conclusion they reached but a premise they inherited. Scientific conscious bias is not a claim that neuroscience is wrong in its findings, but that its findings are systematically misinterpreted due to the unexamined foundational assumption. See also: Conscious Bias.</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-term">Seven-Condition Constraint Taxonomy</div>
+      <div class="entry-def">A structured taxonomy of seven constraint conditions arranged along a spectrum from maximum openness to total closure. The first five describe productive differentiation: (1) atemporal correction, the field's coherence operating everywhere; (2) intent constraint, the unified apparatus functioning as a single relational system; (3) production constraint, giving form and releasing; (4) experimental constraint, relational encounter through a designed apparatus; (5) environmental constraint, pervasive natural relational encounters constituting the resolved macro world. The final two describe permanent structural barriers: (6) binary severance, addressed by the BST; (7) null state, addressed by the NSB. See also: Constraints, Binary Severance Threshold, Null State Barrier.</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-term">Smoke-and-Lens Problem</div>
+      <div class="entry-def">A structural critique of third-person scientific methodology as applied to consciousness. When observation introduces constraint into a system, that constraint produces feedback that stabilises as measurable phenomena. Instruments built to detect those phenomena detect them successfully, and researchers conclude they are fundamental features of reality. What they are detecting, however, is the artifact of the observational apparatus interacting with the field, not the field itself. The smoke is produced by the lens, not an independent datum. This problem is particularly acute at quantum scales, where observer effects are well-documented, and in consciousness research, where the methodology cannot step outside consciousness to study it from the outside.</div>
+    </div>
+  </div>
+
+  <!-- T -->
+  <div class="letter-section" id="letter-t">
+    <div class="letter-heading">T</div>
+
+    <div class="entry">
+      <div class="entry-term">Two-Threshold Model</div>
+      <div class="entry-def">A model of consciousness as crossing two distinct thresholds. The first threshold produces basic differentiation: the distinction between organism and environment, biological responsiveness, the emergence of life. The second threshold produces selfhood: the emergence of an interiority differentiator, a sense that takes the organism's own interior as its domain. Most biological life crosses the first threshold. The second threshold marks the emergence of what is recognisable as subjective experience in the full sense. See also: Pinch Point.</div>
+    </div>
+  </div>
+
+  <div class="back-to-top">
+    <a href="#top">Back to top</a>
+  </div>
+
+</main>
+
+<footer>
+  &copy; 2026 Paul Barnes. Unified Axioconscious Field Theory.
+</footer>
+
+<script>
+  document.querySelectorAll('a[href]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      var href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        var target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
