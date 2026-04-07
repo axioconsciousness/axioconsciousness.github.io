@@ -127,14 +127,40 @@
             margin-bottom: 2.5rem;
         }
 
-        .volume-title {
+        .volume-group > details {
+            border-bottom: none;
+        }
+
+        .volume-group > details > summary {
             font-family: var(--serif);
             font-size: 1.05rem;
             font-weight: 600;
             color: var(--accent);
-            margin-bottom: 0.5rem;
-            padding-bottom: 0.5rem;
+            cursor: pointer;
+            padding: 0.8rem 0;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             border-bottom: 2px solid var(--accent-light);
+        }
+
+        .volume-group > details > summary::-webkit-details-marker { display: none; }
+
+        .volume-group > details > summary::after {
+            content: '+';
+            font-family: var(--sans);
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: var(--accent);
+        }
+
+        .volume-group > details[open] > summary::after {
+            content: '\2212';
+        }
+
+        .volume-group > details > summary:hover {
+            color: var(--text);
         }
 
         /* DISCIPLINE ITEMS */
@@ -281,7 +307,8 @@
     <!-- FOUNDATIONS -->
     <section id="foundations">
         <div class="volume-group">
-            <div class="volume-title">Volume 1 — Foundations: Ontology, Physics, and Cosmology</div>
+            <details open>
+            <summary>Volume 1 — Foundations: Ontology, Physics, and Cosmology</summary>
 
             <details class="discipline">
                 <summary>Ontology &amp; Metaphysics <span class="status-badge badge-published">Published</span></summary>
@@ -326,13 +353,15 @@
                     <p>Information is not consciousness. The byte has no valence. Shannon entropy reframed through UAFT's account of constraint and resolution. The distinction between information-for-a-reader and differentiation-for-itself.</p>
                 </div>
             </details>
+            </details>
         </div>
     </section>
 
     <!-- LIFE -->
     <section id="life">
         <div class="volume-group">
-            <div class="volume-title">Volume 2 — Life: Biology, Evolution, and Neuroscience</div>
+            <details>
+            <summary>Volume 2 — Life: Biology, Evolution, and Neuroscience</summary>
 
             <details class="discipline">
                 <summary>Evolutionary Biology <span class="status-badge badge-coming">Coming Soon</span></summary>
@@ -361,13 +390,15 @@
                     <p>Sleep as integration — the field's cycle of emergence and return expressed biologically. REM as awareness peeking at the field's consolidation work. Dreams as glimpses of integration. Sleep deprivation as blocked integration overloading the differentiation system.</p>
                 </div>
             </details>
+            </details>
         </div>
     </section>
 
     <!-- MIND -->
     <section id="mind">
         <div class="volume-group">
-            <div class="volume-title">Volume 3 — Mind: Psychology, Pharmacology, and Animal Consciousness</div>
+            <details>
+            <summary>Volume 3 — Mind: Psychology, Pharmacology, and Animal Consciousness</summary>
 
             <details class="discipline">
                 <summary>Developmental Psychology <span class="status-badge badge-published">Published</span></summary>
@@ -397,13 +428,15 @@
                     <p>Where different species sit on the differentiation spectrum. Which animals cross the second threshold. Mirror self-recognition across species. Emotional complexity in corvids, cetaceans, and primates. The constraint spectrum applied to non-human biology.</p>
                 </div>
             </details>
+            </details>
         </div>
     </section>
 
     <!-- CULTURE -->
     <section id="culture">
         <div class="volume-group">
-            <div class="volume-title">Volume 4 — Culture: Language, Ethics, Education, and Religion</div>
+            <details>
+            <summary>Volume 4 — Culture: Language, Ethics, Education, and Religion</summary>
 
             <details class="discipline">
                 <summary>Linguistics <span class="status-badge badge-coming">Coming Soon</span></summary>
@@ -439,13 +472,15 @@
                     <p>The quieting of differentiation as a structural account of meditation. The Tao connection — UAFT as structural vocabulary for what Taoism points at non-conceptually. Buddhist emptiness as the undifferentiated field state. Mystical experience as approach to unity. Not mysticism but structural prediction.</p>
                 </div>
             </details>
+            </details>
         </div>
     </section>
 
     <!-- TECHNOLOGY -->
     <section id="technology">
         <div class="volume-group">
-            <div class="volume-title">Volume 5 — Technology: AI, Computing, and the Future of Consciousness Research</div>
+            <details>
+            <summary>Volume 5 — Technology: AI, Computing, and the Future of Consciousness Research</summary>
 
             <details class="discipline">
                 <summary>Artificial Intelligence &amp; Computer Science <span class="status-badge badge-published">Published</span></summary>
@@ -463,10 +498,11 @@
                     <a href="https://doi.org/10.5281/zenodo.19433409" target="_blank">UAFT Working Paper (v3) on Zenodo ↗</a>
                 </div>
             </details>
+            </details>
         </div>
     </section>
 
-    <a href="https://axioconsciousness.com/index.html" class="back-link">← Back to main site</a>
+    <a href="https://axioconsciousness.com/index.html" class="back-link">&larr; Back to main site</a>
 
 </main>
 
