@@ -42,6 +42,7 @@ UAFT is a foundational framework treating consciousness not as a property that e
 
 ## 📚 Published Research
 
+* **Colinear Conservation: Noether's Theorem and the Corrective Architecture of Gravitytime** – Zenodo, [DOI: 10.5281/zenodo.19945285](https://doi.org/10.5281/zenodo.19945285)
 * **Unified Axioconscious Field Theory (Working Paper v3)** – Zenodo, [DOI: 10.5281/zenodo.19433409](https://doi.org/10.5281/zenodo.19433409)
 * **The Binary Severance Threshold** – Zenodo, [DOI: 10.5281/zenodo.19432883](https://doi.org/10.5281/zenodo.19432883)
 * **Author profile** – [PhilPapers](https://philpapers.org/) | [ResearchGate](https://www.researchgate.net/) | [OSF](https://osf.io/)
@@ -68,4 +69,4 @@ Paul W. Barnes is studying psychology and philosophy at Athabasca University. He
 
 ---
 
-🔗 **[axioconsciousness.com](https://axioconsciousness.com)** | 📄 **[Working Paper on Zenodo](https://doi.org/10.5281/zenodo.19433409)** | 📬 **[paul@axioconsciousness.com](mailto:paul@axioconsciousness.com)**
+🔗 **[axioconsciousness.com](https://axioconsciousness.com)** | 📄 **[Latest Paper on Zenodo](https://doi.org/10.5281/zenodo.19945285)** | 📬 **[paul@axioconsciousness.com](mailto:paul@axioconsciousness.com)**
