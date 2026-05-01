@@ -248,6 +248,19 @@
             color: #F57F17;
         }
 
+        .status-new {
+            background: #FFEBEE;
+            color: #C62828;
+            border: 1px solid #EF5350;
+            margin-left: 0.4rem;
+            animation: pulse-new 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-new {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
         /* THEORY OVERVIEW */
         .theory-section {
             margin-bottom: 0;
@@ -470,6 +483,16 @@
         <h2>Papers &amp; Publications</h2>
 
         <div class="paper-card">
+            <span class="paper-status status-published">Preprint</span><span class="paper-status status-new">NEW</span>
+            <h4>Colinear Conservation: Noether's Theorem and the Corrective Architecture of Gravitytime</h4>
+            <div class="paper-meta">Paul W. Barnes — May 1, 2026 — Zenodo</div>
+            <p class="paper-abstract">A structural account of why Noether's theorem holds. Conservation is reframed as the trace of continuous active correction, with colinear gravitytime as the structural operator: a single operator with two reciprocal faces, one differentiating and one cohering, codifferential and colinear. The cosmological constant problem is developed as a worked example, with falsifiable predictions about Λ evolution that recent DESI results render testable. Eight empirical domains are identified, including a near-term lab-scale test of the framework's phase differential prediction in rotating reference frames. Engages relational time (Barbour, Rovelli), background-independent quantum gravity, and emergent-gravity proposals (Verlinde, Jacobson).</p>
+            <div class="paper-links">
+                <a href="https://doi.org/10.5281/zenodo.19945285" target="_blank">View on Zenodo ↗</a>
+            </div>
+        </div>
+
+        <div class="paper-card">
             <span class="paper-status status-published">Preprint — Version 2</span>
             <h4>Unified Axioconscious Field Theory: Consciousness, Differentiation, and the Emergence of Physical Reality</h4>
             <div class="paper-meta">Paul W. Barnes — Originally published March 9, 2026 | Version 2: April 5, 2026 — Zenodo</div>
@@ -477,16 +500,6 @@
             <div class="paper-links">
                 <a href="https://doi.org/10.5281/zenodo.19433409" target="_blank">View on Zenodo (v3) ↗</a>
                 <a href="https://doi.org/10.5281/zenodo.18921322" target="_blank">Version 1 ↗</a>
-            </div>
-        </div>
-
-        <div class="paper-card">
-            <span class="paper-status status-published">Preprint</span>
-            <h4>Colinear Conservation: Noether's Theorem and the Corrective Architecture of Gravitytime</h4>
-            <div class="paper-meta">Paul W. Barnes — May 1, 2026 — Zenodo</div>
-            <p class="paper-abstract">A structural account of why Noether's theorem holds. Conservation is reframed as the trace of continuous active correction, with colinear gravitytime as the structural operator: a single operator with two reciprocal faces, one differentiating and one cohering, codifferential and colinear. The cosmological constant problem is developed as a worked example, with falsifiable predictions about Λ evolution that recent DESI results render testable. Eight empirical domains are identified, including a near-term lab-scale test of the framework's phase differential prediction in rotating reference frames. Engages relational time (Barbour, Rovelli), background-independent quantum gravity, and emergent-gravity proposals (Verlinde, Jacobson).</p>
-            <div class="paper-links">
-                <a href="https://doi.org/10.5281/zenodo.19945285" target="_blank">View on Zenodo ↗</a>
             </div>
         </div>
 
