@@ -108,6 +108,37 @@
 
         section:last-child { border-bottom: none; }
 
+        /* RETURN TO TOP */
+        .to-top {
+            display: block;
+            text-align: right;
+            margin-top: 1.5rem;
+        }
+
+        .to-top a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            padding: 0.4rem 0.8rem;
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            transition: all 0.2s;
+        }
+
+        .to-top a:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .to-top a svg {
+            width: 14px;
+            height: 14px;
+        }
+
         h2 {
             font-family: var(--serif);
             font-size: 1.3rem;
@@ -363,7 +394,7 @@
 </head>
 <body>
 
-<header>
+<header id="top">
     <div class="header-inner">
         <div class="site-title"><span>UAFT</span> | Reading List</div>
         <div class="site-subtitle">Essential Reading Across Disciplines</div>
@@ -455,6 +486,7 @@
 
             </div>
         </details>
+        <div class="to-top"><a href="#top"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>Back to top</a></div>
     </section>
 
     <!-- READING BY DISCIPLINE -->
@@ -654,6 +686,7 @@
 
             </div>
         </details>
+        <div class="to-top"><a href="#top"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>Back to top</a></div>
     </section>
 
     <!-- VOLUME 2 -->
@@ -710,6 +743,7 @@
 
             </div>
         </details>
+        <div class="to-top"><a href="#top"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>Back to top</a></div>
     </section>
 
     <!-- VOLUME 3 -->
@@ -768,6 +802,7 @@
 
             </div>
         </details>
+        <div class="to-top"><a href="#top"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>Back to top</a></div>
     </section>
 
     <!-- VOLUME 4 -->
@@ -805,6 +840,7 @@
 
             </div>
         </details>
+        <div class="to-top"><a href="#top"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>Back to top</a></div>
     </section>
 
     <!-- VOLUME 5 -->
@@ -860,6 +896,7 @@
 
             </div>
         </details>
+        <div class="to-top"><a href="#top"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>Back to top</a></div>
     </section>
 
     <a href="https://axioconsciousness.com/index.html" class="back-link">&larr; Back to main site</a>
