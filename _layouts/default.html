@@ -107,13 +107,21 @@
             border-bottom-color: var(--accent);
         }
 
-        /* BREADCRUMBS */
-        .breadcrumbs {
+        /* BREADCRUMBS - styled like secondary nav for consistency */
+        nav.breadcrumbs {
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+            position: sticky;
+            top: 49px;
+            z-index: 99;
+        }
+
+        .breadcrumbs-inner {
             max-width: var(--max-width);
-            margin: 1.5rem auto 0;
-            padding: 0 1.5rem;
+            margin: 0 auto;
+            padding: 0.65rem 1.5rem;
             font-family: var(--sans);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--text-tertiary);
             display: flex;
             flex-wrap: wrap;
@@ -134,7 +142,7 @@
 
         .breadcrumb-sep {
             color: var(--text-tertiary);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             user-select: none;
         }
 
