@@ -97,6 +97,31 @@
             border-bottom-color: var(--accent);
         }
 
+        /* SECONDARY NAV - page-specific anchors */
+        nav.secondary {
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+            position: sticky;
+            top: 49px;
+            z-index: 99;
+        }
+
+        nav.secondary .nav-inner {
+            padding: 0 1.5rem;
+        }
+
+        nav.secondary a {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: var(--text-tertiary);
+            padding: 0.6rem 0.85rem;
+        }
+
+        nav.secondary a:hover, nav.secondary a.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
         main {
             max-width: var(--max-width);
             margin: 0 auto;
@@ -291,10 +316,19 @@
     <div class="nav-inner">
         <a href="https://axioconsciousness.com/index.html">Home</a>
         <a href="https://axioconsciousness.com/research.html">Research</a>
-        <a href="https://axioconsciousness.com/essays.html">Essays</a>
+        <a href="https://axioconsciousness.com/essays/">Essays</a>
         <a href="https://axioconsciousness.com/reading.html">Reading</a>
         <a href="https://axioconsciousness.com/theory.html">Theory</a>
         <a href="https://axioconsciousness.com/glossary.html">Glossary</a>
+    </div>
+</nav>
+<nav class="secondary">
+    <div class="nav-inner">
+        <a href="#foundations">Foundations</a>
+        <a href="#life">Life</a>
+        <a href="#mind">Mind</a>
+        <a href="#culture">Culture</a>
+        <a href="#technology">Technology</a>
     </div>
 </nav>
 
