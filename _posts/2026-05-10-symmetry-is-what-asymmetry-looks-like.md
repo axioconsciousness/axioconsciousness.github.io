@@ -2,6 +2,7 @@
 layout: essay
 title: "Symmetry Is What Asymmetry Looks Like"
 date: 2026-05-10
+category: Foundations
 description: "UAFT's structural inversion of symmetry and asymmetry. Symmetry as the dynamic consistency that asymmetry maintains, not the static ontological state from which asymmetry breaks. Why apparent symmetry is always a feature of active differentiation."
 ---
 

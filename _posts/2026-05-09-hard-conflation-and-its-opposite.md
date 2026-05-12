@@ -2,6 +2,7 @@
 layout: essay
 title: "The Hard Conflation and Its Opposite: Two Fallacies in Consciousness Debates"
 date: 2026-05-09
+category: Mind
 description: "Two fallacies in contemporary consciousness debates named and distinguished: Hard Conflation (bundling functional and phenomenal consciousness under one term) and Concept Hollowing (keeping the word while removing what made it a concept). The diagnostic that lets the moves be recognized as moves."
 ---
 

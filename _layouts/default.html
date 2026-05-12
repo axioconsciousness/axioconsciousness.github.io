@@ -107,6 +107,82 @@
             border-bottom-color: var(--accent);
         }
 
+        /* BREADCRUMBS */
+        .breadcrumbs {
+            max-width: var(--max-width);
+            margin: 1.5rem auto 0;
+            padding: 0 1.5rem;
+            font-family: var(--sans);
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .breadcrumbs a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .breadcrumbs a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        .breadcrumb-sep {
+            color: var(--text-tertiary);
+            font-size: 0.85rem;
+            user-select: none;
+        }
+
+        .breadcrumb-current {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        /* CATEGORY BADGES */
+        .essay-category {
+            font-family: var(--sans);
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--accent);
+            background: var(--accent-light);
+            padding: 0.15rem 0.55rem;
+            border-radius: 3px;
+            letter-spacing: 0.02em;
+        }
+
+        /* ESSAY INDEX - CATEGORY SECTIONS */
+        .category-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .category-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .category-heading {
+            font-family: var(--serif);
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: var(--text);
+            margin-bottom: 0.4rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+        }
+
+        .category-description {
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
         /* MAIN */
         main {
             max-width: var(--max-width);
