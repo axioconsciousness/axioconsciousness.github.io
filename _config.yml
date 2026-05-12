@@ -1,0 +1,42 @@
+# Site settings
+title: UAFT | Unified Axioconscious Field Theory
+subtitle: Paul W. Barnes — Consciousness Researcher, Athabasca University
+email: paul@axioconsciousness.com
+description: >-
+  Essays, articles, and shorter writings on consciousness, selfhood, emotion,
+  and foundations of physics from the UAFT research program.
+url: "https://axioconsciousness.com"
+author: Paul W. Barnes
+
+# Build settings
+markdown: kramdown
+permalink: /essays/:title/
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /essays/:title/
+
+# Default front matter for posts
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "essay"
+
+# Exclude from processing
+exclude:
+  - README.md
+  - LICENSE
+  - .gitignore
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag

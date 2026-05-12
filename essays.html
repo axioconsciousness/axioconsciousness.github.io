@@ -1,0 +1,20 @@
+---
+layout: default
+title: Essays
+description: Essays, articles, and shorter writings on consciousness, selfhood, emotion, and foundations of physics from the UAFT research program.
+---
+
+<h1 class="page-title">Essays</h1>
+<p class="page-lead">Shorter writings on consciousness, selfhood, emotion, and foundations of physics. Each piece develops a specific argument within or adjacent to the broader UAFT research program. Long-form papers are available on the <a href="/research.html">Research Programme</a> page.</p>
+
+{% for post in site.posts %}
+<div class="essay-list-item">
+    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    <div class="essay-meta">{{ post.date | date: "%B %-d, %Y" }}</div>
+    {% if post.description %}
+    <div class="essay-excerpt">{{ post.description }}</div>
+    {% else %}
+    <div class="essay-excerpt">{{ post.excerpt | strip_html | truncatewords: 50 }}</div>
+    {% endif %}
+</div>
+{% endfor %}
