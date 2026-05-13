@@ -2,18 +2,6 @@
 layout: default
 ---
 
-<nav class="breadcrumbs">
-    <div class="breadcrumbs-inner">
-        <a href="/index.html">Home</a>
-        <span class="breadcrumb-sep">›</span>
-        <a href="/essays/">Essays</a>
-        {% if page.category %}
-        <span class="breadcrumb-sep">›</span>
-        <a href="/essays/#category-{{ page.category | downcase }}">{{ page.category }}</a>
-        {% endif %}
-    </div>
-</nav>
-
 <article>
     <div class="essay-header">
         <h1 class="essay-title">{{ page.title }}</h1>

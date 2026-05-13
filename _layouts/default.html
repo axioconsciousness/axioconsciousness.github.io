@@ -437,6 +437,18 @@
     </div>
 </nav>
 
+{% if page.category %}
+<nav class="breadcrumbs">
+    <div class="breadcrumbs-inner">
+        <a href="/index.html">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="/essays/">Essays</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="/essays/#category-{{ page.category | downcase }}">{{ page.category }}</a>
+    </div>
+</nav>
+{% endif %}
+
 <main>
     {{ content }}
 </main>
