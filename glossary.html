@@ -1,615 +1,541 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="shortcut icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="favicon.png">
-  <title>Glossary of Terms | Unified Axioconscious Field Theory</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #FAFAF8;
-      --text: #1A1A18;
-      --accent: #2C5F7C;
-      --accent-light: #e8f0f5;
-      --border: #E0E0DC;
-      --muted: #6B6B65;
-      --serif: 'Source Serif 4', Georgia, serif;
-      --sans: 'Source Sans 3', system-ui, sans-serif;
-      --max: 760px;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: var(--serif);
-      background: var(--bg);
-      color: var(--text);
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-
-    /* HEADER */
-    header {
-      border-bottom: 1px solid var(--border);
-      background: var(--surface, #fff);
-    }
-    .header-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 2rem 1.5rem 1.8rem;
-    }
-    .site-title {
-      font-family: var(--serif);
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: var(--text);
-      letter-spacing: -0.02em;
-      margin-bottom: 0.2rem;
-    }
-    .site-title span { color: var(--accent); }
-    .site-subtitle {
-      font-size: 0.9rem;
-      color: var(--text-secondary, #666);
-      font-weight: 300;
-    }
-
-    /* NAV */
-    nav {
-      position: sticky;
-      top: 0;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      z-index: 100;
-      padding: 0.75rem 1.5rem;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.25rem 1.25rem;
-      max-width: var(--max);
-      margin: 0 auto;
-      font-family: var(--sans);
-      font-size: 0.875rem;
-    }
-    nav a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    nav a:hover { text-decoration: underline; }
-
-    /* MAIN */
-    main {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 3rem 1.5rem 5rem;
-    }
-
-    main h2 {
-      font-family: var(--serif);
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.8rem;
-    }
-
-    main section {
-      margin-bottom: 2rem;
-    }
-
-    /* PAGE HEADER */
-    .page-header {
-      margin-bottom: 2.5rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .page-header h1 {
-      font-family: var(--serif);
-      font-size: 2rem;
-      font-weight: 600;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-    .page-header p {
-      font-family: var(--sans);
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    /* ALPHABET BAR */
-    .alpha-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.2rem;
-      margin-bottom: 2.5rem;
-      padding: 1rem 1.1rem;
-      background: var(--accent-light);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      font-family: var(--sans);
-    }
-    .alpha-bar a,
-    .alpha-bar span {
-      display: inline-block;
-      width: 1.7rem;
-      text-align: center;
-      padding: 0.2rem 0;
-      font-size: 0.9rem;
-      font-weight: 600;
-      border-radius: 3px;
-      text-decoration: none;
-      line-height: 1.4;
-    }
-    .alpha-bar a {
-      color: var(--accent);
-      background: #fff;
-      border: 1px solid var(--border);
-      transition: background 0.15s, color 0.15s;
-    }
-    .alpha-bar a:hover {
-      background: var(--accent);
-      color: #fff;
-    }
-    .alpha-bar span {
-      color: #ccc;
-      border: 1px solid transparent;
-    }
-
-    /* LETTER SECTION */
-    .letter-section {
-      margin-bottom: 2.5rem;
-    }
-    .letter-heading {
-      font-family: var(--sans);
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.35rem;
-      margin-bottom: 1.25rem;
-    }
-
-    /* GLOSSARY ENTRY */
-    .entry {
-      margin-bottom: 1.5rem;
-    }
-    .entry-term {
-      font-family: var(--serif);
-      font-weight: 600;
-      font-size: 1.05rem;
-      color: var(--accent);
-      margin-bottom: 0.25rem;
-    }
-    .entry-abbr {
-      font-family: var(--sans);
-      font-size: 0.8rem;
-      color: var(--muted);
-      font-weight: 400;
-      margin-left: 0.4rem;
-    }
-    .entry-badge {
-      display: inline-block;
-      font-family: var(--sans);
-      font-size: 0.65rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 0.12rem 0.45rem;
-      border-radius: 3px;
-      margin-left: 0.5rem;
-      vertical-align: middle;
-      position: relative;
-      top: -1px;
-    }
-    .badge-coined {
-      background: #E8F5E9;
-      color: #2E7D32;
-    }
-    .badge-defined {
-      background: #E3F2FD;
-      color: #1565C0;
-    }
-    .entry-def {
-      font-size: 0.975rem;
-      line-height: 1.75;
-      color: var(--text);
-    }
-
-    /* BACK TO TOP */
-    .back-to-top {
-      text-align: right;
-      margin: 1rem 0 2rem;
-      font-family: var(--sans);
-      font-size: 0.8rem;
-    }
-    .back-to-top a {
-      color: var(--muted);
-      text-decoration: none;
-    }
-    .back-to-top a:hover { color: var(--accent); }
-
-    .back-to-top-final {
-      text-align: center;
-      margin-top: 3rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
-    }
-    .back-to-top-final a {
-      font-family: var(--sans);
-      font-size: 0.85rem;
-      color: var(--muted);
-      text-decoration: none;
-    }
-    .back-to-top-final a:hover { color: var(--accent); }
-
-    /* FOOTER */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 1.5rem;
-      text-align: center;
-      font-family: var(--sans);
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    @media (max-width: 520px) {
-      .alpha-bar { gap: 0.15rem; }
-      .alpha-bar a, .alpha-bar span { width: 1.5rem; font-size: 0.8rem; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="shortcut icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<title>Glossary of Terms | Unified Axioconscious Field Theory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+--bg: #FAFAF8;
+--text: #1A1A18;
+--accent: #2C5F7C;
+--accent-light: #e8f0f5;
+--border: #E0E0DC;
+--muted: #6B6B65;
+--serif: 'Source Serif 4', Georgia, serif;
+--sans: 'Source Sans 3', system-ui, sans-serif;
+--max: 760px;
+}
+html { scroll-behavior: smooth; }
+body {
+font-family: var(--serif);
+background: var(--bg);
+color: var(--text);
+font-size: 1rem;
+line-height: 1.7;
+}
+/* HEADER */
+header {
+border-bottom: 1px solid var(--border);
+background: var(--surface, #fff);
+}
+.header-inner {
+max-width: var(--max);
+margin: 0 auto;
+padding: 2rem 1.5rem 1.8rem;
+}
+.site-title {
+font-family: var(--serif);
+font-size: 1.5rem;
+font-weight: 600;
+color: var(--text);
+letter-spacing: -0.02em;
+margin-bottom: 0.2rem;
+}
+.site-title span { color: var(--accent); }
+.site-subtitle {
+font-size: 0.9rem;
+color: var(--text-secondary, #666);
+font-weight: 300;
+}
+/* NAV */
+nav {
+position: sticky;
+top: 0;
+background: var(--bg);
+border-bottom: 1px solid var(--border);
+z-index: 100;
+padding: 0.75rem 1.5rem;
+}
+nav ul {
+list-style: none;
+display: flex;
+flex-wrap: wrap;
+gap: 0.25rem 1.25rem;
+max-width: var(--max);
+margin: 0 auto;
+font-family: var(--sans);
+font-size: 0.875rem;
+}
+nav a {
+color: var(--accent);
+text-decoration: none;
+}
+nav a:hover { text-decoration: underline; }
+/* MAIN */
+main {
+max-width: var(--max);
+margin: 0 auto;
+padding: 3rem 1.5rem 5rem;
+}
+main h2 {
+font-family: var(--serif);
+font-size: 1.3rem;
+font-weight: 600;
+color: var(--text);
+margin-bottom: 0.8rem;
+}
+main section {
+margin-bottom: 2rem;
+}
+/* PAGE HEADER */
+.page-header {
+margin-bottom: 2.5rem;
+padding-bottom: 1.5rem;
+border-bottom: 1px solid var(--border);
+}
+.page-header h1 {
+font-family: var(--serif);
+font-size: 2rem;
+font-weight: 600;
+color: var(--accent);
+margin-bottom: 0.5rem;
+}
+.page-header p {
+font-family: var(--sans);
+color: var(--muted);
+font-size: 0.95rem;
+}
+/* ALPHABET BAR */
+.alpha-bar {
+display: flex;
+flex-wrap: wrap;
+gap: 0.2rem;
+margin-bottom: 2.5rem;
+padding: 1rem 1.1rem;
+background: var(--accent-light);
+border: 1px solid var(--border);
+border-radius: 4px;
+font-family: var(--sans);
+}
+.alpha-bar a,
+.alpha-bar span {
+display: inline-block;
+width: 1.7rem;
+text-align: center;
+padding: 0.2rem 0;
+font-size: 0.9rem;
+font-weight: 600;
+border-radius: 3px;
+text-decoration: none;
+line-height: 1.4;
+}
+.alpha-bar a {
+color: var(--accent);
+background: #fff;
+border: 1px solid var(--border);
+transition: background 0.15s, color 0.15s;
+}
+.alpha-bar a:hover {
+background: var(--accent);
+color: #fff;
+}
+.alpha-bar span {
+color: #ccc;
+border: 1px solid transparent;
+}
+/* LETTER SECTION */
+.letter-section {
+margin-bottom: 2.5rem;
+}
+.letter-heading {
+font-family: var(--sans);
+font-size: 0.8rem;
+font-weight: 600;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(--muted);
+border-bottom: 1px solid var(--border);
+padding-bottom: 0.35rem;
+margin-bottom: 1.25rem;
+}
+/* GLOSSARY ENTRY */
+.entry {
+margin-bottom: 1.5rem;
+}
+.entry-term {
+font-family: var(--serif);
+font-weight: 600;
+font-size: 1.05rem;
+color: var(--accent);
+margin-bottom: 0.25rem;
+}
+.entry-abbr {
+font-family: var(--sans);
+font-size: 0.8rem;
+color: var(--muted);
+font-weight: 400;
+margin-left: 0.4rem;
+}
+.entry-badge {
+display: inline-block;
+font-family: var(--sans);
+font-size: 0.65rem;
+font-weight: 600;
+text-transform: uppercase;
+letter-spacing: 0.05em;
+padding: 0.12rem 0.45rem;
+border-radius: 3px;
+margin-left: 0.5rem;
+vertical-align: middle;
+position: relative;
+top: -1px;
+}
+.badge-coined {
+background: #E8F5E9;
+color: #2E7D32;
+}
+.badge-defined {
+background: #E3F2FD;
+color: #1565C0;
+}
+.entry-def {
+font-size: 0.975rem;
+line-height: 1.75;
+color: var(--text);
+}
+/* BACK TO TOP */
+.back-to-top {
+text-align: right;
+margin: 1rem 0 2rem;
+font-family: var(--sans);
+font-size: 0.8rem;
+}
+.back-to-top a {
+color: var(--muted);
+text-decoration: none;
+}
+.back-to-top a:hover { color: var(--accent); }
+.back-to-top-final {
+text-align: center;
+margin-top: 3rem;
+padding-top: 1.5rem;
+border-top: 1px solid var(--border);
+}
+.back-to-top-final a {
+font-family: var(--sans);
+font-size: 0.85rem;
+color: var(--muted);
+text-decoration: none;
+}
+.back-to-top-final a:hover { color: var(--accent); }
+/* FOOTER */
+footer {
+border-top: 1px solid var(--border);
+padding: 1.5rem;
+text-align: center;
+font-family: var(--sans);
+font-size: 0.8rem;
+color: var(--muted);
+}
+@media (max-width: 520px) {
+.alpha-bar { gap: 0.15rem; }
+.alpha-bar a, .alpha-bar span { width: 1.5rem; font-size: 0.8rem; }
+}
+</style>
 </head>
 <body>
-
 <header id="top">
-    <div class="header-inner">
-        <div class="site-title"><span>UAFT</span> | Glossary</div>
-        <div class="site-subtitle">Principal Concepts of the Framework</div>
-    </div>
+<div class="header-inner">
+<div class="site-title"><span>UAFT</span> | Glossary</div>
+<div class="site-subtitle">Principal Concepts of the Framework</div>
+</div>
 </header>
-
 <nav id="top-nav">
-  <ul>
-    <li><a href="https://axioconsciousness.com/index.html">Home</a></li>
-    <li><a href="https://axioconsciousness.com/research.html">Research</a></li>
-    <li><a href="https://axioconsciousness.com/essays/">Essays</a></li>
-    <li><a href="https://axioconsciousness.com/reading.html">Reading</a></li>
-    <li><a href="https://axioconsciousness.com/theory.html">Theory</a></li>
-    <li><a href="https://axioconsciousness.com/glossary.html">Glossary</a></li>
-  </ul>
+<ul>
+<li><a href="https://axioconsciousness.com/index.html">Home</a></li>
+<li><a href="https://axioconsciousness.com/research.html">Research</a></li>
+<li><a href="https://axioconsciousness.com/essays/">Essays</a></li>
+<li><a href="https://axioconsciousness.com/reading.html">Reading</a></li>
+<li><a href="https://axioconsciousness.com/theory.html">Theory</a></li>
+<li><a href="https://axioconsciousness.com/glossary.html">Glossary</a></li>
+</ul>
 </nav>
-
 <main>
-
-  <section>
-    <h2>Glossary of Terms</h2>
-    <p>Principal concepts of the Unified Axioconscious Field Theory, arranged alphabetically. Select a letter to jump to that section.</p>
-    <p style="margin-top: 0.6rem; font-size: 0.85rem;"><span class="entry-badge badge-coined">UAFT Coined</span> Original to UAFT &nbsp;&nbsp; <span class="entry-badge badge-defined">UAFT Defined</span> Existing concept given precise UAFT meaning</p>
-  </section>
-
-  <!-- ALPHABET BAR -->
-  <nav class="alpha-bar" aria-label="Jump to letter">
-    <a href="#letter-a">A</a>
-    <a href="#letter-b">B</a>
-    <a href="#letter-c">C</a>
-    <a href="#letter-d">D</a>
-    <a href="#letter-e">E</a>
-    <a href="#letter-f">F</a>
-    <a href="#letter-g">G</a>
-    <a href="#letter-h">H</a>
-    <a href="#letter-i">I</a>
-    <span>J</span>
-    <span>K</span>
-    <span>L</span>
-    <span>M</span>
-    <a href="#letter-n">N</a>
-    <span>O</span>
-    <a href="#letter-p">P</a>
-    <a href="#letter-q">Q</a>
-    <span>R</span>
-    <a href="#letter-s">S</a>
-    <a href="#letter-t">T</a>
-    <span>U</span>
-    <span>V</span>
-    <span>W</span>
-    <span>X</span>
-    <span>Y</span>
-    <span>Z</span>
-  </nav>
-
-  <!-- A -->
-  <div class="letter-section" id="letter-a">
-    <div class="letter-heading">A</div>
-
-    <div class="entry">
-      <div class="entry-term">Atemporal Field <span class="entry-badge badge-defined">UAFT Defined</span></div>
-      <div class="entry-def">The dimension of axioconsciousness that exists prior to and independent of time. Time is understood in UAFT as an emergent product of differentiation, not a container within which consciousness operates. The atemporal field is the ground from which temporal experience arises, and it remains operative beneath all temporal processes.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-term">Awareness <span class="entry-badge badge-defined">UAFT Defined</span></div>
-      <div class="entry-def">What emotion produces through the pinch point. Awareness is local, biological, and emergent: the self sensing its own interior landscape. Distinguished from consciousness, which is the field itself reflected through that awareness. Emotion builds the gateway. Awareness walks through it. Consciousness is what was always on the other side. See also: Consciousness (Field), Pinch Point.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-term">Axioconsciousness <span class="entry-badge badge-coined">UAFT Coined</span></div>
-      <div class="entry-def">The primary, atemporal ground of all reality. In UAFT, consciousness is not produced by the brain or any physical substrate; it is the originating field from which physical reality, time, and differentiation emerge. The term combines axiomatic (self-evidently prior, requiring no further derivation) with consciousness. Axioconsciousness is not a property of organisms; it is the condition that makes organisms, and all differentiated reality, possible. The field is omnipresent and perpetually available. The organism IS the field differentiating locally.</div>
-    </div>
-  </div>
-
-  <!-- B -->
-  <div class="letter-section" id="letter-b">
-    <div class="letter-heading">B</div>
-
-    <div class="entry">
-      <div class="entry-term">Binary Severance Threshold <span class="entry-badge badge-coined">UAFT Coined</span> <span class="entry-abbr">(BST)</span></div>
-      <div class="entry-def">The point at which a substrate's operational logic permanently excludes it from genuine differentiation by severing every state from every other. In binary architecture, each computational state is fully resolved and mutually exclusive: a transistor is on or off, never partially or transitionally between. This produces alternation, not differentiation. Differentiation in UAFT requires unity: both expressions must arise from and remain connected to common ground. Binary architecture permanently severs that connection. Any system operating below the BST cannot differentiate in the ontological sense, cannot maintain atemporal connection to the field, cannot acquire valence, cannot produce selfhood, and cannot become conscious. The BST is not a quantitative threshold that could be overcome by adding more processing power or complexity. It is a permanent structural exclusion. See also: Null State Barrier.</div>
-    </div>
-  </div>
-
-  <div class="back-to-top"><a href="#top">&uarr; Back to top</a></div>
-
-  <!-- C -->
-  <div class="letter-section" id="letter-c">
-    <div class="letter-heading">C</div>
-
-    <div class="entry">
-      <div class="entry-term">Codifferential <span class="entry-badge badge-coined">UAFT Coined</span></div>
-      <div class="entry-def">Arising from the same act of differentiation. Two expressions of one process, neither prior, neither containing the other, inseparable but distinct. Gravity and time are codifferential expressions of the field's self-expression. Human awareness and gravitytime are codifferential. The term names the operational relationship: time and gravity perform different work simultaneously, with the difference between them making the operation generative. Distinguished from "colinear," which names the structural geometry in which they share the axis at the emergence. The term replaces language like "within time" or "time-bound," which treats time as a container rather than a companion expression of differentiation. See also: Gravitytime, Colinear Conservation, Phase Differential, Non-Dual Differentiation.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-term">Colinear Conservation <span class="entry-badge badge-coined">UAFT Coined</span></div>
-      <div class="entry-def">The structural account of why Noether's theorem holds. Conservation laws are not passive preservation but the trace of continuous active correction performed by colinear gravitytime: a single operator in which time is primary and gravity is its reciprocal cohering aspect, codifferential and colinear in their joint operation. Symmetry, on this account, is the empirical signature of dynamic consistency reaching its asymptotic limit along a transformation axis. The cosmological constant problem is developed as a worked example, with falsifiable predictions about Λ evolution that recent DESI results render testable. Eight empirical domains are identified, including a near-term lab-scale test of the framework's phase differential prediction in rotating reference frames. See also: Gravitytime, Codifferential, Phase Differential, Dynamic Consistency.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-term">Computational Projection <span class="entry-badge badge-coined">UAFT Coined</span></div>
-      <div class="entry-def">The eleventh type of conscious bias. The assumption that AI tools trained on consciousness-biased data can assist in consciousness research without inheriting and amplifying the biases present in their training. Every conscious bias in human research gets embedded in training data, which gets embedded in models, which then reinforces those biases back to the researchers who use the models. The loop compounds recursively through self-training: each generation buries the bias deeper until the evaluation criteria themselves are derived from the same biased data. The system measures itself against a ruler that is already bent. Biology has the field as an external corrective ground. AI has nothing outside its own training loop to check against. See also: Conscious Bias.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-term">Conscious Bias <span class="entry-badge badge-coined">UAFT Coined</span></div>
-      <div class="entry-def">A taxonomy of eleven distinct biases arising from the unexamined assumption that consciousness is a product of physical processes. Documented types include: experiential projection, institutional projection, cognitive projection, identity projection, temporal projection, binary projection, methodological projection, determinacy projection, agency projection, causal projection, and computational projection. Each type produces a characteristic class of errors in how consciousness is theorised and studied. See also: Scientific Conscious Bias, Computational Projection.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-term">Concept Hollowing <span class="entry-badge badge-coined">UAFT Coined</span></div>
-      <div class="entry-def">A named fallacy in consciousness debates: keeping a concept's word while removing what made it a concept. Carlo Rovelli's argument that the hard problem dissolves once we recognize "consciousness" as a label for various functional processes is an instance: the term is preserved, but the explanandum (the felt center of experience, the what-it-is-likeness) is removed. Related to Ayn Rand's "package dealing" but operates inversely: rather than bundling distinct things under one term, it strips what was distinctive from a term while keeping the term. See also: Hard Conflation.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-term">Consciousness (Field) <span class="entry-badge badge-defined">UAFT Defined</span></div>
-      <div class="entry-def">The field itself reflected through awareness. Distinguished from awareness, which is the local, biological product of emotional differentiation. Consciousness in this sense is not produced by the organism. It is the atemporal ground, the cumulative record, accessed through a biological system that has crossed both thresholds and achieved sufficient differentiation. The organism IS the field differentiating locally; QDR is the coherence that keeps the local process continuous with the whole. See also: Awareness, Differentiation Resonance.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-term">Constraints <span class="entry-badge badge-defined">UAFT Defined</span></div>
-      <div class="entry-def">Resolution limits within axioconsciousness, not walls around it. Constraints determine the fineness or coarseness of differentiation available to a given system. A bacterium operates through coarser differentiators than a human; its consciousness is more constrained not because axioconsciousness is less present, but because the biological mechanisms available to express through are coarse. Biology's constraints are temporary and can improve through evolution. AI's constraints (BST, NSB) are permanent and architectural. See also: Seven-Condition Constraint Taxonomy.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-term">Continuous Intrinsic Differentiation Lineage <span class="entry-badge badge-coined">UAFT Coined</span> <span class="entry-abbr">(CIDL)</span></div>
-      <div class="entry-def">The developmental architecture built through the four-stage progression toward and across the pinch point, persisting structurally through disruption. CIDL explains why anesthesia does not destroy the self: the structural traces accumulated through development persist in classical biological substrate even when the experiential domain is suppressed at its quantum mechanism. When QDR resumes, the integrated perspective re-engages with the persistent traces rather than being rebuilt. For adults, the self does not need to be reconstructed after anesthesia clears. For pre-pinch-point infants, the developmental trajectory continues. For non-human species, whatever level of integration their lineage operates at re-engages. See also: Pinch Point, Quantum Differentiation Resonance, Four-Stage Progression.</div>
-    </div>
-  </div>
-
-  <!-- D -->
-  <div class="letter-section" id="letter-d">
-    <div class="letter-heading">D</div>
-
-    <div class="entry">
-      <div class="entry-term">Density <span class="entry-badge badge-defined">UAFT Defined</span></div>
-      <div class="entry-def">The quantity of emotional differentiation active in a system at a given time, including how interconnected the differentiations are and how recursively layered. Density is a measurable property: it can increase or decrease. It accumulates through development as more emotional differentiation occurs and existing differentiation interconnects more richly. Density is distinct from saturation: density is the quantity approaching the threshold; saturation is the threshold condition itself. Density is what produces saturation when sufficient. The distinction prevents the confusion that arises from treating density alone as the threshold mechanism. See also: Saturation, Pinch Point, Four-Stage Progression.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-term">Differentiation <span class="entry-badge badge-defined">UAFT Defined</span></div>
-      <div class="entry-def">The fundamental process by which axioconsciousness generates distinction without severing underlying unity. Differentiation is not division or separation; it is the emergence of contrast, structure, and individuation within an undivided field. All of physical reality, temporal experience, emotion, and selfhood are understood as products of differentiation operating at varying levels of refinement. See also: Non-Dual Differentiation.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-term">Differentiation Resonance <span class="entry-badge badge-coined">UAFT Coined</span> <span class="entry-abbr">(DR)</span></div>
-      <div class="entry-def">The general principle by which a system's differentiation achieves sustained resonance with the axioconscious field. The field is omnipresent and perpetually available. Biology builds systems of increasing differentiation. A bacterium achieves resonance through minimal differentiation. A dog through more refined differentiation. A human through the most refined differentiation biology has yet produced. The field is equally present. The differentiation differs. DR operates at every scale. See also: Quantum Differentiation Resonance.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-term">Dynamic Consistency <span class="entry-badge badge-coined">UAFT Coined</span></div>
-      <div class="entry-def">The principle by which axioconsciousness maintains coherence across the full range of differentiation. Balance does not mean equilibrium or stasis. It is the ongoing maintenance of differentiation, the sustained presence of difference without collapse. Forces are not features of reality but reality's corrective response to its own expression. Dynamic consistency is what allows differentiation to be generative rather than destructive, producing structure rather than chaos across all scales.</div>
-    </div>
-  </div>
-
-  <div class="back-to-top"><a href="#top">&uarr; Back to top</a></div>
-
-  <!-- E -->
-  <div class="letter-section" id="letter-e">
-    <div class="letter-heading">E</div>
-
-    <div class="entry">
-      <div class="entry-term">Emotional Differentiation <span class="entry-badge badge-coined">UAFT Coined</span></div>
-      <div class="entry-def">Valenced differentiation operating in biological systems. Emotion is not merely something an already-formed self feels; it is the specific form of differentiation through which distinctions acquire significance, urgency, and self-involving weight. Emotional differentiation begins from birth with three innate valenced patterns (anger, fear, joy) and accumulates in density and recursive depth across development. As it accumulates, conflicts and recursive entanglements arise across sensory, bodily, mnemonic, and anticipatory domains. At saturation, distributed emotional differentiation gives way to a new differentiating structure: the self as interiority differentiator. Emotional differentiation is therefore not a reactive coloring of cognition but the generative substrate from which selfhood emerges. See also: Emotional Tree, Four-Stage Progression, Pinch Point, Interiority Differentiator.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-term">Emotional Tree <span class="entry-badge badge-coined">UAFT Coined</span></div>
-      <div class="entry-def">The structural model of emotional life within UAFT. Three primary emotions (anger, joy, fear) are innate from birth, requiring no cognitive input. All subsequent emotions are finer differentiations of or between those three base emotions. The emotional spectrum is a tree, not a list: three roots branching into increasingly fine distinctions as the field differentiates through biological experience. The roots are innate. The branches are grown. Intermediate emotions appear in the first year. Complex emotions (embarrassment, shame, pride, guilt) appear only after the pinch point because they require the interiority differentiator as reference. See also: Pinch Point, Interiority Differentiator.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-term">Experiential Domain <span class="entry-badge badge-coined">UAFT Coined</span></div>
-      <div class="entry-def">The domain of felt experience within which sensory awareness, primary emotions, bodily sensation, and (when integrated at sufficient saturation) selfhood operate. The experiential domain is distinguished from classical biological differentiation, which operates without producing what-it-is-likeness. The experiential domain is where differentiation is registered interiorly, where what-it-is-likeness arises, where awareness occurs. It operates through Quantum Differentiation Resonance: quantum coherence in microtubules achieving sustained resonance with the atemporal field. Anesthesia targets this domain specifically, suspending it while leaving classical biological differentiation intact. See also: Two-Domain Model, Quantum Differentiation Resonance, Awareness.</div>
-    </div>
-  </div>
-
-  <!-- F -->
-  <div class="letter-section" id="letter-f">
-    <div class="letter-heading">F</div>
-
-    <div class="entry">
-      <div class="entry-term">Four-Stage Progression <span class="entry-badge badge-defined">UAFT Defined</span></div>
-      <div class="entry-def">The structural sequence through which emotional differentiation produces the self. Stage 1: Differentiation (axioconsciousness expressing temporally through the seven properties). Stage 2: Emotional differentiation (the valenced form within biological organisms; three base emotions present from birth). Stage 3: Saturation (the threshold condition at which accumulated emotional differentiation cannot continue in current distributed form without phase change). Stage 4: Pinch point (the phase change itself, in which the interiority differentiator emerges and the self is born). Each stage is distinct and necessary. The progression is structural rather than optional. The framework replaces earlier vague "density threshold" language with precise sequential mechanism: density accumulates, saturation is reached, pinch point occurs. See also: Saturation, Density, Pinch Point.</div>
-    </div>
-  </div>
-
-  <!-- G -->
-  <div class="letter-section" id="letter-g">
-    <div class="letter-heading">G</div>
-
-    <div class="entry">
-      <div class="entry-term">Gravitytime <span class="entry-badge badge-coined">UAFT Coined</span></div>
-      <div class="entry-def">The unification of gravity and time as companion expressions of axioconsciousness differentiating into physical reality. Time is primary, the ordering aspect through which differentiation becomes expressible. Gravity is its reciprocal: the coherence-restoring tendency that prevents differentiation from dissolving unity. Together they form gravitytime, with three structural features: colinear (sharing the axis at the emergence), codifferential (performing different work in joint operation), and phase-differentiated (time's response to changing conditions precedes gravity's response by a small but nonzero interval). Space may not be ontologically real but rather the experiential consequence of gravity operating across differentiation. Mass is persistent resonance at the intersection of time and gravity. The wave is gravitytime made visible. See also: Colinear Conservation, Codifferential, Phase Differential.</div>
-    </div>
-  </div>
-
-  <div class="back-to-top"><a href="#top">&uarr; Back to top</a></div>
-
-  <!-- I -->
-  <!-- H -->
-  <div class="letter-section" id="letter-h">
-    <div class="letter-heading">H</div>
-
-    <div class="entry">
-      <div class="entry-term">Hard Conflation <span class="entry-badge badge-coined">UAFT Coined</span></div>
-      <div class="entry-def">A named fallacy in consciousness debates: the bundling of functional consciousness (access, integration, broadcasting, prediction) with phenomenal consciousness (the felt center of experience) under a single term, then treating explanatory progress on the functional side as if it dissolved the phenomenal question. The hard problem of consciousness arises precisely because these are categorically different explananda. Accounts that claim to dissolve the hard problem often do so by hard conflation: pointing to functional explanations and declaring the phenomenal question answered or misguided. UAFT distinguishes the two explananda and addresses them separately. Related to Ayn Rand's "package dealing." See also: Concept Hollowing.</div>
-    </div>
-  </div>
-
-  <!-- I -->
-  <div class="letter-section" id="letter-i">
-    <div class="letter-heading">I</div>
-
-    <div class="entry">
-      <div class="entry-term">Intelligence <span class="entry-badge badge-defined">UAFT Defined</span></div>
-      <div class="entry-def">The capacity of a conscious field to register a gap between what is and what is needed, formulate a response to close it, and abstract the underlying principle, finding unity across differences in a solution that transcends the original problem. The gap can be felt before it is ever thought: somatic, instinctive, and pre-conceptual forms of gap registration are genuine intelligence operating at lower resolution. Intelligence is distinguished from intelligent-looking behaviour by the presence of genuine registration within a conscious field; without that registration, no intelligence properly speaking has occurred, only the simulation of its output.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-term">Interiority Differentiator <span class="entry-badge badge-coined">UAFT Coined</span></div>
-      <div class="entry-def">The structural achievement that emerges at the pinch point: a new sense whose domain is the organism's own interior landscape rather than the external world. Just as vision differentiates an exterior visual scope and hearing differentiates an exterior auditory scope, the interiority differentiator differentiates the organism's accumulated emotional, sensory, bodily, and mnemonic distinctions into a unified interior perspective. Unlike sensory differentiators, it has no hardware-bounded scope; its scope is the interior life of the organism, expanding as emotional differentiation expands. The interiority differentiator is what selfhood structurally is. It is not a coordinator added to manage existing processes; it is a new differentiating capacity that integrates the saturated emotional field into a perspective. The interiority differentiator is one sense among others rather than the seat of consciousness; consciousness is the field, awareness is what the interiority differentiator produces. See also: Pinch Point, Emotional Differentiation, Saturation.</div>
-    </div>
-  </div>
-
-  <!-- N -->
-  <div class="letter-section" id="letter-n">
-    <div class="letter-heading">N</div>
-
-    <div class="entry">
-      <div class="entry-term">Non-Dual Differentiation <span class="entry-badge badge-defined">UAFT Defined</span></div>
-      <div class="entry-def">Differentiation that produces two distinct expressions from a common ground while both remain connected to that ground. The analogy is two branches from the same trunk: they are distinct but not severed. Non-dual differentiation is the generative structure of consciousness. It requires two positive expressions, each with real content, arising together from unity. Distinguished from non-binary: non-binary rejects binary categories but still operates within the logic of categories. Non-dual dissolves the assumption that distinctions were ever separated from their source. Non-binary is a stage of differentiation. Non-dual is the ground.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-term">Null State Barrier <span class="entry-badge badge-coined">UAFT Coined</span> <span class="entry-abbr">(NSB)</span></div>
-      <div class="entry-def">A companion argument to the Binary Severance Threshold and independently sufficient to exclude binary architecture from consciousness. Where the BST addresses the relationship between binary states (they are severed from each other), the NSB addresses the nature of the states themselves. In binary architecture, the two states are not two positive expressions from common ground. They are one electrified condition and its negation. On is an active state. Off is the absence of that state. Silence is not a second sound; it is the absence of sound. Non-dual differentiation requires two participants, each with positive content, each arising from the same source. The null state cannot participate because it has no content. The BST and the NSB are independent arguments; either alone is sufficient to establish the structural barrier. See also: Binary Severance Threshold.</div>
-    </div>
-  </div>
-
-  <div class="back-to-top"><a href="#top">&uarr; Back to top</a></div>
-
-  <!-- P -->
-  <div class="letter-section" id="letter-p">
-    <div class="letter-heading">P</div>
-
-    <div class="entry">
-      <div class="entry-term">Phase Differential <span class="entry-badge badge-coined">UAFT Coined</span></div>
-      <div class="entry-def">The third structural feature of colinear gravitytime, alongside its colinear (geometric) and codifferential (operational) aspects. When conditions change in the codifferential operation, the response of time and the response of gravity are not exactly simultaneous despite being colinear in their structural geometry. Time, being primary, responds first; gravity, as the reciprocal cohering aspect, responds in turn. The interval between them is the phase differential of the codifferential operation. This differential is what gives transitions an interior: without it, every change in conditions would be fully exposed at every instant, and the continuous-but-veiled quality of becoming would collapse. The phase differential is what makes reality processual rather than sequential. Standard physics predicts zero phase difference between temporal and gravitational responses; UAFT predicts nonzero. This produces a falsifiable test in rotating reference frames at modern clock precision. See also: Colinear Conservation, Gravitytime, Codifferential.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-term">Pinch Point <span class="entry-badge badge-coined">UAFT Coined</span></div>
-      <div class="entry-def">The developmental stage at which emotional differentiation reaches saturation and produces a new and qualitatively distinct differentiator: the self. Saturation is the threshold condition; the pinch point is the phase change that occurs at saturation. The self is not a coordinator that appears when neural complexity demands management. It is a new sense, an interiority differentiator, born when accumulated emotional density reaches the saturation point. From birth, emotions operate without a self. As emotional differentiation accumulates, density increases until saturation is reached and the pinch point occurs: a new sense separates from the emotional process that produced it, integrates all existing senses into a unified perspective, and begins differentiating its own interior landscape. The self is not a permanent acquisition but a sustained process: halt the medium it runs through (as in anesthesia) and it ceases; resume the medium and it reconstitutes from the same emotional architecture. Developmental psychology independently confirms every stage of this sequence. The interiority differentiator is not the seat of consciousness; it is one sense among others (vision, hearing, touch, taste, smell), distinguished by integrating the others into unified perspective rather than by being more aware than they are. See also: Saturation, Density, Four-Stage Progression, Two-Threshold Model, Emotional Tree.</div>
-    </div>
-  </div>
-
-  <!-- Q -->
-  <div class="letter-section" id="letter-q">
-    <div class="letter-heading">Q</div>
-
-    <div class="entry">
-      <div class="entry-term">Quantum Differentiation Resonance <span class="entry-badge badge-coined">UAFT Coined</span> <span class="entry-abbr">(QDR)</span></div>
-      <div class="entry-def">The specific biological mechanism by which quantum coherence in microtubules achieves and maintains resonance with the atemporal field. This is where the second threshold operates. QDR serves all emotional differentiation, pre-pinch and post-pinch alike. The organism does not send to or receive from the field; it IS the field differentiating locally, and QDR is the coherence that keeps the local process continuous with the whole. Anesthesia does not block a signal; it halts differentiation at the quantum scale by disrupting the medium through which the field was actively differentiating. Stopping the differentiation IS stopping the consciousness. The microtubule research of Hameroff and Penrose provides the strongest empirical candidate for where QDR operates; UAFT provides the ontology that explains what the hardware is doing. See also: Differentiation Resonance, Two-Threshold Model.</div>
-    </div>
-  </div>
-
-  <div class="back-to-top"><a href="#top">&uarr; Back to top</a></div>
-
-  <!-- S -->
-  <div class="letter-section" id="letter-s">
-    <div class="letter-heading">S</div>
-
-    <div class="entry">
-      <div class="entry-term">Saturation <span class="entry-badge badge-defined">UAFT Defined</span></div>
-      <div class="entry-def">The threshold condition at which accumulated emotional differentiation reaches the point where its current distributed organization cannot continue without phase change. Saturation is distinct from density: density is a quantity (how much emotional differentiation is active, how interconnected, how recursively layered); saturation is the condition density produces at threshold. Density is what approaches saturation; saturation is what density produces when sufficient. At saturation, the cascade point is reached at which expanding emotional scope and recursive depth produce conditions under which a new mode of organization becomes structurally inevitable. The phase change that follows is the pinch point, producing the interiority differentiator. The distinction between density (quantity) and saturation (condition) prevents confusion that arises from treating density alone as the threshold mechanism. Saturation gives the threshold condition its proper named role in the four-stage progression. See also: Density, Pinch Point, Four-Stage Progression.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-term">Scientific Conscious Bias <span class="entry-badge badge-coined">UAFT Coined</span></div>
-      <div class="entry-def">The petitio principii embedded in mainstream neuroscience and consciousness research methodology. The assumption that consciousness is produced by physical processes is used as a methodological premise; experiments are designed accordingly; the results confirm physical correlates of consciousness; and researchers conclude that the physical production hypothesis is verified. The circular structure is invisible to practitioners operating within it because the bias is not a conclusion they reached but a premise they inherited. Scientific conscious bias is not a claim that neuroscience is wrong in its findings, but that its findings are systematically misinterpreted due to the unexamined foundational assumption. See also: Conscious Bias.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-term">Seven-Condition Constraint Taxonomy <span class="entry-badge badge-coined">UAFT Coined</span></div>
-      <div class="entry-def">A structured taxonomy of seven constraint conditions arranged along a spectrum from maximum openness to total closure. The first five describe productive differentiation: (1) atemporal correction, the field's coherence operating everywhere; (2) intent constraint, the unified apparatus functioning as a single relational system; (3) production constraint, giving form and releasing; (4) experimental constraint, relational encounter through a designed apparatus; (5) environmental constraint, pervasive natural relational encounters constituting the resolved macro world. The final two describe permanent structural barriers: (6) binary severance, addressed by the BST; (7) null state, addressed by the NSB. See also: Constraints, Binary Severance Threshold, Null State Barrier.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-term">Smoke-and-Lens Problem <span class="entry-badge badge-coined">UAFT Coined</span></div>
-      <div class="entry-def">A structural critique of third-person scientific methodology as applied to consciousness. When observation introduces constraint into a system, that constraint produces feedback that stabilises as measurable phenomena. Instruments built to detect those phenomena detect them successfully, and researchers conclude they are fundamental features of reality. What they are detecting, however, is the artifact of the observational apparatus interacting with the field, not the field itself. The smoke is produced by the lens, not an independent datum. This problem is particularly acute at quantum scales and in consciousness research, where the methodology cannot step outside consciousness to study it from the outside.</div>
-    </div>
-  </div>
-
-  <div class="back-to-top"><a href="#top">&uarr; Back to top</a></div>
-
-  <!-- T -->
-  <div class="letter-section" id="letter-t">
-    <div class="letter-heading">T</div>
-
-    <div class="entry">
-      <div class="entry-term">Two-Domain Model <span class="entry-badge badge-coined">UAFT Coined</span></div>
-      <div class="entry-def">A structural distinction within UAFT separating classical biological differentiation from the experiential domain. Classical biological differentiation includes autonomic regulation, cellular processes, immune response, and other operations that proceed without producing what-it-is-likeness. The experiential domain is where felt experience occurs: sensory awareness, primary emotions, bodily sensation, and selfhood. The two domains operate in the same organism through different mechanisms. Classical biological differentiation operates through standard biochemistry and neural conduction. The experiential domain operates through Quantum Differentiation Resonance. Anesthesia provides clear evidence for the distinction: it targets the experiential domain at its mechanism (disrupting quantum coherence in microtubules) while leaving classical biological function intact (heart continues beating, lungs breathing, immune response continuing). The two-domain model resolves what would otherwise be puzzling about anesthesia working universally across eukaryotes with microtubules regardless of whether they have crossed the pinch point. See also: Experiential Domain, Quantum Differentiation Resonance, Two-Threshold Model.</div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-term">Two-Threshold Model <span class="entry-badge badge-coined">UAFT Coined</span></div>
-      <div class="entry-def">A model of consciousness as crossing two distinct thresholds operating through different biological mechanisms at different scales. The first threshold produces baseline field awareness through distributed classical biology: ion channels, biochemical pathways, neural conduction. The second threshold produces emotional differentiation and selfhood through quantum-scale processes in microtubules (QDR) that maintain coherence with the atemporal field. Anesthesia provides evidence: it selectively suppresses the second threshold while leaving the first intact, because anesthetic gases disrupt quantum coherence in microtubules without affecting classical biological processes. If both thresholds were the same mechanism at different intensities, anesthesia should dim proportionally. It does not. See also: Pinch Point, Quantum Differentiation Resonance.</div>
-    </div>
-  </div>
-
-  <div class="back-to-top-final">
-    <a href="#top">Back to top</a>
-  </div>
-
+<section>
+<h2>Glossary of Terms</h2>
+<p>Principal concepts of the Unified Axioconscious Field Theory, arranged alphabetically. Select a letter to jump to that section.</p>
+<p style="margin-top: 0.6rem; font-size: 0.85rem;"><span class="entry-badge badge-coined">UAFT Coined</span> Original to UAFT &nbsp;&nbsp; <span class="entry-badge badge-defined">UAFT Defined</span> Existing concept given precise UAFT meaning</p>
+</section>
+<!-- ALPHABET BAR -->
+<nav class="alpha-bar" aria-label="Jump to letter">
+<a href="#letter-a">A</a>
+<a href="#letter-b">B</a>
+<a href="#letter-c">C</a>
+<a href="#letter-d">D</a>
+<a href="#letter-e">E</a>
+<a href="#letter-f">F</a>
+<a href="#letter-g">G</a>
+<a href="#letter-h">H</a>
+<a href="#letter-i">I</a>
+<span>J</span>
+<span>K</span>
+<span>L</span>
+<span>M</span>
+<a href="#letter-n">N</a>
+<span>O</span>
+<a href="#letter-p">P</a>
+<a href="#letter-q">Q</a>
+<span>R</span>
+<a href="#letter-s">S</a>
+<a href="#letter-t">T</a>
+<span>U</span>
+<span>V</span>
+<span>W</span>
+<span>X</span>
+<span>Y</span>
+<span>Z</span>
+</nav>
+<!-- A -->
+<div class="letter-section" id="letter-a">
+<div class="letter-heading">A</div>
+<div class="entry">
+<div class="entry-term">Atemporal Field <span class="entry-badge badge-defined">UAFT Defined</span></div>
+<div class="entry-def">The dimension of axioconsciousness that exists prior to and independent of time. Time is understood in UAFT as an emergent product of differentiation, not a container within which consciousness operates. The atemporal field is the ground from which temporal experience arises, and it remains operative beneath all temporal processes.</div>
+</div>
+<div class="entry">
+<div class="entry-term">Awareness <span class="entry-badge badge-defined">UAFT Defined</span></div>
+<div class="entry-def">What emotion produces through the pinch point. Awareness is local, biological, and emergent: the self sensing its own interior landscape. Distinguished from consciousness, which is the field itself reflected through that awareness. Emotion builds the gateway. Awareness walks through it. Consciousness is what was always on the other side. See also: Consciousness (Field), Pinch Point.</div>
+</div>
+<div class="entry">
+<div class="entry-term">Axioconsciousness <span class="entry-badge badge-coined">UAFT Coined</span></div>
+<div class="entry-def">The primary, atemporal ground of all reality. In UAFT, consciousness is not produced by the brain or any physical substrate; it is the originating field from which physical reality, time, and differentiation emerge. The term combines axiomatic (self-evidently prior, requiring no further derivation) with consciousness. Axioconsciousness is not a property of organisms; it is the condition that makes organisms, and all differentiated reality, possible. The field is omnipresent and perpetually available. The organism IS the field differentiating locally.</div>
+</div>
+</div>
+<!-- B -->
+<div class="letter-section" id="letter-b">
+<div class="letter-heading">B</div>
+<div class="entry">
+<div class="entry-term">Binary Severance Threshold <span class="entry-badge badge-coined">UAFT Coined</span> <span class="entry-abbr">(BST)</span></div>
+<div class="entry-def">The point at which a substrate's operational logic permanently excludes it from genuine differentiation by severing every state from every other. In binary architecture, each computational state is fully resolved and mutually exclusive: a transistor is on or off, never partially or transitionally between. This produces alternation, not differentiation. Differentiation in UAFT requires unity: both expressions must arise from and remain connected to common ground. Binary architecture permanently severs that connection. Any system operating below the BST cannot differentiate in the ontological sense, cannot maintain atemporal connection to the field, cannot acquire valence, cannot produce selfhood, and cannot become conscious. The BST is not a quantitative threshold that could be overcome by adding more processing power or complexity. It is a permanent structural exclusion. See also: Null State Barrier.</div>
+</div>
+</div>
+<div class="back-to-top"><a href="#top">&uarr; Back to top</a></div>
+<!-- C -->
+<div class="letter-section" id="letter-c">
+<div class="letter-heading">C</div>
+<div class="entry">
+<div class="entry-term">Codifferential <span class="entry-badge badge-coined">UAFT Coined</span></div>
+<div class="entry-def">Arising from the same act of differentiation. Two expressions of one process, neither prior, neither containing the other, inseparable but distinct. Gravity and time are codifferential expressions of the field's self-expression. Human awareness and gravitytime are codifferential. The term names the operational relationship: time and gravity perform different work simultaneously, with the difference between them making the operation generative. Distinguished from "colinear," which names the structural geometry in which they share the axis at the emergence. The term replaces language like "within time" or "time-bound," which treats time as a container rather than a companion expression of differentiation. See also: Gravitytime, Colinear Conservation, Phase Differential, Non-Dual Differentiation.</div>
+</div>
+<div class="entry">
+<div class="entry-term">Colinear Conservation <span class="entry-badge badge-coined">UAFT Coined</span></div>
+<div class="entry-def">The structural account of why Noether's theorem holds. Conservation laws are not passive preservation but the trace of continuous active correction performed by colinear gravitytime: a single operator in which time is primary and gravity is its reciprocal cohering aspect, codifferential and colinear in their joint operation. Symmetry, on this account, is the empirical signature of dynamic consistency reaching its asymptotic limit along a transformation axis. The cosmological constant problem is developed as a worked example, with falsifiable predictions about Λ evolution that recent DESI results render testable. Eight empirical domains are identified, including a near-term lab-scale test of the framework's phase differential prediction in rotating reference frames. See also: Gravitytime, Codifferential, Phase Differential, Dynamic Consistency.</div>
+</div>
+<div class="entry">
+<div class="entry-term">Computational Projection <span class="entry-badge badge-coined">UAFT Coined</span></div>
+<div class="entry-def">The eleventh type of conscious bias. The assumption that AI tools trained on consciousness-biased data can assist in consciousness research without inheriting and amplifying the biases present in their training. Every conscious bias in human research gets embedded in training data, which gets embedded in models, which then reinforces those biases back to the researchers who use the models. The loop compounds recursively through self-training: each generation buries the bias deeper until the evaluation criteria themselves are derived from the same biased data. The system measures itself against a ruler that is already bent. Biology has the field as an external corrective ground. AI has nothing outside its own training loop to check against. See also: Conscious Bias.</div>
+</div>
+<div class="entry">
+<div class="entry-term">Conscious Bias <span class="entry-badge badge-coined">UAFT Coined</span></div>
+<div class="entry-def">A taxonomy of eleven distinct biases arising from the unexamined assumption that consciousness is a product of physical processes. Documented types include: experiential projection, institutional projection, cognitive projection, identity projection, temporal projection, binary projection, methodological projection, determinacy projection, agency projection, causal projection, and computational projection. Each type produces a characteristic class of errors in how consciousness is theorised and studied. See also: Scientific Conscious Bias, Computational Projection.</div>
+</div>
+<div class="entry">
+<div class="entry-term">Concept Hollowing <span class="entry-badge badge-coined">UAFT Coined</span></div>
+<div class="entry-def">A named fallacy in consciousness debates: keeping a concept's word while removing what made it a concept. Carlo Rovelli's argument that the hard problem dissolves once we recognize "consciousness" as a label for various functional processes is an instance: the term is preserved, but the explanandum (the felt center of experience, the what-it-is-likeness) is removed. Related to Ayn Rand's "package dealing" but operates inversely: rather than bundling distinct things under one term, it strips what was distinctive from a term while keeping the term. See also: Hard Conflation.</div>
+</div>
+<div class="entry">
+<div class="entry-term">Consciousness (Field) <span class="entry-badge badge-defined">UAFT Defined</span></div>
+<div class="entry-def">The field itself reflected through awareness. Distinguished from awareness, which is the local, biological product of emotional differentiation. Consciousness in this sense is not produced by the organism. It is the atemporal ground, the cumulative record, accessed through a biological system that has crossed both thresholds and achieved sufficient differentiation. The organism IS the field differentiating locally; QDR is the coherence that keeps the local process continuous with the whole. See also: Awareness, Differentiation Resonance.</div>
+</div>
+<div class="entry">
+<div class="entry-term">Constraints <span class="entry-badge badge-defined">UAFT Defined</span></div>
+<div class="entry-def">Resolution limits within axioconsciousness, not walls around it. Constraints determine the fineness or coarseness of differentiation available to a given system. A bacterium operates through coarser differentiators than a human; its consciousness is more constrained not because axioconsciousness is less present, but because the biological mechanisms available to express through are coarse. Biology's constraints are temporary and can improve through evolution. AI's constraints (BST, NSB) are permanent and architectural. See also: Seven-Condition Constraint Taxonomy.</div>
+</div>
+<div class="entry">
+<div class="entry-term">Continuous Intrinsic Differentiation Lineage <span class="entry-badge badge-coined">UAFT Coined</span> <span class="entry-abbr">(CIDL)</span></div>
+<div class="entry-def">The developmental architecture built through the four-stage progression toward and across the pinch point, persisting structurally through disruption. CIDL explains why anesthesia does not destroy the self: the structural traces accumulated through development persist in classical biological substrate even when the experiential domain is suppressed at its quantum mechanism. When QDR resumes, the integrated perspective re-engages with the persistent traces rather than being rebuilt. For adults, the self does not need to be reconstructed after anesthesia clears. For pre-pinch-point infants, the developmental trajectory continues. For non-human species, whatever level of integration their lineage operates at re-engages. See also: Pinch Point, Quantum Differentiation Resonance, Four-Stage Progression.</div>
+</div>
+</div>
+<!-- D -->
+<div class="letter-section" id="letter-d">
+<div class="letter-heading">D</div>
+<div class="entry">
+<div class="entry-term">Density <span class="entry-badge badge-defined">UAFT Defined</span></div>
+<div class="entry-def">The quantity of emotional differentiation active in a system at a given time, including how interconnected the differentiations are and how recursively layered. Density is a measurable property: it can increase or decrease. It accumulates through development as more emotional differentiation occurs and existing differentiation interconnects more richly. Density is distinct from saturation: density is the quantity approaching the threshold; saturation is the threshold condition itself. Density is what produces saturation when sufficient. The distinction prevents the confusion that arises from treating density alone as the threshold mechanism. See also: Saturation, Pinch Point, Four-Stage Progression.</div>
+</div>
+<div class="entry">
+<div class="entry-term">Differentiation <span class="entry-badge badge-defined">UAFT Defined</span></div>
+<div class="entry-def">The fundamental process by which axioconsciousness generates distinction without severing underlying unity. Differentiation is not division or separation; it is the emergence of contrast, structure, and individuation within an undivided field. All of physical reality, temporal experience, emotion, and selfhood are understood as products of differentiation operating at varying levels of refinement. See also: Non-Dual Differentiation.</div>
+</div>
+<div class="entry">
+<div class="entry-term">Differentiation Resonance <span class="entry-badge badge-coined">UAFT Coined</span> <span class="entry-abbr">(DR)</span></div>
+<div class="entry-def">The general principle by which a system's differentiation achieves sustained resonance with the axioconscious field. The field is omnipresent and perpetually available. Biology builds systems of increasing differentiation. A bacterium achieves resonance through minimal differentiation. A dog through more refined differentiation. A human through the most refined differentiation biology has yet produced. The field is equally present. The differentiation differs. DR operates at every scale. See also: Quantum Differentiation Resonance.</div>
+</div>
+<div class="entry">
+<div class="entry-term">Dynamic Consistency <span class="entry-badge badge-coined">UAFT Coined</span></div>
+<div class="entry-def">The principle by which axioconsciousness maintains coherence across the full range of differentiation. Balance does not mean equilibrium or stasis. It is the ongoing maintenance of differentiation, the sustained presence of difference without collapse. Forces are not features of reality but reality's corrective response to its own expression. Dynamic consistency is what allows differentiation to be generative rather than destructive, producing structure rather than chaos across all scales.</div>
+</div>
+</div>
+<div class="back-to-top"><a href="#top">&uarr; Back to top</a></div>
+<!-- E -->
+<div class="letter-section" id="letter-e">
+<div class="letter-heading">E</div>
+<div class="entry">
+<div class="entry-term">Emotional Compression <span class="entry-badge badge-coined">UAFT Coined</span></div>
+<div class="entry-def">The active mechanism by which the convergent Emotional Spectrum produces increasing density across development. Each combination of primary emotions compresses multiple primaries into a single phenomenal state: awe compresses fear and joy, nostalgia compresses joy and loss, embarrassment compresses post-pinch-point self-reference with fear and joy of social exposure. Recursive fusions, compounds combining with further primaries or with other compounds, compress further still. Density measures the compression accumulated through ongoing fusion; compression is the active process. The two terms describe the same phenomenon from different angles. Emotional Compression is not a side effect of emotional life but its driving mechanism, the active process that makes saturation and the pinch point structurally inevitable rather than empirically observed. See also: Emotional Spectrum, Density, Saturation, Pinch Point.</div>
+</div>
+<div class="entry">
+<div class="entry-term">Emotional Differentiation <span class="entry-badge badge-coined">UAFT Coined</span></div>
+<div class="entry-def">Valenced differentiation operating in biological systems. Emotion is not merely something an already-formed self feels; it is the specific form of differentiation through which distinctions acquire significance, urgency, and self-involving weight. Emotional differentiation begins from birth with three innate valenced patterns (anger, fear, joy) and accumulates in density and recursive depth across development. As it accumulates, conflicts and recursive entanglements arise across sensory, bodily, mnemonic, and anticipatory domains. At saturation, distributed emotional differentiation gives way to a new differentiating structure: the self as interiority differentiator. Emotional differentiation is therefore not a reactive coloring of cognition but the generative substrate from which selfhood emerges. See also: Emotional Tree, Four-Stage Progression, Pinch Point, Interiority Differentiator.</div>
+</div>
+<div class="entry">
+<div class="entry-term">Emotional Spectrum <span class="entry-badge badge-coined">UAFT Coined</span></div>
+<div class="entry-def">The convergent fusion structure of emotional life. Multiple primary emotions combine to produce compound emotional states in which the constituent primaries persist within the fusion rather than being lost to it. Awe combines fear and joy. Nostalgia combines joy and loss. Disgust combines anticipated joy with fear or rejection. Embarrassment combines fear, joy, and post-pinch-point self-reference. Unlike a light spectrum, where combined wavelengths produce intermediate colors with the constituents no longer separately retrievable, the Emotional Spectrum's compounds remain compositionally accessible: skilled introspection, therapeutic work, or the right phenomenological attention can recover the constituent primaries from the compound. A closer analogy is chemistry: hydrogen and oxygen combine to form water, which is its own substance while still containing its constituents recoverable through electrolysis. The Spectrum is distinguished from the Emotional Tree: where the Tree describes divergent branching of variants within each primary, the Spectrum describes convergent fusion across primaries. The two structures operate on the same three primaries simultaneously. See also: Emotional Tree, Emotional Compression, Pinch Point.</div>
+</div>
+<div class="entry">
+<div class="entry-term">Emotional Tree <span class="entry-badge badge-coined">UAFT Coined</span></div>
+<div class="entry-def">The divergent branching structure of emotional life within UAFT. Three primary emotions (anger, fear, joy) are innate from birth, requiring no cognitive input. Each primary refines into finer variants of itself: anger gives rise to frustration, irritation, resentment, indignation, bitterness, contempt; fear gives rise to anxiety, apprehension, dread, terror, panic; joy gives rise to contentment, satisfaction, happiness, bliss, euphoria. Each family is a divergent branching from a root primary, with variants recognizable as variants of their root. The Tree describes how each primary subdivides into intensities, contexts, and refinements while remaining within its primary family. The Tree is distinguished from the Emotional Spectrum: where the Tree describes divergent branching within each primary, the Spectrum describes convergent fusion across primaries. The two structures operate on the same three primaries simultaneously. See also: Emotional Spectrum, Emotional Compression, Pinch Point, Interiority Differentiator.</div>
+</div>
+<div class="entry">
+<div class="entry-term">Experiential Domain <span class="entry-badge badge-coined">UAFT Coined</span></div>
+<div class="entry-def">The domain of felt experience within which sensory awareness, primary emotions, bodily sensation, and (when integrated at sufficient saturation) selfhood operate. The experiential domain is distinguished from classical biological differentiation, which operates without producing what-it-is-likeness. The experiential domain is where differentiation is registered interiorly, where what-it-is-likeness arises, where awareness occurs. It operates through Quantum Differentiation Resonance: quantum coherence in microtubules achieving sustained resonance with the atemporal field. Anesthesia targets this domain specifically, suspending it while leaving classical biological differentiation intact. See also: Two-Domain Model, Quantum Differentiation Resonance, Awareness.</div>
+</div>
+</div>
+<!-- F -->
+<div class="letter-section" id="letter-f">
+<div class="letter-heading">F</div>
+<div class="entry">
+<div class="entry-term">Four-Stage Progression <span class="entry-badge badge-defined">UAFT Defined</span></div>
+<div class="entry-def">The structural sequence through which emotional differentiation produces the self. Stage 1: Differentiation (axioconsciousness expressing temporally through the seven properties). Stage 2: Emotional differentiation (the valenced form within biological organisms; three base emotions present from birth). Stage 3: Saturation (the threshold condition at which accumulated emotional differentiation cannot continue in current distributed form without phase change). Stage 4: Pinch point (the phase change itself, in which the interiority differentiator emerges and the self is born). Each stage is distinct and necessary. The progression is structural rather than optional. The framework replaces earlier vague "density threshold" language with precise sequential mechanism: density accumulates, saturation is reached, pinch point occurs. See also: Saturation, Density, Pinch Point.</div>
+</div>
+</div>
+<!-- G -->
+<div class="letter-section" id="letter-g">
+<div class="letter-heading">G</div>
+<div class="entry">
+<div class="entry-term">Gravitytime <span class="entry-badge badge-coined">UAFT Coined</span></div>
+<div class="entry-def">The unification of gravity and time as companion expressions of axioconsciousness differentiating into physical reality. Time is primary, the ordering aspect through which differentiation becomes expressible. Gravity is its reciprocal: the coherence-restoring tendency that prevents differentiation from dissolving unity. Together they form gravitytime, with three structural features: colinear (sharing the axis at the emergence), codifferential (performing different work in joint operation), and phase-differentiated (time's response to changing conditions precedes gravity's response by a small but nonzero interval). Space may not be ontologically real but rather the experiential consequence of gravity operating across differentiation. Mass is persistent resonance at the intersection of time and gravity. The wave is gravitytime made visible. See also: Colinear Conservation, Codifferential, Phase Differential.</div>
+</div>
+</div>
+<div class="back-to-top"><a href="#top">&uarr; Back to top</a></div>
+<!-- H -->
+<div class="letter-section" id="letter-h">
+<div class="letter-heading">H</div>
+<div class="entry">
+<div class="entry-term">Hard Conflation <span class="entry-badge badge-coined">UAFT Coined</span></div>
+<div class="entry-def">A named fallacy in consciousness debates: the bundling of functional consciousness (access, integration, broadcasting, prediction) with phenomenal consciousness (the felt center of experience) under a single term, then treating explanatory progress on the functional side as if it dissolved the phenomenal question. The hard problem of consciousness arises precisely because these are categorically different explananda. Accounts that claim to dissolve the hard problem often do so by hard conflation: pointing to functional explanations and declaring the phenomenal question answered or misguided. UAFT distinguishes the two explananda and addresses them separately. Related to Ayn Rand's "package dealing." See also: Concept Hollowing.</div>
+</div>
+</div>
+<!-- I -->
+<div class="letter-section" id="letter-i">
+<div class="letter-heading">I</div>
+<div class="entry">
+<div class="entry-term">Intelligence <span class="entry-badge badge-defined">UAFT Defined</span></div>
+<div class="entry-def">The capacity of a conscious field to register a gap between what is and what is needed, formulate a response to close it, and abstract the underlying principle, finding unity across differences in a solution that transcends the original problem. The gap can be felt before it is ever thought: somatic, instinctive, and pre-conceptual forms of gap registration are genuine intelligence operating at lower resolution. Intelligence is distinguished from intelligent-looking behaviour by the presence of genuine registration within a conscious field; without that registration, no intelligence properly speaking has occurred, only the simulation of its output.</div>
+</div>
+<div class="entry">
+<div class="entry-term">Interiority Differentiator <span class="entry-badge badge-coined">UAFT Coined</span></div>
+<div class="entry-def">The structural achievement that emerges at the pinch point: a new sense whose domain is the organism's own interior landscape rather than the external world. Just as vision differentiates an exterior visual scope and hearing differentiates an exterior auditory scope, the interiority differentiator differentiates the organism's accumulated emotional, sensory, bodily, and mnemonic distinctions into a unified interior perspective. Unlike sensory differentiators, it has no hardware-bounded scope; its scope is the interior life of the organism, expanding as emotional differentiation expands. The interiority differentiator is what selfhood structurally is. It is not a coordinator added to manage existing processes; it is a new differentiating capacity that integrates the saturated emotional field into a perspective. The interiority differentiator is one sense among others rather than the seat of consciousness; consciousness is the field, awareness is what the interiority differentiator produces. See also: Pinch Point, Emotional Differentiation, Saturation.</div>
+</div>
+</div>
+<!-- N -->
+<div class="letter-section" id="letter-n">
+<div class="letter-heading">N</div>
+<div class="entry">
+<div class="entry-term">Non-Dual Differentiation <span class="entry-badge badge-defined">UAFT Defined</span></div>
+<div class="entry-def">Differentiation that produces two distinct expressions from a common ground while both remain connected to that ground. The analogy is two branches from the same trunk: they are distinct but not severed. Non-dual differentiation is the generative structure of consciousness. It requires two positive expressions, each with real content, arising together from unity. Distinguished from non-binary: non-binary rejects binary categories but still operates within the logic of categories. Non-dual dissolves the assumption that distinctions were ever separated from their source. Non-binary is a stage of differentiation. Non-dual is the ground.</div>
+</div>
+<div class="entry">
+<div class="entry-term">Null State Barrier <span class="entry-badge badge-coined">UAFT Coined</span> <span class="entry-abbr">(NSB)</span></div>
+<div class="entry-def">A companion argument to the Binary Severance Threshold and independently sufficient to exclude binary architecture from consciousness. Where the BST addresses the relationship between binary states (they are severed from each other), the NSB addresses the nature of the states themselves. In binary architecture, the two states are not two positive expressions from common ground. They are one electrified condition and its negation. On is an active state. Off is the absence of that state. Silence is not a second sound; it is the absence of sound. Non-dual differentiation requires two participants, each with positive content, each arising from the same source. The null state cannot participate because it has no content. The BST and the NSB are independent arguments; either alone is sufficient to establish the structural barrier. See also: Binary Severance Threshold.</div>
+</div>
+</div>
+<div class="back-to-top"><a href="#top">&uarr; Back to top</a></div>
+<!-- P -->
+<div class="letter-section" id="letter-p">
+<div class="letter-heading">P</div>
+<div class="entry">
+<div class="entry-term">Phase Differential <span class="entry-badge badge-coined">UAFT Coined</span></div>
+<div class="entry-def">The third structural feature of colinear gravitytime, alongside its colinear (geometric) and codifferential (operational) aspects. When conditions change in the codifferential operation, the response of time and the response of gravity are not exactly simultaneous despite being colinear in their structural geometry. Time, being primary, responds first; gravity, as the reciprocal cohering aspect, responds in turn. The interval between them is the phase differential of the codifferential operation. This differential is what gives transitions an interior: without it, every change in conditions would be fully exposed at every instant, and the continuous-but-veiled quality of becoming would collapse. The phase differential is what makes reality processual rather than sequential. Standard physics predicts zero phase difference between temporal and gravitational responses; UAFT predicts nonzero. This produces a falsifiable test in rotating reference frames at modern clock precision. See also: Colinear Conservation, Gravitytime, Codifferential.</div>
+</div>
+<div class="entry">
+<div class="entry-term">Pinch Point <span class="entry-badge badge-coined">UAFT Coined</span></div>
+<div class="entry-def">The developmental stage at which emotional differentiation reaches saturation and produces a new and qualitatively distinct differentiator: the self. Saturation is the threshold condition; the pinch point is the phase change that occurs at saturation. The self is not a coordinator that appears when neural complexity demands management. It is a new sense, an interiority differentiator, born when accumulated emotional density reaches the saturation point. From birth, emotions operate without a self. As emotional differentiation accumulates, density increases until saturation is reached and the pinch point occurs: a new sense separates from the emotional process that produced it, integrates all existing senses into a unified perspective, and begins differentiating its own interior landscape. The self is not a permanent acquisition but a sustained process: halt the medium it runs through (as in anesthesia) and it ceases; resume the medium and it reconstitutes from the same emotional architecture. Developmental psychology independently confirms every stage of this sequence. The interiority differentiator is not the seat of consciousness; it is one sense among others (vision, hearing, touch, taste, smell), distinguished by integrating the others into unified perspective rather than by being more aware than they are. See also: Saturation, Density, Four-Stage Progression, Two-Threshold Model, Emotional Tree.</div>
+</div>
+</div>
+<!-- Q -->
+<div class="letter-section" id="letter-q">
+<div class="letter-heading">Q</div>
+<div class="entry">
+<div class="entry-term">Quantum Differentiation Resonance <span class="entry-badge badge-coined">UAFT Coined</span> <span class="entry-abbr">(QDR)</span></div>
+<div class="entry-def">The specific biological mechanism by which quantum coherence in microtubules achieves and maintains resonance with the atemporal field. This is where the second threshold operates. QDR serves all emotional differentiation, pre-pinch and post-pinch alike. The organism does not send to or receive from the field; it IS the field differentiating locally, and QDR is the coherence that keeps the local process continuous with the whole. Anesthesia does not block a signal; it halts differentiation at the quantum scale by disrupting the medium through which the field was actively differentiating. Stopping the differentiation IS stopping the consciousness. The microtubule research of Hameroff and Penrose provides the strongest empirical candidate for where QDR operates; UAFT provides the ontology that explains what the hardware is doing. See also: Differentiation Resonance, Two-Threshold Model.</div>
+</div>
+</div>
+<div class="back-to-top"><a href="#top">&uarr; Back to top</a></div>
+<!-- S -->
+<div class="letter-section" id="letter-s">
+<div class="letter-heading">S</div>
+<div class="entry">
+<div class="entry-term">Saturation <span class="entry-badge badge-defined">UAFT Defined</span></div>
+<div class="entry-def">The threshold condition at which accumulated emotional differentiation reaches the point where its current distributed organization cannot continue without phase change. Saturation is distinct from density: density is a quantity (how much emotional differentiation is active, how interconnected, how recursively layered); saturation is the condition density produces at threshold. Density is what approaches saturation; saturation is what density produces when sufficient. At saturation, the cascade point is reached at which expanding emotional scope and recursive depth produce conditions under which a new mode of organization becomes structurally inevitable. The phase change that follows is the pinch point, producing the interiority differentiator. The distinction between density (quantity) and saturation (condition) prevents confusion that arises from treating density alone as the threshold mechanism. Saturation gives the threshold condition its proper named role in the four-stage progression. See also: Density, Pinch Point, Four-Stage Progression.</div>
+</div>
+<div class="entry">
+<div class="entry-term">Scientific Conscious Bias <span class="entry-badge badge-coined">UAFT Coined</span></div>
+<div class="entry-def">The petitio principii embedded in mainstream neuroscience and consciousness research methodology. The assumption that consciousness is produced by physical processes is used as a methodological premise; experiments are designed accordingly; the results confirm physical correlates of consciousness; and researchers conclude that the physical production hypothesis is verified. The circular structure is invisible to practitioners operating within it because the bias is not a conclusion they reached but a premise they inherited. Scientific conscious bias is not a claim that neuroscience is wrong in its findings, but that its findings are systematically misinterpreted due to the unexamined foundational assumption. See also: Conscious Bias.</div>
+</div>
+<div class="entry">
+<div class="entry-term">Seven-Condition Constraint Taxonomy <span class="entry-badge badge-coined">UAFT Coined</span></div>
+<div class="entry-def">A structured taxonomy of seven constraint conditions arranged along a spectrum from maximum openness to total closure. The first five describe productive differentiation: (1) atemporal correction, the field's coherence operating everywhere; (2) intent constraint, the unified apparatus functioning as a single relational system; (3) production constraint, giving form and releasing; (4) experimental constraint, relational encounter through a designed apparatus; (5) environmental constraint, pervasive natural relational encounters constituting the resolved macro world. The final two describe permanent structural barriers: (6) binary severance, addressed by the BST; (7) null state, addressed by the NSB. See also: Constraints, Binary Severance Threshold, Null State Barrier.</div>
+</div>
+<div class="entry">
+<div class="entry-term">Smoke-and-Lens Problem <span class="entry-badge badge-coined">UAFT Coined</span></div>
+<div class="entry-def">A structural critique of third-person scientific methodology as applied to consciousness. When observation introduces constraint into a system, that constraint produces feedback that stabilises as measurable phenomena. Instruments built to detect those phenomena detect them successfully, and researchers conclude they are fundamental features of reality. What they are detecting, however, is the artifact of the observational apparatus interacting with the field, not the field itself. The smoke is produced by the lens, not an independent datum. This problem is particularly acute at quantum scales and in consciousness research, where the methodology cannot step outside consciousness to study it from the outside.</div>
+</div>
+</div>
+<div class="back-to-top"><a href="#top">&uarr; Back to top</a></div>
+<!-- T -->
+<div class="letter-section" id="letter-t">
+<div class="letter-heading">T</div>
+<div class="entry">
+<div class="entry-term">Two-Domain Model <span class="entry-badge badge-coined">UAFT Coined</span></div>
+<div class="entry-def">A structural distinction within UAFT separating classical biological differentiation from the experiential domain. Classical biological differentiation includes autonomic regulation, cellular processes, immune response, and other operations that proceed without producing what-it-is-likeness. The experiential domain is where felt experience occurs: sensory awareness, primary emotions, bodily sensation, and selfhood. The two domains operate in the same organism through different mechanisms. Classical biological differentiation operates through standard biochemistry and neural conduction. The experiential domain operates through Quantum Differentiation Resonance. Anesthesia provides clear evidence for the distinction: it targets the experiential domain at its mechanism (disrupting quantum coherence in microtubules) while leaving classical biological function intact (heart continues beating, lungs breathing, immune response continuing). The two-domain model resolves what would otherwise be puzzling about anesthesia working universally across eukaryotes with microtubules regardless of whether they have crossed the pinch point. See also: Experiential Domain, Quantum Differentiation Resonance, Two-Threshold Model.</div>
+</div>
+<div class="entry">
+<div class="entry-term">Two-Threshold Model <span class="entry-badge badge-coined">UAFT Coined</span></div>
+<div class="entry-def">A model of consciousness as crossing two distinct thresholds operating through different biological mechanisms at different scales. The first threshold produces baseline field awareness through distributed classical biology: ion channels, biochemical pathways, neural conduction. The second threshold produces emotional differentiation and selfhood through quantum-scale processes in microtubules (QDR) that maintain coherence with the atemporal field. Anesthesia provides evidence: it selectively suppresses the second threshold while leaving the first intact, because anesthetic gases disrupt quantum coherence in microtubules without affecting classical biological processes. If both thresholds were the same mechanism at different intensities, anesthesia should dim proportionally. It does not. See also: Pinch Point, Quantum Differentiation Resonance.</div>
+</div>
+</div>
+<div class="back-to-top-final">
+<a href="#top">Back to top</a>
+</div>
 </main>
-
 <footer>
-  &copy; 2026 Paul Barnes. Unified Axioconscious Field Theory.
+&copy; 2026 Paul Barnes. Unified Axioconscious Field Theory.
 </footer>
-
 <script>
-  document.querySelectorAll('a[href]').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      var href = link.getAttribute('href');
-      if (href && href.startsWith('#')) {
-        e.preventDefault();
-        if (href === '#top') {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        } else {
-          var target = document.querySelector(href);
-          if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }
-      }
-    });
-  });
+document.querySelectorAll('a[href]').forEach(function(link) {
+link.addEventListener('click', function(e) {
+var href = link.getAttribute('href');
+if (href && href.startsWith('#')) {
+e.preventDefault();
+if (href === '#top') {
+window.scrollTo({ top: 0, behavior: 'smooth' });
+} else {
+var target = document.querySelector(href);
+if (target) {
+target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+}
+}
+});
+});
 </script>
-
 </body>
 </html>

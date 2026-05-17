@@ -1,758 +1,678 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="shortcut icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="favicon.png">
-    <title>UAFT | Unified Axioconscious Field Theory — Paul W. Barnes</title>
-    <meta name="description" content="Unified Axioconscious Field Theory (UAFT) proposes consciousness as the axiomatic ground from which time, gravity, mass, and physical law emerge through non-dual differentiation.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --serif: 'Source Serif 4', Georgia, serif;
-            --sans: 'Source Sans 3', 'Segoe UI', sans-serif;
-            --bg: #FAFAF8;
-            --surface: #FFFFFF;
-            --text: #1A1A1A;
-            --text-secondary: #555555;
-            --text-tertiary: #888888;
-            --accent: #2C5F7C;
-            --accent-light: #E8F0F5;
-            --border: #E0E0DC;
-            --max-width: 760px;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: var(--sans);
-            background: var(--bg);
-            color: var(--text);
-            font-size: 16px;
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* HEADER */
-        header {
-            border-bottom: 1px solid var(--border);
-            background: var(--surface);
-        }
-
-        .header-inner {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 2rem 1.5rem 1.8rem;
-        }
-
-        .site-title {
-            font-family: var(--serif);
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text);
-            letter-spacing: -0.02em;
-            margin-bottom: 0.2rem;
-        }
-
-        .site-title span {
-            color: var(--accent);
-        }
-
-        .site-subtitle {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            font-weight: 300;
-        }
-
-        /* NAV */
-        nav {
-            border-bottom: 1px solid var(--border);
-            background: var(--surface);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav-inner {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            gap: 0;
-            overflow-x: auto;
-        }
-
-        nav a {
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--text-secondary);
-            text-decoration: none;
-            padding: 0.85rem 1rem;
-            border-bottom: 2px solid transparent;
-            white-space: nowrap;
-            transition: all 0.2s;
-        }
-
-        nav a:hover, nav a.active {
-            color: var(--accent);
-            border-bottom-color: var(--accent);
-        }
-
-
-        /* SECONDARY NAV - page-specific anchors */
-        nav.secondary {
-            border-bottom: 1px solid var(--border);
-            background: var(--bg);
-            position: sticky;
-            top: 49px;
-            z-index: 99;
-        }
-
-        nav.secondary .nav-inner {
-            padding: 0 1.5rem;
-        }
-
-        nav.secondary a {
-            font-size: 0.8rem;
-            font-weight: 400;
-            color: var(--text-tertiary);
-            padding: 0.6rem 0.85rem;
-        }
-
-        nav.secondary a:hover, nav.secondary a.active {
-            color: var(--accent);
-            border-bottom-color: var(--accent);
-        }
-
-        /* MAIN */
-        main {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        section {
-            padding: 3rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        section:last-child {
-            border-bottom: none;
-        }
-
-        h2 {
-            font-family: var(--serif);
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: var(--text);
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.01em;
-        }
-
-        h3 {
-            font-family: var(--sans);
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            margin-bottom: 1rem;
-        }
-
-        p {
-            margin-bottom: 1rem;
-            color: var(--text-secondary);
-        }
-
-        p.lead {
-            font-family: var(--serif);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text);
-        }
-
-        /* ABOUT */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-
-        .affiliation {
-            font-size: 0.9rem;
-            color: var(--text-tertiary);
-            margin-bottom: 0.5rem;
-        }
-
-        .credential-list {
-            list-style: none;
-            margin-top: 1rem;
-        }
-
-        .credential-list li {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            padding: 0.4rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .credential-list li:last-child {
-            border-bottom: none;
-        }
-
-        .credential-list li strong {
-            color: var(--text);
-            font-weight: 500;
-        }
-
-        /* PAPERS */
-        .paper-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .paper-card h4 {
-            font-family: var(--serif);
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: var(--text);
-            margin-bottom: 0.3rem;
-        }
-
-        .paper-meta {
-            font-size: 0.85rem;
-            color: var(--text-tertiary);
-            margin-bottom: 0.8rem;
-        }
-
-        .paper-abstract {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .paper-links a {
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--accent);
-            text-decoration: none;
-            margin-right: 1.5rem;
-        }
-
-        .paper-links a:hover {
-            text-decoration: underline;
-        }
-
-        .paper-status {
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            padding: 0.2rem 0.6rem;
-            border-radius: 3px;
-            margin-bottom: 0.8rem;
-        }
-
-        .status-published {
-            background: #E8F5E9;
-            color: #2E7D32;
-        }
-
-        .status-accepted {
-            background: #E3F2FD;
-            color: #1565C0;
-        }
-
-        .status-progress {
-            background: #FFF8E1;
-            color: #F57F17;
-        }
-
-        .status-new {
-            background: #FFEBEE;
-            color: #C62828;
-            border: 1px solid #EF5350;
-            margin-left: 0.4rem;
-            animation: pulse-new 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse-new {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-
-        /* THEORY OVERVIEW */
-        .theory-section {
-            margin-bottom: 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .theory-section summary {
-            font-family: var(--serif);
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text);
-            cursor: pointer;
-            padding: 1rem 0;
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .theory-section summary::-webkit-details-marker { display: none; }
-
-        .theory-section summary::after {
-            content: '+';
-            font-family: var(--sans);
-            font-size: 1.2rem;
-            font-weight: 300;
-            color: var(--accent);
-            transition: transform 0.2s;
-        }
-
-        .theory-section[open] summary::after {
-            content: '−';
-        }
-
-        .theory-section summary:hover {
-            color: var(--accent);
-        }
-
-        .theory-section p {
-            font-size: 0.95rem;
-            padding-bottom: 1.2rem;
-        }
-
-        .key-claim {
-            background: var(--accent-light);
-            border-left: 3px solid var(--accent);
-            padding: 1rem 1.2rem;
-            margin: 1.5rem 0;
-            font-family: var(--serif);
-            font-size: 0.95rem;
-            color: var(--text);
-            font-style: italic;
-        }
-
-        /* BLOG */
-        .blog-entry {
-            padding: 1.5rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .blog-entry:last-child {
-            border-bottom: none;
-        }
-
-        .blog-date {
-            font-size: 0.8rem;
-            color: var(--text-tertiary);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-        }
-
-        .blog-entry h4 {
-            font-family: var(--serif);
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: var(--text);
-            margin: 0.3rem 0 0.5rem;
-        }
-
-        .blog-entry p {
-            font-size: 0.9rem;
-        }
-
-        /* CONTACT */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-
-        .contact-item {
-            padding: 1rem;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 4px;
-        }
-
-        .contact-item .label {
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-tertiary);
-            margin-bottom: 0.3rem;
-        }
-
-        .contact-item a {
-            color: var(--accent);
-            text-decoration: none;
-            font-size: 0.95rem;
-        }
-
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
-
-        .contact-item .value {
-            font-size: 0.95rem;
-            color: var(--text);
-        }
-
-        /* FOOTER */
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 2rem 1.5rem;
-            text-align: center;
-            font-size: 0.8rem;
-            color: var(--text-tertiary);
-            max-width: var(--max-width);
-            margin: 0 auto;
-        }
-
-        /* RETURN TO TOP */
-        .to-top {
-            display: block;
-            text-align: right;
-            margin-top: 1.5rem;
-        }
-
-        .to-top a {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: var(--text-tertiary);
-            text-decoration: none;
-            padding: 0.4rem 0.8rem;
-            border: 1px solid var(--border);
-            border-radius: 3px;
-            transition: all 0.2s;
-        }
-
-        .to-top a:hover {
-            color: var(--accent);
-            border-color: var(--accent);
-        }
-
-        .to-top a svg {
-            width: 14px;
-            height: 14px;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 600px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .header-inner {
-                padding: 1.5rem 1rem 1.3rem;
-            }
-
-            .nav-inner {
-                padding: 0 0.5rem;
-            }
-
-            nav a {
-                padding: 0.75rem 0.7rem;
-                font-size: 0.8rem;
-            }
-
-            main {
-                padding: 0 1rem;
-            }
-
-            section {
-                padding: 2rem 0;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="shortcut icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<title>UAFT | Unified Axioconscious Field Theory — Paul W. Barnes</title>
+<meta name="description" content="Unified Axioconscious Field Theory (UAFT) proposes consciousness as the axiomatic ground from which time, gravity, mass, and physical law emerge through non-dual differentiation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+--serif: 'Source Serif 4', Georgia, serif;
+--sans: 'Source Sans 3', 'Segoe UI', sans-serif;
+--bg: #FAFAF8;
+--surface: #FFFFFF;
+--text: #1A1A1A;
+--text-secondary: #555555;
+--text-tertiary: #888888;
+--accent: #2C5F7C;
+--accent-light: #E8F0F5;
+--border: #E0E0DC;
+--max-width: 760px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+font-family: var(--sans);
+background: var(--bg);
+color: var(--text);
+font-size: 16px;
+line-height: 1.7;
+-webkit-font-smoothing: antialiased;
+}
+/* HEADER */
+header {
+border-bottom: 1px solid var(--border);
+background: var(--surface);
+}
+.header-inner {
+max-width: var(--max-width);
+margin: 0 auto;
+padding: 2rem 1.5rem 1.8rem;
+}
+.site-title {
+font-family: var(--serif);
+font-size: 1.5rem;
+font-weight: 600;
+color: var(--text);
+letter-spacing: -0.02em;
+margin-bottom: 0.2rem;
+}
+.site-title span {
+color: var(--accent);
+}
+.site-subtitle {
+font-size: 0.9rem;
+color: var(--text-secondary);
+font-weight: 300;
+}
+/* NAV */
+nav {
+border-bottom: 1px solid var(--border);
+background: var(--surface);
+position: sticky;
+top: 0;
+z-index: 100;
+}
+.nav-inner {
+max-width: var(--max-width);
+margin: 0 auto;
+padding: 0 1.5rem;
+display: flex;
+gap: 0;
+overflow-x: auto;
+}
+nav a {
+font-size: 0.85rem;
+font-weight: 500;
+color: var(--text-secondary);
+text-decoration: none;
+padding: 0.85rem 1rem;
+border-bottom: 2px solid transparent;
+white-space: nowrap;
+transition: all 0.2s;
+}
+nav a:hover, nav a.active {
+color: var(--accent);
+border-bottom-color: var(--accent);
+}
+/* SECONDARY NAV - page-specific anchors */
+nav.secondary {
+border-bottom: 1px solid var(--border);
+background: var(--bg);
+position: sticky;
+top: 49px;
+z-index: 99;
+}
+nav.secondary .nav-inner {
+padding: 0 1.5rem;
+}
+nav.secondary a {
+font-size: 0.8rem;
+font-weight: 400;
+color: var(--text-tertiary);
+padding: 0.6rem 0.85rem;
+}
+nav.secondary a:hover, nav.secondary a.active {
+color: var(--accent);
+border-bottom-color: var(--accent);
+}
+/* MAIN */
+main {
+max-width: var(--max-width);
+margin: 0 auto;
+padding: 0 1.5rem;
+}
+section {
+padding: 3rem 0;
+border-bottom: 1px solid var(--border);
+}
+section:last-child {
+border-bottom: none;
+}
+h2 {
+font-family: var(--serif);
+font-size: 1.35rem;
+font-weight: 600;
+color: var(--text);
+margin-bottom: 1.5rem;
+letter-spacing: -0.01em;
+}
+h3 {
+font-family: var(--sans);
+font-size: 0.95rem;
+font-weight: 600;
+color: var(--accent);
+text-transform: uppercase;
+letter-spacing: 0.06em;
+margin-bottom: 1rem;
+}
+p {
+margin-bottom: 1rem;
+color: var(--text-secondary);
+}
+p.lead {
+font-family: var(--serif);
+font-size: 1.1rem;
+line-height: 1.8;
+color: var(--text);
+}
+/* ABOUT */
+.about-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 2rem;
+}
+.affiliation {
+font-size: 0.9rem;
+color: var(--text-tertiary);
+margin-bottom: 0.5rem;
+}
+.credential-list {
+list-style: none;
+margin-top: 1rem;
+}
+.credential-list li {
+font-size: 0.9rem;
+color: var(--text-secondary);
+padding: 0.4rem 0;
+border-bottom: 1px solid var(--border);
+}
+.credential-list li:last-child {
+border-bottom: none;
+}
+.credential-list li strong {
+color: var(--text);
+font-weight: 500;
+}
+/* PAPERS */
+.paper-card {
+background: var(--surface);
+border: 1px solid var(--border);
+border-radius: 4px;
+padding: 1.5rem;
+margin-bottom: 1rem;
+}
+.paper-card h4 {
+font-family: var(--serif);
+font-size: 1.05rem;
+font-weight: 600;
+color: var(--text);
+margin-bottom: 0.3rem;
+}
+.paper-meta {
+font-size: 0.85rem;
+color: var(--text-tertiary);
+margin-bottom: 0.8rem;
+}
+.paper-abstract {
+font-size: 0.9rem;
+color: var(--text-secondary);
+line-height: 1.6;
+margin-bottom: 1rem;
+}
+.paper-links a {
+font-size: 0.85rem;
+font-weight: 500;
+color: var(--accent);
+text-decoration: none;
+margin-right: 1.5rem;
+}
+.paper-links a:hover {
+text-decoration: underline;
+}
+.paper-status {
+display: inline-block;
+font-size: 0.75rem;
+font-weight: 600;
+text-transform: uppercase;
+letter-spacing: 0.05em;
+padding: 0.2rem 0.6rem;
+border-radius: 3px;
+margin-bottom: 0.8rem;
+}
+.status-published {
+background: #E8F5E9;
+color: #2E7D32;
+}
+.status-accepted {
+background: #E3F2FD;
+color: #1565C0;
+}
+.status-progress {
+background: #FFF8E1;
+color: #F57F17;
+}
+.status-new {
+background: #FFEBEE;
+color: #C62828;
+border: 1px solid #EF5350;
+margin-left: 0.4rem;
+animation: pulse-new 2s ease-in-out infinite;
+}
+@keyframes pulse-new {
+0%, 100% { opacity: 1; }
+50% { opacity: 0.7; }
+}
+/* THEORY OVERVIEW */
+.theory-section {
+margin-bottom: 0;
+border-bottom: 1px solid var(--border);
+}
+.theory-section summary {
+font-family: var(--serif);
+font-size: 1rem;
+font-weight: 600;
+color: var(--text);
+cursor: pointer;
+padding: 1rem 0;
+list-style: none;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.theory-section summary::-webkit-details-marker { display: none; }
+.theory-section summary::after {
+content: '+';
+font-family: var(--sans);
+font-size: 1.2rem;
+font-weight: 300;
+color: var(--accent);
+transition: transform 0.2s;
+}
+.theory-section[open] summary::after {
+content: '−';
+}
+.theory-section summary:hover {
+color: var(--accent);
+}
+.theory-section p {
+font-size: 0.95rem;
+padding-bottom: 1.2rem;
+}
+.key-claim {
+background: var(--accent-light);
+border-left: 3px solid var(--accent);
+padding: 1rem 1.2rem;
+margin: 1.5rem 0;
+font-family: var(--serif);
+font-size: 0.95rem;
+color: var(--text);
+font-style: italic;
+}
+/* BLOG */
+.blog-entry {
+padding: 1.5rem 0;
+border-bottom: 1px solid var(--border);
+}
+.blog-entry:last-child {
+border-bottom: none;
+}
+.blog-date {
+font-size: 0.8rem;
+color: var(--text-tertiary);
+font-weight: 500;
+text-transform: uppercase;
+letter-spacing: 0.04em;
+}
+.blog-entry h4 {
+font-family: var(--serif);
+font-size: 1.05rem;
+font-weight: 600;
+color: var(--text);
+margin: 0.3rem 0 0.5rem;
+}
+.blog-entry p {
+font-size: 0.9rem;
+}
+/* CONTACT */
+.contact-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 1.5rem;
+}
+.contact-item {
+padding: 1rem;
+background: var(--surface);
+border: 1px solid var(--border);
+border-radius: 4px;
+}
+.contact-item .label {
+font-size: 0.8rem;
+font-weight: 600;
+text-transform: uppercase;
+letter-spacing: 0.05em;
+color: var(--text-tertiary);
+margin-bottom: 0.3rem;
+}
+.contact-item a {
+color: var(--accent);
+text-decoration: none;
+font-size: 0.95rem;
+}
+.contact-item a:hover {
+text-decoration: underline;
+}
+.contact-item .value {
+font-size: 0.95rem;
+color: var(--text);
+}
+/* FOOTER */
+footer {
+border-top: 1px solid var(--border);
+padding: 2rem 1.5rem;
+text-align: center;
+font-size: 0.8rem;
+color: var(--text-tertiary);
+max-width: var(--max-width);
+margin: 0 auto;
+}
+/* RETURN TO TOP */
+.to-top {
+display: block;
+text-align: right;
+margin-top: 1.5rem;
+}
+.to-top a {
+display: inline-flex;
+align-items: center;
+gap: 0.3rem;
+font-size: 0.8rem;
+font-weight: 500;
+color: var(--text-tertiary);
+text-decoration: none;
+padding: 0.4rem 0.8rem;
+border: 1px solid var(--border);
+border-radius: 3px;
+transition: all 0.2s;
+}
+.to-top a:hover {
+color: var(--accent);
+border-color: var(--accent);
+}
+.to-top a svg {
+width: 14px;
+height: 14px;
+}
+/* RESPONSIVE */
+@media (max-width: 600px) {
+.contact-grid {
+grid-template-columns: 1fr;
+}
+.header-inner {
+padding: 1.5rem 1rem 1.3rem;
+}
+.nav-inner {
+padding: 0 0.5rem;
+}
+nav a {
+padding: 0.75rem 0.7rem;
+font-size: 0.8rem;
+}
+main {
+padding: 0 1rem;
+}
+section {
+padding: 2rem 0;
+}
+}
+</style>
 </head>
 <body>
-
 <header>
-    <div class="header-inner">
-        <div class="site-title"><span>UAFT</span> | Unified Axioconscious Field Theory</div>
-        <div class="site-subtitle">Paul W. Barnes — Consciousness Researcher, Athabasca University</div>
-    </div>
+<div class="header-inner">
+<div class="site-title"><span>UAFT</span> | Unified Axioconscious Field Theory</div>
+<div class="site-subtitle">Paul W. Barnes — Consciousness Researcher, Athabasca University</div>
+</div>
 </header>
-
 <nav>
-    <div class="nav-inner">
-        <a href="https://axioconsciousness.com/index.html">Home</a>
-        <a href="https://axioconsciousness.com/research.html">Research</a>
-        <a href="https://axioconsciousness.com/essays/">Essays</a>
-        <a href="https://axioconsciousness.com/reading.html">Reading</a>
-        <a href="https://axioconsciousness.com/theory.html">Theory</a>
-        <a href="https://axioconsciousness.com/glossary.html">Glossary</a>
-    </div>
+<div class="nav-inner">
+<a href="https://axioconsciousness.com/index.html">Home</a>
+<a href="https://axioconsciousness.com/research.html">Research</a>
+<a href="https://axioconsciousness.com/essays/">Essays</a>
+<a href="https://axioconsciousness.com/reading.html">Reading</a>
+<a href="https://axioconsciousness.com/theory.html">Theory</a>
+<a href="https://axioconsciousness.com/glossary.html">Glossary</a>
+</div>
 </nav>
 <nav class="secondary">
-    <div class="nav-inner">
-        <a href="#papers">Papers</a>
-        <a href="#updates">Updates</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </div>
+<div class="nav-inner">
+<a href="#papers">Papers</a>
+<a href="#updates">Updates</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</div>
 </nav>
-
 <main>
-
-    <!-- PAPERS -->
-    <section id="papers">
-        <h2>Papers &amp; Publications</h2>
-
-        <div class="paper-card">
-            <span class="paper-status status-published">Preprint</span><span class="paper-status status-new">NEW</span>
-            <h4>Emotional Differentiation: The Emergence of Consciousness and Self</h4>
-            <div class="paper-meta">Paul W. Barnes — May 10, 2026 — Zenodo</div>
-            <p class="paper-abstract">Consciousness studies typically treats emotion as a feature of an already-formed subject. This paper argues the reverse: emotion is part of how the subject comes into being. The argument develops through a four-stage progression: general differentiation, emotional differentiation, saturation, and pinch point. At saturation, distributed emotional differentiation gives way to a new differentiating structure: the self as interiority differentiator. Three innate emotions (anger, fear, joy) operate as primary valenced differentiations from which the full emotional spectrum unfolds through combinatorial differentiation. Developmental sequencing (Stern, Rochat), deafblindness evidence (Keller), and cross-species mirror self-recognition support the four-stage account. Damasio's three-self model is engaged at five points of divergence. A two-domain model distinguishes classical biological differentiation from the experiential domain, with Quantum Differentiation Resonance proposed as the mechanism sustaining the latter. Qualia are reframed as the interior aspect of differentiation. On this account, the hard problem of consciousness appears framework-bound rather than fundamental.</p>
-            <div class="paper-links">
-                <a href="https://doi.org/10.5281/zenodo.20115674" target="_blank">View on Zenodo ↗</a>
-            </div>
-        </div>
-
-        <div class="paper-card">
-            <span class="paper-status status-published">Preprint</span>
-            <h4>Colinear Conservation: Noether's Theorem and the Corrective Architecture of Gravitytime</h4>
-            <div class="paper-meta">Paul W. Barnes — May 1, 2026 — Zenodo</div>
-            <p class="paper-abstract">A structural account of why Noether's theorem holds. Conservation is reframed as the trace of continuous active correction, with colinear gravitytime as the structural operator: a single operator with two reciprocal faces, one differentiating and one cohering, codifferential and colinear. The cosmological constant problem is developed as a worked example, with falsifiable predictions about Λ evolution that recent DESI results render testable. Eight empirical domains are identified, including a near-term lab-scale test of the framework's phase differential prediction in rotating reference frames. Engages relational time (Barbour, Rovelli), background-independent quantum gravity, and emergent-gravity proposals (Verlinde, Jacobson).</p>
-            <div class="paper-links">
-                <a href="https://doi.org/10.5281/zenodo.19945285" target="_blank">View on Zenodo ↗</a>
-            </div>
-        </div>
-
-        <div class="paper-card">
-            <span class="paper-status status-published">Preprint — Version 2</span>
-            <h4>Unified Axioconscious Field Theory: Consciousness, Differentiation, and the Emergence of Physical Reality</h4>
-            <div class="paper-meta">Paul W. Barnes — Originally published March 9, 2026 | Version 2: April 5, 2026 — Zenodo</div>
-            <p class="paper-abstract">This paper introduces UAFT, a framework proposing that reality emerges from an axiomatic consciousness field. Version 2 expands the constraint taxonomy from six to seven conditions (splitting observational constraint into experimental and environmental), introduces the refined pinch point mechanism grounding selfhood in developmental psychology as an interiority differentiator, rewrites the anesthesia section with direct engagement with Hameroff's microtubule research, adds a Damasio comparison, and tightens the consciousness/axioconsciousness distinction throughout.</p>
-            <div class="paper-links">
-                <a href="https://doi.org/10.5281/zenodo.19433409" target="_blank">View on Zenodo (v3) ↗</a>
-                <a href="https://doi.org/10.5281/zenodo.18921322" target="_blank">Version 1 ↗</a>
-            </div>
-        </div>
-
-        <div class="paper-card">
-            <span class="paper-status status-published">Preprint</span>
-            <h4>The Binary Severance Threshold: Why Artificial Intelligence Cannot Achieve Consciousness</h4>
-            <div class="paper-meta">Paul W. Barnes — April 5, 2026 — Zenodo</div>
-            <p class="paper-abstract">A structural argument from UAFT that AI cannot become conscious, not because of insufficient complexity, but because the computational substrate is ontologically incompatible with what consciousness requires. Introduces two novel concepts: the Binary Severance Threshold (BST) and the Null State Barrier (NSB). Examines classical computing, quantum computing, neuromorphic architectures, and Orch-OR.</p>
-            <div class="paper-links">
-                <a href="https://doi.org/10.5281/zenodo.19432883" target="_blank">View on Zenodo ↗</a>
-                <a href="https://philpeople.org/profiles/paul-barnes" target="_blank">View on PhilPapers ↗</a>
-            </div>
-        </div>
-
-        <div class="paper-card">
-            <span class="paper-status status-accepted">Accepted — Conference Cancelled</span>
-            <h4>Conscious Bias: The Axiomatic Nature of Consciousness and Emergent Phenomena</h4>
-            <div class="paper-meta">Paul W. Barnes — November 2025 — The Science of Consciousness 2026 (University of Arizona)</div>
-            <p class="paper-abstract">Conference abstract accepted for presentation at TSC 2026. Introduces conscious bias as a systematic limitation in consciousness studies and proposes axioconsciousness as a framework for reframing the relationship between consciousness, physical forces, and emergent phenomena.</p>
-            <div class="paper-links">
-                <a href="https://doi.org/10.5281/zenodo.18921322" target="_blank">Related Preprint ↗</a>
-            </div>
-        </div>
-
-    <div class="to-top"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>Back to top</a></div>
-    </section>
-
-
-    <!-- UPDATES -->
-    <section id="updates">
-        <h2>Updates</h2>
-
-        <details class="theory-section" open>
-            <summary>May 2026 (last updated May 10, 2026)</summary>
-            <div class="blog-entry">
-                <div class="blog-date">May 10, 2026</div>
-                <h4>Emotional Differentiation Paper Published</h4>
-                <p>The fourth UAFT paper is now publicly available on Zenodo with a permanent DOI. "Emotional Differentiation: The Emergence of Consciousness and Self" develops the pinch point mechanism in detail and engages the philosophical tradition on selfhood (Aristotle, Descartes, Spinoza, Locke, Hume, Kant, James, Husserl, Heidegger, Merleau-Ponty, Strawson), contemporary consciousness theories (IIT, GWT, HOT, predictive processing, Solms), affective neuroscience (Damasio, Panksepp, LeDoux, Barrett), developmental psychology (Stern, Rochat, Ekman), and cross-species evidence. The four-stage progression (general differentiation, emotional differentiation, saturation, pinch point) is articulated as the structural mechanism for the emergence of selfhood. The two-domain model distinguishes classical biological differentiation from the experiential domain supported by Quantum Differentiation Resonance, with anesthesia evidence systematically developed. Continuous Intrinsic Differentiation Lineage (CIDL) introduced as the architecture that persists through anesthesia. Three named fallacies in consciousness debates introduced through associated work: Hard Conflation and Concept Hollowing. The paper has been submitted for peer review at Phenomenology and the Cognitive Sciences.</p>
-            </div>
-            <div class="blog-entry">
-                <div class="blog-date">May 1, 2026</div>
-                <h4>Colinear Conservation Paper Published</h4>
-                <p>The third UAFT paper is now publicly available on Zenodo with a permanent DOI. "Colinear Conservation: Noether's Theorem and the Corrective Architecture of Gravitytime" extends UAFT into foundations of physics, offering a structural account of why Noether's theorem holds. Conservation is reframed as active corrective process; colinear gravitytime is articulated as the structural operator with three structural features (colinear, codifferential, phase-differentiated); the cosmological constant problem is developed as a worked example. Eight empirical domains are identified, including a near-term lab-scale test predicting a nonzero phase differential between time and gravity responses in rotating reference frames. The framework's testability claim is now grounded in concrete empirical predictions.</p>
-            </div>
-        </details>
-
-        <details class="theory-section">
-            <summary>April 2026 (last updated April 17, 2026)</summary>
-            <div class="blog-entry">
-                <div class="blog-date">April 7, 2026</div>
-                <h4>Four New Terms Coined, Testable Prediction Articulated</h4>
-                <p>Differentiation Resonance (DR) and Quantum Differentiation Resonance (QDR) coined, providing a structural account of how biology achieves and maintains resonance with the axioconscious field through quantum coherence in microtubules. Awareness/consciousness distinction refined: awareness is what emotion produces through the pinch point; consciousness is the field itself reflected through that awareness. Codifferential coined to describe expressions arising from the same act of differentiation, replacing "within time" language. Computational projection identified as the eleventh type of conscious bias: AI tools trained on consciousness-biased data inherit and amplify those biases recursively. A testable empirical prediction articulated: quantum coherence signatures in microtubules should differ qualitatively between conscious, anesthetized, and dead tissue. Glossary page launched with 24 terms.</p>
-            </div>
-            <div class="blog-entry">
-                <div class="blog-date">April 6, 2026</div>
-                <h4>Website Expanded and Migrated to GitHub Pages</h4>
-                <p>Site expanded from one page to four: a dedicated Theory page with 20 expanded sections covering the full UAFT architecture, a Research Programme page mapping 17 disciplines across five planned volumes, and a Reading List page with 29 annotated works organised by discipline. Site migrated to GitHub Pages hosting with custom domain. DNS updated for axioconsciousness.com and uaftheory.com.</p>
-            </div>
-            <div class="blog-entry">
-                <div class="blog-date">April 5, 2026</div>
-                <h4>Two Papers Published</h4>
-                <p>UAFT Version 2 uploaded to Zenodo with major updates: seven-condition constraint taxonomy, refined pinch point mechanism grounded in developmental psychology, anesthesia section engaging Hameroff's microtubule research, Damasio comparison, and environmental constraint explaining the resolved macro world. Companion paper "The Binary Severance Threshold: Why Artificial Intelligence Cannot Achieve Consciousness" published simultaneously, introducing BST and NSB as structural barriers to machine consciousness. Both papers cross-referenced with permanent DOIs.</p>
-            </div>
-        </details>
-
-        <details class="theory-section">
-            <summary>March 2026 (last updated March 10, 2026)</summary>
-            <div class="blog-entry">
-                <div class="blog-date">March 10, 2026</div>
-                <h4>Engagement on X</h4>
-                <p>Posted the Zenodo preprint link on X. Within 24 hours: 67 views, 3 downloads, and a substantive response from a researcher working on converging ideas in holographic physics and fractal consciousness. The convergence across the field continues to accelerate.</p>
-            </div>
-            <div class="blog-entry">
-                <div class="blog-date">March 9, 2026</div>
-                <h4>Preprint Published on Zenodo</h4>
-                <p>The working paper "Unified Axioconscious Field Theory: Consciousness, Differentiation, and the Emergence of Physical Reality" is now publicly available on Zenodo with a permanent DOI. This establishes a timestamped public record of the core UAFT architecture.</p>
-            </div>
-            <div class="blog-entry">
-                <div class="blog-date">March 9, 2026</div>
-                <h4>Theory Name Clarified</h4>
-                <p>The framework name has been refined from "Unified Axiomatic Field Theory" to "Unified Axioconscious Field Theory" (UAFT). The term "axioconscious" embeds the core claim directly: consciousness is the axiom.</p>
-            </div>
-        </details>
-
-        <details class="theory-section">
-            <summary>November 2025</summary>
-            <div class="blog-entry">
-                <div class="blog-date">November 2025</div>
-                <h4>TSC 2026 Abstract Accepted</h4>
-                <p>Abstract "Conscious Bias: The Axiomatic Nature of Consciousness and Emergent Phenomena" accepted for presentation at The Science of Consciousness 2026, University of Arizona. The conference was subsequently cancelled.</p>
-            </div>
-            <div class="blog-entry">
-                <div class="blog-date">November 2025</div>
-                <h4>Domain Registered</h4>
-                <p>axioconsciousness.com registered, marking the public beginning of the framework's online presence.</p>
-            </div>
-        </details>
-
-    <div class="to-top"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>Back to top</a></div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>I welcome thoughtful engagement from anyone working in consciousness studies, philosophy of mind, or foundations of physics.</p>
-
-        <div class="contact-grid">
-            <div class="contact-item">
-                <div class="label">Email</div>
-                <div class="value">pbarnes1 [at] athabasca.edu</div>
-            </div>
-            <div class="contact-item">
-                <div class="label">Zenodo</div>
-                <a href="https://doi.org/10.5281/zenodo.19945285" target="_blank">Colinear Conservation ↗</a><br>
-                <a href="https://doi.org/10.5281/zenodo.19433409" target="_blank">UAFT Preprint (v3) ↗</a><br>
-                <a href="https://doi.org/10.5281/zenodo.19432883" target="_blank">BST Paper ↗</a>
-            </div>
-            <div class="contact-item">
-                <div class="label">X (Twitter)</div>
-                <a href="https://x.com/paulwbarnes" target="_blank">@paulwbarnes ↗</a>
-            </div>
-            <div class="contact-item">
-                <div class="label">LinkedIn</div>
-                <a href="https://linkedin.com/in/pwbarnes" target="_blank">linkedin.com/in/pwbarnes ↗</a>
-            </div>
-            <div class="contact-item">
-                <div class="label">PhilPeople</div>
-                <a href="https://philpeople.org/profiles/paul-barnes" target="_blank">Paul Barnes ↗</a>
-            </div>
-            <div class="contact-item">
-                <div class="label">GitHub</div>
-                <a href="https://github.com/axioconsciousness" target="_blank">axioconsciousness ↗</a>
-            </div>
-            <div class="contact-item">
-                <div class="label">ORCID</div>
-                <a href="https://orcid.org/0009-0007-7046-3827" target="_blank">0009-0007-7046-3827 ↗</a>
-            </div>
-            <div class="contact-item">
-                <div class="label">Website</div>
-                <a href="https://axioconsciousness.com" target="_blank">axioconsciousness.com ↗</a>
-            </div>
-        </div>
-    <div class="to-top"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>Back to top</a></div>
-    </section>
-
-</main>
-
-<section id="about" style="max-width: 760px; margin: 0 auto; padding: 0 1.5rem 2rem;">
-    <details class="theory-section" style="border-top: 1px solid var(--border);">
-        <summary>About the Author</summary>
-        <p style="margin-top: 0.5rem;">I am a consciousness researcher at Athabasca University studying psychology with a minor in philosophy. My work centres on the foundations of consciousness, exploring the relationship between differentiation, emotion, and the emergence of awareness.</p>
-        <p>I am the developer of Unified Axioconscious Field Theory (UAFT), a framework proposing that consciousness is axiomatic, a self-grounding, atemporal field from which time, gravity, mass, and physical law emerge through a process called non-dual differentiation. My professional background spans over 30 years in electrical and systems design within Canada's nuclear and industrial sectors, which informs my approach to theoretical questions with technical precision and systems-level insight.</p>
-        <p>My abstract "Conscious Bias: The Axiomatic Nature of Consciousness and Emergent Phenomena" was accepted for presentation at The Science of Consciousness 2026 (University of Arizona), prior to conference cancellation.</p>
-        <ul class="credential-list" style="margin-bottom: 1.2rem;">
-            <li><strong>Affiliation:</strong> Athabasca University — BA Psychology (in progress), Philosophy Minor</li>
-            <li><strong>Research Focus:</strong> Consciousness, Ontology, Philosophy of Mind, Philosophy of Physics</li>
-            <li><strong>Professional Background:</strong> Electrical &amp; Systems Design — Nuclear &amp; Industrial Sectors (30+ years)</li>
-            <li><strong>Conference:</strong> TSC 2026 — Accepted (conference cancelled)</li>
-            <li><strong>Memberships:</strong> Journal of Consciousness Studies (subscriber), American Philosophical Association (student member)</li>
-        </ul>
-    </details>
+<!-- PAPERS -->
+<section id="papers">
+<h2>Papers &amp; Publications</h2>
+<div class="paper-card">
+<span class="paper-status status-published">Preprint</span><span class="paper-status status-new">NEW</span>
+<h4>Emotional Compression and the Structural Inevitability of the Pinch Point: A Supplement to Barnes (2026c)</h4>
+<div class="paper-meta">Paul W. Barnes — May 14, 2026 — Zenodo</div>
+<p class="paper-abstract">This supplement to "Emotional Differentiation: The Emergence of Consciousness and Self" (Barnes 2026c) develops three theoretical refinements left implicit in the original paper. First, the Emotional Tree and Emotional Spectrum are distinguished as two structurally different aspects of emotional life: the Tree describes the divergent branching of variants from each primary emotion, while the Spectrum describes the convergent fusion of multiple primaries into compound emotional states in which the constituent primaries persist within the fusion rather than being lost to it. Second, Emotional Compression is introduced as the active mechanism by which the convergent Spectrum produces increasing density across development. Each new fusion compresses multiple primaries into a single phenomenal state; recursive fusions compress further still. Third, with Compression named, saturation is shown to be structurally inevitable rather than merely empirically observed. These refinements tighten the causal chain articulated in the original paper without altering its substantive conclusions.</p>
+<div class="paper-links">
+<a href="https://doi.org/10.5281/zenodo.20238791" target="_blank">View on Zenodo ↗</a>
+</div>
+</div>
+<div class="paper-card">
+<span class="paper-status status-published">Preprint</span>
+<h4>Emotional Differentiation: The Emergence of Consciousness and Self</h4>
+<div class="paper-meta">Paul W. Barnes — May 10, 2026 — Zenodo</div>
+<p class="paper-abstract">Consciousness studies typically treats emotion as a feature of an already-formed subject. This paper argues the reverse: emotion is part of how the subject comes into being. The argument develops through a four-stage progression: general differentiation, emotional differentiation, saturation, and pinch point. At saturation, distributed emotional differentiation gives way to a new differentiating structure: the self as interiority differentiator. Three innate emotions (anger, fear, joy) operate as primary valenced differentiations from which the full emotional spectrum unfolds through combinatorial differentiation. Developmental sequencing (Stern, Rochat), deafblindness evidence (Keller), and cross-species mirror self-recognition support the four-stage account. Damasio's three-self model is engaged at five points of divergence. A two-domain model distinguishes classical biological differentiation from the experiential domain, with Quantum Differentiation Resonance proposed as the mechanism sustaining the latter. Qualia are reframed as the interior aspect of differentiation. On this account, the hard problem of consciousness appears framework-bound rather than fundamental.</p>
+<div class="paper-links">
+<a href="https://doi.org/10.5281/zenodo.20115674" target="_blank">View on Zenodo ↗</a>
+</div>
+</div>
+<div class="paper-card">
+<span class="paper-status status-published">Preprint</span>
+<h4>Colinear Conservation: Noether's Theorem and the Corrective Architecture of Gravitytime</h4>
+<div class="paper-meta">Paul W. Barnes — May 1, 2026 — Zenodo</div>
+<p class="paper-abstract">A structural account of why Noether's theorem holds. Conservation is reframed as the trace of continuous active correction, with colinear gravitytime as the structural operator: a single operator with two reciprocal faces, one differentiating and one cohering, codifferential and colinear. The cosmological constant problem is developed as a worked example, with falsifiable predictions about Λ evolution that recent DESI results render testable. Eight empirical domains are identified, including a near-term lab-scale test of the framework's phase differential prediction in rotating reference frames. Engages relational time (Barbour, Rovelli), background-independent quantum gravity, and emergent-gravity proposals (Verlinde, Jacobson).</p>
+<div class="paper-links">
+<a href="https://doi.org/10.5281/zenodo.19945285" target="_blank">View on Zenodo ↗</a>
+</div>
+</div>
+<div class="paper-card">
+<span class="paper-status status-published">Preprint — Version 2</span>
+<h4>Unified Axioconscious Field Theory: Consciousness, Differentiation, and the Emergence of Physical Reality</h4>
+<div class="paper-meta">Paul W. Barnes — Originally published March 9, 2026 | Version 2: April 5, 2026 — Zenodo</div>
+<p class="paper-abstract">This paper introduces UAFT, a framework proposing that reality emerges from an axiomatic consciousness field. Version 2 expands the constraint taxonomy from six to seven conditions (splitting observational constraint into experimental and environmental), introduces the refined pinch point mechanism grounding selfhood in developmental psychology as an interiority differentiator, rewrites the anesthesia section with direct engagement with Hameroff's microtubule research, adds a Damasio comparison, and tightens the consciousness/axioconsciousness distinction throughout.</p>
+<div class="paper-links">
+<a href="https://doi.org/10.5281/zenodo.19433409" target="_blank">View on Zenodo (v3) ↗</a>
+<a href="https://doi.org/10.5281/zenodo.18921322" target="_blank">Version 1 ↗</a>
+</div>
+</div>
+<div class="paper-card">
+<span class="paper-status status-published">Preprint</span>
+<h4>The Binary Severance Threshold: Why Artificial Intelligence Cannot Achieve Consciousness</h4>
+<div class="paper-meta">Paul W. Barnes — April 5, 2026 — Zenodo</div>
+<p class="paper-abstract">A structural argument from UAFT that AI cannot become conscious, not because of insufficient complexity, but because the computational substrate is ontologically incompatible with what consciousness requires. Introduces two novel concepts: the Binary Severance Threshold (BST) and the Null State Barrier (NSB). Examines classical computing, quantum computing, neuromorphic architectures, and Orch-OR.</p>
+<div class="paper-links">
+<a href="https://doi.org/10.5281/zenodo.19432883" target="_blank">View on Zenodo ↗</a>
+<a href="https://philpeople.org/profiles/paul-barnes" target="_blank">View on PhilPapers ↗</a>
+</div>
+</div>
+<div class="paper-card">
+<span class="paper-status status-accepted">Accepted — Conference Cancelled</span>
+<h4>Conscious Bias: The Axiomatic Nature of Consciousness and Emergent Phenomena</h4>
+<div class="paper-meta">Paul W. Barnes — November 2025 — The Science of Consciousness 2026 (University of Arizona)</div>
+<p class="paper-abstract">Conference abstract accepted for presentation at TSC 2026. Introduces conscious bias as a systematic limitation in consciousness studies and proposes axioconsciousness as a framework for reframing the relationship between consciousness, physical forces, and emergent phenomena.</p>
+<div class="paper-links">
+<a href="https://doi.org/10.5281/zenodo.18921322" target="_blank">Related Preprint ↗</a>
+</div>
+</div>
+<div class="to-top"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>Back to top</a></div>
 </section>
-
+<!-- UPDATES -->
+<section id="updates">
+<h2>Updates</h2>
+<details class="theory-section" open>
+<summary>May 2026 (last updated May 14, 2026)</summary>
+<div class="blog-entry">
+<div class="blog-date">May 14, 2026</div>
+<h4>Emotional Compression Supplement Published</h4>
+<p>A supplement to the emotion paper has been deposited on Zenodo. "Emotional Compression and the Structural Inevitability of the Pinch Point" develops three theoretical refinements: the distinction between the Emotional Tree (divergent branching within each primary emotion) and the Emotional Spectrum (convergent fusion across primaries with persistence of the constituents); Emotional Compression as the active mechanism by which convergent fusion produces increasing density across development; and the structural inevitability argument, showing that saturation and the pinch point are necessary consequences of the prior mechanism rather than empirically observed developmental events. The supplement tightens the causal chain articulated in the original paper without altering its substantive conclusions. Also deposited on PhilPapers.</p>
+</div>
+<div class="blog-entry">
+<div class="blog-date">May 10, 2026</div>
+<h4>Emotional Differentiation Paper Published</h4>
+<p>The fourth UAFT paper is now publicly available on Zenodo with a permanent DOI. "Emotional Differentiation: The Emergence of Consciousness and Self" develops the pinch point mechanism in detail and engages the philosophical tradition on selfhood (Aristotle, Descartes, Spinoza, Locke, Hume, Kant, James, Husserl, Heidegger, Merleau-Ponty, Strawson), contemporary consciousness theories (IIT, GWT, HOT, predictive processing, Solms), affective neuroscience (Damasio, Panksepp, LeDoux, Barrett), developmental psychology (Stern, Rochat, Ekman), and cross-species evidence. The four-stage progression (general differentiation, emotional differentiation, saturation, pinch point) is articulated as the structural mechanism for the emergence of selfhood. The two-domain model distinguishes classical biological differentiation from the experiential domain supported by Quantum Differentiation Resonance, with anesthesia evidence systematically developed. Continuous Intrinsic Differentiation Lineage (CIDL) introduced as the architecture that persists through anesthesia. Three named fallacies in consciousness debates introduced through associated work: Hard Conflation and Concept Hollowing. The paper has been submitted for peer review at Phenomenology and the Cognitive Sciences.</p>
+</div>
+<div class="blog-entry">
+<div class="blog-date">May 1, 2026</div>
+<h4>Colinear Conservation Paper Published</h4>
+<p>The third UAFT paper is now publicly available on Zenodo with a permanent DOI. "Colinear Conservation: Noether's Theorem and the Corrective Architecture of Gravitytime" extends UAFT into foundations of physics, offering a structural account of why Noether's theorem holds. Conservation is reframed as active corrective process; colinear gravitytime is articulated as the structural operator with three structural features (colinear, codifferential, phase-differentiated); the cosmological constant problem is developed as a worked example. Eight empirical domains are identified, including a near-term lab-scale test predicting a nonzero phase differential between time and gravity responses in rotating reference frames. The framework's testability claim is now grounded in concrete empirical predictions.</p>
+</div>
+</details>
+<details class="theory-section">
+<summary>April 2026 (last updated April 17, 2026)</summary>
+<div class="blog-entry">
+<div class="blog-date">April 7, 2026</div>
+<h4>Four New Terms Coined, Testable Prediction Articulated</h4>
+<p>Differentiation Resonance (DR) and Quantum Differentiation Resonance (QDR) coined, providing a structural account of how biology achieves and maintains resonance with the axioconscious field through quantum coherence in microtubules. Awareness/consciousness distinction refined: awareness is what emotion produces through the pinch point; consciousness is the field itself reflected through that awareness. Codifferential coined to describe expressions arising from the same act of differentiation, replacing "within time" language. Computational projection identified as the eleventh type of conscious bias: AI tools trained on consciousness-biased data inherit and amplify those biases recursively. A testable empirical prediction articulated: quantum coherence signatures in microtubules should differ qualitatively between conscious, anesthetized, and dead tissue. Glossary page launched with 24 terms.</p>
+</div>
+<div class="blog-entry">
+<div class="blog-date">April 6, 2026</div>
+<h4>Website Expanded and Migrated to GitHub Pages</h4>
+<p>Site expanded from one page to four: a dedicated Theory page with 20 expanded sections covering the full UAFT architecture, a Research Programme page mapping 17 disciplines across five planned volumes, and a Reading List page with 29 annotated works organised by discipline. Site migrated to GitHub Pages hosting with custom domain. DNS updated for axioconsciousness.com and uaftheory.com.</p>
+</div>
+<div class="blog-entry">
+<div class="blog-date">April 5, 2026</div>
+<h4>Two Papers Published</h4>
+<p>UAFT Version 2 uploaded to Zenodo with major updates: seven-condition constraint taxonomy, refined pinch point mechanism grounded in developmental psychology, anesthesia section engaging Hameroff's microtubule research, Damasio comparison, and environmental constraint explaining the resolved macro world. Companion paper "The Binary Severance Threshold: Why Artificial Intelligence Cannot Achieve Consciousness" published simultaneously, introducing BST and NSB as structural barriers to machine consciousness. Both papers cross-referenced with permanent DOIs.</p>
+</div>
+</details>
+<details class="theory-section">
+<summary>March 2026 (last updated March 10, 2026)</summary>
+<div class="blog-entry">
+<div class="blog-date">March 10, 2026</div>
+<h4>Engagement on X</h4>
+<p>Posted the Zenodo preprint link on X. Within 24 hours: 67 views, 3 downloads, and a substantive response from a researcher working on converging ideas in holographic physics and fractal consciousness. The convergence across the field continues to accelerate.</p>
+</div>
+<div class="blog-entry">
+<div class="blog-date">March 9, 2026</div>
+<h4>Preprint Published on Zenodo</h4>
+<p>The working paper "Unified Axioconscious Field Theory: Consciousness, Differentiation, and the Emergence of Physical Reality" is now publicly available on Zenodo with a permanent DOI. This establishes a timestamped public record of the core UAFT architecture.</p>
+</div>
+<div class="blog-entry">
+<div class="blog-date">March 9, 2026</div>
+<h4>Theory Name Clarified</h4>
+<p>The framework name has been refined from "Unified Axiomatic Field Theory" to "Unified Axioconscious Field Theory" (UAFT). The term "axioconscious" embeds the core claim directly: consciousness is the axiom.</p>
+</div>
+</details>
+<details class="theory-section">
+<summary>November 2025</summary>
+<div class="blog-entry">
+<div class="blog-date">November 2025</div>
+<h4>TSC 2026 Abstract Accepted</h4>
+<p>Abstract "Conscious Bias: The Axiomatic Nature of Consciousness and Emergent Phenomena" accepted for presentation at The Science of Consciousness 2026, University of Arizona. The conference was subsequently cancelled.</p>
+</div>
+<div class="blog-entry">
+<div class="blog-date">November 2025</div>
+<h4>Domain Registered</h4>
+<p>axioconsciousness.com registered, marking the public beginning of the framework's online presence.</p>
+</div>
+</details>
+<div class="to-top"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>Back to top</a></div>
+</section>
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact</h2>
+<p>I welcome thoughtful engagement from anyone working in consciousness studies, philosophy of mind, or foundations of physics.</p>
+<div class="contact-grid">
+<div class="contact-item">
+<div class="label">Email</div>
+<div class="value">pbarnes1 [at] athabasca.edu</div>
+</div>
+<div class="contact-item">
+<div class="label">Zenodo</div>
+<a href="https://doi.org/10.5281/zenodo.20238791" target="_blank">Emotional Compression Supplement ↗</a><br>
+<a href="https://doi.org/10.5281/zenodo.20115674" target="_blank">Emotional Differentiation ↗</a><br>
+<a href="https://doi.org/10.5281/zenodo.19945285" target="_blank">Colinear Conservation ↗</a><br>
+<a href="https://doi.org/10.5281/zenodo.19433409" target="_blank">UAFT Preprint (v3) ↗</a><br>
+<a href="https://doi.org/10.5281/zenodo.19432883" target="_blank">BST Paper ↗</a>
+</div>
+<div class="contact-item">
+<div class="label">X (Twitter)</div>
+<a href="https://x.com/paulwbarnes" target="_blank">@paulwbarnes ↗</a>
+</div>
+<div class="contact-item">
+<div class="label">LinkedIn</div>
+<a href="https://linkedin.com/in/pwbarnes" target="_blank">linkedin.com/in/pwbarnes ↗</a>
+</div>
+<div class="contact-item">
+<div class="label">PhilPeople</div>
+<a href="https://philpeople.org/profiles/paul-barnes" target="_blank">Paul Barnes ↗</a>
+</div>
+<div class="contact-item">
+<div class="label">GitHub</div>
+<a href="https://github.com/axioconsciousness" target="_blank">axioconsciousness ↗</a>
+</div>
+<div class="contact-item">
+<div class="label">ORCID</div>
+<a href="https://orcid.org/0009-0007-7046-3827" target="_blank">0009-0007-7046-3827 ↗</a>
+</div>
+<div class="contact-item">
+<div class="label">Website</div>
+<a href="https://axioconsciousness.com" target="_blank">axioconsciousness.com ↗</a>
+</div>
+</div>
+<div class="to-top"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>Back to top</a></div>
+</section>
+</main>
+<section id="about" style="max-width: 760px; margin: 0 auto; padding: 0 1.5rem 2rem;">
+<details class="theory-section" style="border-top: 1px solid var(--border);">
+<summary>About the Author</summary>
+<p style="margin-top: 0.5rem;">I am a consciousness researcher at Athabasca University studying psychology with a minor in philosophy. My work centres on the foundations of consciousness, exploring the relationship between differentiation, emotion, and the emergence of awareness.</p>
+<p>I am the developer of Unified Axioconscious Field Theory (UAFT), a framework proposing that consciousness is axiomatic, a self-grounding, atemporal field from which time, gravity, mass, and physical law emerge through a process called non-dual differentiation. My professional background spans over 30 years in electrical and systems design within Canada's nuclear and industrial sectors, which informs my approach to theoretical questions with technical precision and systems-level insight.</p>
+<p>My abstract "Conscious Bias: The Axiomatic Nature of Consciousness and Emergent Phenomena" was accepted for presentation at The Science of Consciousness 2026 (University of Arizona), prior to conference cancellation.</p>
+<ul class="credential-list" style="margin-bottom: 1.2rem;">
+<li><strong>Affiliation:</strong> Athabasca University — BA Psychology (in progress), Philosophy Minor</li>
+<li><strong>Research Focus:</strong> Consciousness, Ontology, Philosophy of Mind, Philosophy of Physics</li>
+<li><strong>Professional Background:</strong> Electrical &amp; Systems Design — Nuclear &amp; Industrial Sectors (30+ years)</li>
+<li><strong>Conference:</strong> TSC 2026 — Accepted (conference cancelled)</li>
+<li><strong>Memberships:</strong> American Philosophical Association, American Psychological Association (Division 24: Society for Theoretical and Philosophical Psychology), Society for Mind-Matter Research, Journal of Consciousness Studies (subscriber)</li>
+</ul>
+</details>
+</section>
 <footer>
-    <p>&copy; 2026 Paul W. Barnes. All rights reserved.</p>
-    <p style="margin-top: 0.3rem;">Unified Axioconscious Field Theory (UAFT) — uaftheory.com</p>
+<p>&copy; 2026 Paul W. Barnes. All rights reserved.</p>
+<p style="margin-top: 0.3rem;">Unified Axioconscious Field Theory (UAFT) — uaftheory.com</p>
 </footer>
-
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // Smooth scroll navigation
-    document.querySelectorAll('nav a, .to-top a').forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (!href.startsWith('#')) return;
-            e.preventDefault();
-            if (href === '#') {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            } else {
-                const target = document.querySelector(href);
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            }
-            document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
-            const navLink = document.querySelector('nav a[href="' + href + '"]');
-            if (navLink) navLink.classList.add('active');
-        });
-    });
-
-    // Update active nav on scroll
-    window.addEventListener('scroll', function() {
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('nav a');
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            if (window.pageYOffset >= sectionTop) {
-                current = section.getAttribute('id');
-            }
-        });
-         navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === '#' + current) {
-                link.classList.add('active');
-            }
-        });
-    });
+// Smooth scroll navigation
+document.querySelectorAll('nav a, .to-top a').forEach(link => {
+link.addEventListener('click', function(e) {
+const href = this.getAttribute('href');
+if (!href.startsWith('#')) return;
+e.preventDefault();
+if (href === '#') {
+window.scrollTo({ top: 0, behavior: 'smooth' });
+} else {
+const target = document.querySelector(href);
+if (target) {
+target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+}
+document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+const navLink = document.querySelector('nav a[href="' + href + '"]');
+if (navLink) navLink.classList.add('active');
+});
+});
+// Update active nav on scroll
+window.addEventListener('scroll', function() {
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('nav a');
+let current = '';
+sections.forEach(section => {
+const sectionTop = section.offsetTop - 100;
+if (window.pageYOffset >= sectionTop) {
+current = section.getAttribute('id');
+}
+});
+navLinks.forEach(link => {
+link.classList.remove('active');
+if (link.getAttribute('href') === '#' + current) {
+link.classList.add('active');
+}
+});
+});
 </script>
-
 </body>
 </html>
