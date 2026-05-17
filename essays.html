@@ -5,61 +5,23 @@ description: Essays, articles, and shorter writings on consciousness, selfhood, 
 ---
 
 <h1 class="page-title">Essays</h1>
-<p class="page-lead">Shorter writings on consciousness, selfhood, emotion, and foundations of physics. Each piece develops a specific argument within or adjacent to the broader UAFT research program. Long-form papers are available on the <a href="/research.html">Research Programme</a> page. Essays are organised by domain, mirroring the five-volume research structure.</p>
+
+<p class="page-lead">Shorter writings on consciousness, selfhood, emotion, and foundations of physics. Each piece develops a specific argument within or adjacent to the broader UAFT research program. Long-form papers are available on the <a href="/research.html">Research Programme</a> page. Listed newest first.</p>
 
 {% comment %}
-The five categories mirror the research programme volumes:
-Foundations / Life / Mind / Culture / Technology
-We iterate in this fixed order so the page structure is stable.
+Reverse chronological listing. Category and series (if present) are shown as inline metadata next to the date rather than as section headers.
 {% endcomment %}
 
-{% assign category_order = "Foundations,Life,Mind,Culture,Technology" | split: "," %}
-
-{% for category in category_order %}
-  {% assign category_posts = site.posts | where: "category", category %}
-  {% if category_posts.size > 0 %}
-<section class="category-section" id="category-{{ category | downcase }}">
-    <h2 class="category-heading">{{ category }}</h2>
-    <p class="category-description">
-      {% if category == "Foundations" %}Physics, cosmology, ontology.
-      {% elsif category == "Life" %}Biology, evolution, lifeforms.
-      {% elsif category == "Mind" %}Consciousness, philosophy of mind, psychology.
-      {% elsif category == "Culture" %}Society, history, language.
-      {% elsif category == "Technology" %}AI, computing, machine consciousness.
-      {% endif %}
-    </p>
-    {% for post in category_posts %}
-    <div class="essay-list-item">
-        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-        <div class="essay-meta">{{ post.date | date: "%B %-d, %Y" }}</div>
-        {% if post.description %}
-        <div class="essay-excerpt">{{ post.description }}</div>
-        {% else %}
-        <div class="essay-excerpt">{{ post.excerpt | strip_html | truncatewords: 50 }}</div>
-        {% endif %}
+{% for post in site.posts %}
+  <div class="essay-list-item">
+    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    <div class="essay-meta">
+      {% if post.category %}{{ post.category }} · {% endif %}{% if post.series %}<em>{{ post.series }}</em> · {% endif %}{{ post.date | date: "%B %-d, %Y" }}
     </div>
-    {% endfor %}
-</section>
-  {% endif %}
+    {% if post.description %}
+      <div class="essay-excerpt">{{ post.description }}</div>
+    {% else %}
+      <div class="essay-excerpt">{{ post.excerpt | strip_html | truncatewords: 50 }}</div>
+    {% endif %}
+  </div>
 {% endfor %}
-
-{% comment %}
-Catch any essays without a category - they appear under "Uncategorized" at the bottom
-{% endcomment %}
-{% assign uncategorized = site.posts | where_exp: "post", "post.category == nil" %}
-{% if uncategorized.size > 0 %}
-<section class="category-section">
-    <h2 class="category-heading">Other</h2>
-    {% for post in uncategorized %}
-    <div class="essay-list-item">
-        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-        <div class="essay-meta">{{ post.date | date: "%B %-d, %Y" }}</div>
-        {% if post.description %}
-        <div class="essay-excerpt">{{ post.description }}</div>
-        {% else %}
-        <div class="essay-excerpt">{{ post.excerpt | strip_html | truncatewords: 50 }}</div>
-        {% endif %}
-    </div>
-    {% endfor %}
-</section>
-{% endif %}
