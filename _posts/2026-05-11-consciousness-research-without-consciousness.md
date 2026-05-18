@@ -2,7 +2,6 @@
 layout: essay
 title: "Consciousness Research Without Consciousness"
 date: 2026-05-11
-category: Mind
 description: "A new paper from Google DeepMind on AI consciousness exemplifies two fallacies that should be named before they harden into the discipline's defaults. The diagnostic, the framework problem, and what is at stake when consciousness research stops asking about consciousness."
 ---
 
@@ -96,9 +95,11 @@ Naming the moves is the first step toward not adopting them.
 
 *References:*
 
-*Anastasia Bendebury (@astronomind), "AI and Consciousness: Shifting Focus Towards Tractable Questions." Google DeepMind, 2026.*
+*Anastasia Bendebury (@astronomind), "AI and Consciousness: Shifting Focus Towards Tractable Questions." Google DeepMind, 2026. arXiv:2605.06965, [https://arxiv.org/abs/2605.06965](https://arxiv.org/abs/2605.06965)*
 
-*Paul W. Barnes, "The Hard Conflation and Its Opposite: Two Fallacies in Consciousness Debates." May 2026.*
+*Paul W. Barnes, "Three Fallacies in AI Consciousness Research: A Structural Diagnostic." Zenodo, May 2026. [https://doi.org/10.5281/zenodo.20272907](https://doi.org/10.5281/zenodo.20272907)*
+
+*Paul W. Barnes, "The Hard Conflation and Its Opposite: Two Fallacies in Consciousness Debates." axioconsciousness.com, May 2026.*
 
 *Paul W. Barnes, "Emotional Differentiation: The Emergence of Consciousness and Self." Zenodo, May 2026. [https://doi.org/10.5281/zenodo.20115674](https://doi.org/10.5281/zenodo.20115674)*
 

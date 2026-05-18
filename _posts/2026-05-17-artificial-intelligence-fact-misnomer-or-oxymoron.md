@@ -116,7 +116,7 @@ The series is about all the words under the same kind of pressure.
 
 The structural argument for the oxymoron reading is developed in two companion papers:
 
-- "Three Fallacies in AI Consciousness Research: A Structural Diagnostic" (Barnes 2026, in deposit)
+- "Three Fallacies in AI Consciousness Research: A Structural Diagnostic" (Barnes 2026, [Zenodo DOI 10.5281/zenodo.20272907](https://doi.org/10.5281/zenodo.20272907))
 - "The Vocabulary of Mind Under Capture: A Structural Diagnostic of Cognitive Concepts in AI Discourse" (Barnes 2026, in deposit)
 
 The foundational claim that binary computational substrates cannot host the differentiation consciousness requires is developed in "The Binary Severance Threshold: Why Artificial Intelligence Cannot Achieve Consciousness," Zenodo DOI [10.5281/zenodo.19432883](https://doi.org/10.5281/zenodo.19432883). The broader theoretical framework is the Unified Axioconscious Field Theory, Zenodo DOI [10.5281/zenodo.19433409](https://doi.org/10.5281/zenodo.19433409).
