@@ -1,6 +1,6 @@
 ---
 layout: essay
-title: "Consciousness Research Without Consciousness"
+title: "Consciousness Research (Without Consciousness)"
 date: 2026-05-11
 description: "A new paper from Google DeepMind on AI consciousness exemplifies two fallacies that should be named before they harden into the discipline's defaults. The diagnostic, the framework problem, and what is at stake when consciousness research stops asking about consciousness."
 ---
