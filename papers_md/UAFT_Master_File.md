@@ -2,7 +2,24 @@
 
 A concept-organized statement of the Unified Axioconscious Field Theory, distilled from the core papers. This file is the always-loaded reference. It states what each concept is, in declarative form, so that an answer drawn from it carries the whole framework rather than a fragment. Where a question needs the full argument or the worked detail, the source paper named at the end of each section is the place to go.
 
-Author: Paul W. Barnes. Source papers: UAFT Working Paper (v3 is current; this file is distilled from v2 and must be checked against v3), Emotional Differentiation, Emotional Compression and the Structural Inevitability of the Pinch Point, The Second Pinch Point, Colinear Conservation.
+Author: Paul W. Barnes. Source papers: UAFT Working Paper (v3 current; v3 is a formatting fix of v2 with no substantive change), Emotional Differentiation, Emotional Compression and the Structural Inevitability of the Pinch Point, The Second Pinch Point, Colinear Conservation.
+
+---
+
+## Sources and DOIs
+
+All papers are by Paul W. Barnes and are openly available on Zenodo. When someone asks where to find the work, cite the relevant paper and its DOI link below.
+
+- Unified Axioconscious Field Theory (Working Paper, v3): https://doi.org/10.5281/zenodo.19433409
+- Emotional Differentiation: The Emergence of Consciousness and Self: https://doi.org/10.5281/zenodo.20115674
+- Emotional Compression and the Structural Inevitability of the Pinch Point: https://doi.org/10.5281/zenodo.20238791
+- The Second Pinch Point: Emotion, Intellect, and the Emergence of Reason: https://doi.org/10.5281/zenodo.20487419
+- Colinear Conservation: Noether's Theorem and the Corrective Architecture of Gravitytime: https://doi.org/10.5281/zenodo.19945284
+
+Related papers referenced by the framework (AI-argument branch, not part of the core distillation above):
+- The Binary Severance Threshold: https://doi.org/10.5281/zenodo.19432883
+
+General reference: https://axioconsciousness.com
 
 ---
 
@@ -128,7 +145,7 @@ Emotional compression is the active mechanism by which the convergent Spectrum p
 
 The pinch point is structurally inevitable, not a contingent biological accident. In a finite distributed system, continuous compression must eventually reach a threshold where distributed processing can no longer hold the compressed field. Either compression halts (and emotional development plateaus) or a new mode of integration emerges. This phase change is the pinch point.
 
-What emerges at the pinch point is the interiority differentiator: the self. It is not a coordinator in the managerial sense but a new sense, a new differentiation mechanism whose domain is not the external world but the organism's own emotional and sensory landscape. It differentiates the interior the way sight differentiates the exterior. The interiority differentiator is one sense among others, not the seat of consciousness. Developmental psychology locates mirror self-recognition at this point, roughly fifteen to twenty-four months.
+What emerges at the pinch point is the interiority differentiator: the self. The interiority differentiator is consciousness. It is not a coordinator in the managerial sense, and it is not a place where consciousness sits. There is no seat of consciousness in the framework. The interiority differentiator does not house or coordinate consciousness; it is the conscious self. It is a new sense, a new differentiation mechanism whose domain is not the external world but the organism's own emotional and sensory landscape, and it differentiates the interior the way sight differentiates the exterior. That it is a new sense and that it is consciousness are not in tension: the emergence of this new differentiation mechanism is the arrival of phenomenal selfhood. Developmental psychology locates mirror self-recognition at this point, roughly fifteen to twenty-four months.
 
 Once born, the self differentiates itself from the process that produced it, then integrates all the senses into a unified field of experience and begins differentiating its own life. The self-conscious emotions (embarrassment, shame, pride) appear here, because they are the compression of compression: the fusion of primary emotional content with the self that emerged from prior fusions.
 
@@ -222,4 +239,4 @@ Source: UAFT Working Paper.
 
 ## Verification Note
 
-This file was distilled from the source papers by an AI assistant under the author's direction. The author's standing concern, documented across prior work, is that AI distillation tends to smooth precise claims into adjacent ones that sound similar but say something different (for example, treating BST as a general structural claim rather than one conditional on UAFT, or describing the interiority differentiator as the seat of consciousness rather than one sense among others). Every claim in this file should be checked by the author against the source papers, and especially against the current Working Paper v3, which this file approximates from v2.
+This file was distilled from the source papers by an AI assistant under the author's direction. The author's standing concern, documented across prior work, is that AI distillation tends to smooth precise claims into adjacent ones that sound similar but say something different. One example matters especially here: the interiority differentiator is consciousness, a new sense whose domain is the interior. There is no seat of consciousness in the framework, and the ID must not be described as housing, coordinating, or being merely adjacent to consciousness, nor as just one sense among others. Another example: the Binary Severance Threshold should be stated as conditional on UAFT rather than as a free-standing general structural claim. Every claim in this file should be checked by the author against the source papers.
