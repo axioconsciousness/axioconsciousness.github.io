@@ -16,7 +16,7 @@ Conservation laws are not balanced equations. They are the trace of asymmetric c
 
 Symmetry breaking is misnamed. There is no symmetry to break. What changes is whether the underlying asymmetry remains hidden behind regularity or becomes visible at the scale of observation. "Spontaneous symmetry breaking" should be "spontaneous asymmetry revelation." The asymmetry was always there, doing the work. The change is in what observation can resolve.
 
-The cosmological constant being constant is the strongest example of the appearance. Lambda appears constant because the corrective work maintaining cosmic dynamic consistency operates with high regularity at the scales we observe. The DESI 2024 results suggesting Lambda may actually evolve are the regularity slipping. The asymmetric work was always there. Observational precision now lets us see it.
+The cosmological constant being constant is the strongest example of the appearance. Lambda appears constant because the corrective work maintaining cosmic dynamic consistency operates with high regularity at the scales we observe. The DESI results suggesting Lambda may actually evolve are consistent with this reading. They do not yet confirm it. Current data cannot discriminate the framework's account from quintessence-like alternatives; the discriminating observations are still to come.
 
 This is not a small revision. If correct, it inverts how to think about most of fundamental physics.
 
@@ -40,9 +40,9 @@ The interesting question is not "what symmetry is being broken" but "what asymme
 
 **The technical foundation:**
 
-The position is developed formally in a paper on conservation laws and the structure of gravitytime, published in 2026 (\[link to colinear conservation paper on Zenodo\]). The paper argues that what physics calls conservation laws are traces of corrective work performed by an operator that performs both temporal and gravitational differentiation simultaneously. Symmetry is redefined as dynamic consistency rather than as identity under transformation. The cosmological constant is predicted to evolve rather than be constant — a prediction that subsequent observational data appears to support.
+The position is developed in structural detail in a paper on conservation laws and the structure of gravitytime, published in 2026 (https://zenodo.org/records/19945285). The paper argues that what physics calls conservation laws are traces of corrective work performed by an operator that performs both temporal and gravitational differentiation simultaneously. Symmetry is redefined as dynamic consistency rather than as identity under transformation. On the cosmological constant, the framework's distinctive predictions are that Lambda should evolve in correlation with the rate of cosmic structure formation and should exhibit environmental dependence, with the local effective dark energy density differing between voids and high-density regions. No current survey has yet tested these predictions. Recent DESI results showing tension with a constant Lambda are consistent with the framework's expectation, though they do not yet discriminate it from quintessence-like alternatives. DESI's continuation through 2028, the Vera Rubin Observatory's Legacy Survey of Space and Time, and the Roman Space Telescope's dark energy programme are positioned to test the distinctive predictions directly. The framework is exposed to falsification on a definite timescale.
 
-The philosophical claim and the technical paper develop together. The technical paper makes the argument formally for foundations of physics. The philosophical position translates that argument for broader engagement.
+The philosophical claim and the technical paper develop together. The technical paper makes the argument in structural terms for foundations of physics and identifies the technical development its full formalization would require. The philosophical position translates that argument for broader engagement.
 
 Subsequent papers extend the framework into other domains. The full project is ongoing. This article is one statement of where the position currently stands.
 
